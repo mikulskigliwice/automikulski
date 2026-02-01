@@ -193,7 +193,6 @@
     .ghost{background:transparent;border-color:rgba(109,124,255,.55)}
     .full{width:100%}
 
-    /* SECTIONS */
     .section{padding:70px 0}
     .section-title{margin:0 0 32px;text-align:center;font-size:clamp(1.4rem,2.8vw,2.1rem)}
     .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
@@ -279,6 +278,71 @@
     .modal p{margin:0 0 14px;line-height:1.5;color:rgba(234,234,255,.92)}
     .modal-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px;align-items:center}
     .modal-note{margin-top:10px;font-size:12px;color:rgba(234,234,255,.62);line-height:1.4}
+
+    /* Popup: lepsza widoczność przycisku "Rozumiem" */
+    .modal .btn.ghost{
+      background: rgba(109,124,255,.16);
+      border-color: rgba(109,124,255,.65);
+      color: var(--text);
+    }
+    .modal .btn.ghost:hover{
+      border-color: rgba(109,124,255,.9);
+    }
+
+    /* Scroll-to-top button */
+    .to-top{
+      position:fixed;
+      right:16px;
+      bottom:16px;
+      width:48px;
+      height:48px;
+      border-radius:999px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:rgba(18,26,51,.72);
+      border:1px solid rgba(109,124,255,.35);
+      box-shadow:0 18px 55px rgba(0,0,0,.46);
+      color:var(--text);
+      font-weight:950;
+      cursor:pointer;
+      opacity:0;
+      transform:translateY(10px);
+      pointer-events:none;
+      transition:.2s ease;
+      z-index:80;
+    }
+    .to-top.show{
+      opacity:1;
+      transform:none;
+      pointer-events:auto;
+    }
+    .to-top:hover{
+      border-color: rgba(79,209,197,.55);
+    }
+    .to-top span{
+      font-size:18px;
+      line-height:1;
+    }
+    .to-top small{
+      position:absolute;
+      bottom:54px;
+      right:0;
+      background:rgba(0,0,0,.6);
+      border:1px solid rgba(109,124,255,.25);
+      padding:6px 8px;
+      border-radius:10px;
+      font-size:12px;
+      color:rgba(234,234,255,.9);
+      white-space:nowrap;
+      opacity:0;
+      transform:translateY(6px);
+      transition:.18s ease;
+    }
+    .to-top:hover small{
+      opacity:1;
+      transform:none;
+    }
 
     /* Mobile: trochę ciaśniej w hero przy sticky nav */
     @media (max-width: 520px){
@@ -374,13 +438,13 @@
     </div>
   </section>
 
-  <!-- MIASTA (POPRAWNIE JAKO OSOBNA SEKCJA) -->
+  <!-- MIASTA -->
   <section id="miasta" class="section">
     <div class="container">
       <h2 class="section-title">Obsługiwane miasta – skup aut do złomowania</h2>
 
       <p class="lead">
-        Działamy na terenie całego Śląska. Poniżej wybrane miasta, w których prowadzimy
+        Działamy na terenie całego Śląska. Poniżej wybrane miasto, w którym prowadzimy
         <strong>skup aut do złomowania</strong>, <strong>skup samochodów uszkodzonych</strong>
         oraz <strong>odbiór pojazdów</strong>.
       </p>
@@ -394,24 +458,6 @@
             <div class="pill">Zabrze</div>
           </div>
         </a>
-
-        <a href="knurow/" class="card service reveal" aria-label="Skup aut do złomowania Knurów">
-          <img src="https://i.postimg.cc/pdG4qmyw/IMG2.png" alt="Skup aut do złomowania Knurów">
-          <div class="overlay">
-            <h3>Skup aut Knurów</h3>
-            <p>Skup aut uszkodzonych i niesprawnych. Odbiór pojazdu.</p>
-            <div class="pill">Knurów</div>
-          </div>
-        </a>
-
-        <a href="pyskowice/" class="card service reveal" aria-label="Skup aut do złomowania Pyskowice">
-          <img src="https://i.postimg.cc/0NQHM9ZV/IMG3.png" alt="Skup aut do złomowania Pyskowice">
-          <div class="overlay">
-            <h3>Skup aut Pyskowice</h3>
-            <p>Samochody do złomowania. Szybka wycena i odbiór.</p>
-            <div class="pill">Pyskowice</div>
-          </div>
-        </a>
       </div>
     </div>
   </section>
@@ -421,9 +467,8 @@
     <div class="container">
       <h2 class="section-title">Skup aut do złomowania – Śląsk</h2>
       <p class="lead">
-        Obsługujemy Gliwice, Zabrze, Knurów, Pyskowice oraz okolice.
-        Skupujemy auta do złomowania na umowę kupna–sprzedaży, także bez przeglądu,
-        niesprawne i powypadkowe. Nadal odbieramy samochody — zadzwoń i podaj markę/model.
+        Obsługujemy Gliwice, Zabrze oraz okolice. Skupujemy auta do złomowania na umowę kupna–sprzedaży,
+        także bez przeglądu, niesprawne i powypadkowe. Nadal odbieramy samochody — zadzwoń i podaj markę/model.
       </p>
     </div>
   </section>
@@ -481,6 +526,12 @@
     <p class="modal-note">Kliknij „Rozumiem”, żeby okienko nie wyskakiwało ponownie na tym urządzeniu.</p>
   </div>
 
+  <!-- TO TOP BUTTON -->
+  <button class="to-top" id="toTop" aria-label="Przewiń do góry">
+    <small>Do góry</small>
+    <span>↑</span>
+  </button>
+
   <script>
     // reveal on scroll
     const reveals = document.querySelectorAll('.reveal');
@@ -512,6 +563,16 @@
     laterBtn.addEventListener('click', closeModal);
     backdrop.addEventListener('click', closeModal);
     document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeModal(); });
+
+    // scroll-to-top
+    const toTop = document.getElementById('toTop');
+    function toggleToTop(){
+      if (window.scrollY > 500) toTop.classList.add('show');
+      else toTop.classList.remove('show');
+    }
+    toggleToTop();
+    window.addEventListener('scroll', toggleToTop);
+    toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
   </script>
 </body>
 </html>
