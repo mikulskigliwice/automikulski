@@ -1,8 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Strona główna -->
   <url>
     <loc>https://mikulskigliwice.github.io/automikulski/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+
+  <!-- Zabrze -->
+  <url>
+    <loc>https://mikulskigliwice.github.io/automikulski/zabrze/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Knurów -->
+  <url>
+    <loc>https://mikulskigliwice.github.io/automikulski/knurow/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Pyskowice -->
+  <url>
+    <loc>https://mikulskigliwice.github.io/automikulski/pyskowice/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
 </urlset>
