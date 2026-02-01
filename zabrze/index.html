@@ -1,47 +1,332 @@
 <!doctype html>
 <html lang="pl">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-<title>Skup aut do złomowania Zabrze – Auto Mikulski | Umowa kupna–sprzedaży</title>
-<meta name="description" content="Skup aut do złomowania Zabrze. Skup samochodów uszkodzonych i powypadkowych. Odbiór auta, umowa kupna–sprzedaży. Auto Mikulski – Śląsk. Tel. 517 936 676">
+  <title>Skup aut do złomowania Zabrze – umowa kupna–sprzedaży | Auto Mikulski</title>
+  <meta name="description" content="Skup aut do złomowania Zabrze i okolice. Umowa kupna–sprzedaży, odbiór auta, skup aut uszkodzonych i powypadkowych. Pomoc drogowa 24h. Zadzwoń: 517 936 676." />
 
-<link rel="canonical" href="https://mikulskigliwice.github.io/automikulski/zabrze/">
+  <link rel="canonical" href="https://mikulskigliwice.github.io/automikulski/zabrze/" />
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
 
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pl_PL" />
+  <meta property="og:title" content="Skup aut do złomowania Zabrze – Auto Mikulski" />
+  <meta property="og:description" content="Skup aut do złomowania w Zabrzu. Umowa kupna–sprzedaży, odbiór auta, szybka wycena. Zadzwoń: 517 936 676." />
+  <meta property="og:url" content="https://mikulskigliwice.github.io/automikulski/zabrze/" />
+  <meta property="og:image" content="https://i.postimg.cc/pdG4qmyw/IMG2.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Skup aut do złomowania Zabrze – Auto Mikulski" />
+  <meta name="twitter:description" content="Umowa kupna–sprzedaży, odbiór auta, szybka wycena. Tel. 517 936 676." />
+  <meta name="twitter:image" content="https://i.postimg.cc/pdG4qmyw/IMG2.png" />
+
+  <link rel="preconnect" href="https://i.postimg.cc" crossorigin />
+
+  <!-- LocalBusiness (city landing) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":"Auto Mikulski",
+    "url":"https://mikulskigliwice.github.io/automikulski/zabrze/",
+    "description":"Skup aut do złomowania Zabrze – umowa kupna–sprzedaży, odbiór auta, skup aut uszkodzonych i powypadkowych. Pomoc drogowa 24h.",
+    "areaServed":[
+      {"@type":"City","name":"Zabrze"},
+      {"@type":"AdministrativeArea","name":"Śląskie"}
+    ],
+    "telephone":"+48 517 936 676",
+    "email":"automikulski@gmail.com",
+    "image":[
+      "https://i.postimg.cc/J0tFfMHV/IMG1.jpg",
+      "https://i.postimg.cc/pdG4qmyw/IMG2.png",
+      "https://i.postimg.cc/0NQHM9ZV/IMG3.png"
+    ]
+  }
+  </script>
+
+  <style>
+    :root{
+      --bg:#05070f;
+      --card1:#121a33;
+      --card2:#0b1125;
+      --text:#eaeaff;
+      --muted:rgba(234,234,255,.72);
+      --stroke:rgba(109,124,255,.16);
+      --a1:#6d7cff;
+      --a2:#4fd1c5;
+      --navbg: rgba(7,10,22,.62);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:
+        radial-gradient(900px 450px at 15% 15%, rgba(109,124,255,.20), transparent 55%),
+        radial-gradient(700px 380px at 85% 25%, rgba(79,209,197,.16), transparent 55%),
+        radial-gradient(circle at top, #10162f, var(--bg));
+      color:var(--text);
+    }
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1120px;margin:0 auto;padding:0 18px}
+
+    /* NAV */
+    .nav{
+      position:sticky; top:0; z-index:40;
+      backdrop-filter: blur(10px);
+      background: var(--navbg);
+      border-bottom:1px solid rgba(109,124,255,.14);
+    }
+    .nav-inner{
+      max-width:1120px;
+      margin:0 auto;
+      padding:12px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight:950;
+      letter-spacing:.2px;
+      white-space:nowrap;
+    }
+    .dot{
+      width:10px;height:10px;border-radius:99px;
+      background:linear-gradient(135deg,var(--a1),var(--a2));
+      box-shadow:0 0 18px rgba(109,124,255,.35);
+      flex:0 0 auto;
+    }
+    .nav-links{display:flex; gap:10px; flex-wrap:wrap; align-items:center; justify-content:flex-end;}
+    .nav-link{
+      padding:8px 10px;border-radius:12px;
+      border:1px solid rgba(109,124,255,.18);
+      background:rgba(18,26,51,.28);
+      font-weight:850;font-size:13px;opacity:.95;
+      transition:transform .18s ease, opacity .18s ease, border-color .18s ease;
+    }
+    .nav-link:hover{transform:translateY(-1px);opacity:1;border-color:rgba(109,124,255,.42)}
+    .nav-call{
+      padding:9px 12px;border-radius:12px;font-weight:950;font-size:13px;
+      background:linear-gradient(135deg,var(--a1),var(--a2));
+      color:#061018;border:0;
+    }
+
+    /* HERO */
+    .hero{padding:64px 0 56px;text-align:center}
+    .badge{
+      display:inline-block;padding:7px 12px;border-radius:999px;
+      font-weight:900;font-size:12px;letter-spacing:.25px;
+      background:rgba(79,209,197,.10);border:1px solid rgba(79,209,197,.22);
+      margin-bottom:14px;
+    }
+    h1{margin:0;font-size:clamp(2.0rem,5vw,3.1rem)}
+    .hero p{max-width:920px;margin:16px auto 0;color:var(--muted);line-height:1.55;font-size:1.05rem}
+    .cta{margin-top:22px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:8px;
+      padding:13px 20px;border-radius:14px;font-weight:900;
+      border:1px solid transparent;cursor:pointer;user-select:none;
+      transition:transform .18s ease, opacity .18s ease;
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .btn:active{transform:translateY(0);opacity:.92}
+    .primary{background:linear-gradient(135deg,var(--a1),var(--a2));color:#061018}
+    .ghost{background:transparent;border-color:rgba(109,124,255,.55)}
+    .full{width:100%}
+
+    /* SECTIONS */
+    .section{padding:62px 0}
+    .section-title{margin:0 0 28px;text-align:center;font-size:clamp(1.35rem,2.7vw,2.05rem)}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
+
+    .card{
+      background:linear-gradient(180deg,var(--card1),var(--card2));
+      border:1px solid var(--stroke);
+      border-radius:22px;
+      box-shadow:0 18px 55px rgba(0,0,0,.46);
+      overflow:hidden;
+    }
+
+    .service{position:relative;height:300px;display:block}
+    .service img{
+      width:100%;height:100%;object-fit:cover;display:block;
+      transform:scale(1.02);
+      transition:transform .7s ease, filter .7s ease;
+      filter:saturate(1.06) contrast(1.03);
+    }
+    .service:hover img{transform:scale(1.09)}
+    .overlay{
+      position:absolute; inset:0;
+      display:flex;flex-direction:column;justify-content:flex-end;
+      padding:18px 18px 16px;
+      background:linear-gradient(180deg, rgba(0,0,0,0) 38%, rgba(0,0,0,.86) 100%);
+    }
+    .overlay h3{margin:0 0 8px;text-align:left}
+    .overlay p{margin:0;color:rgba(234,234,255,.9);line-height:1.35;font-size:.97rem}
+    .pill{
+      margin-top:12px;width:fit-content;padding:6px 10px;border-radius:999px;
+      font-size:12px;font-weight:950;
+      background:rgba(109,124,255,.18);
+      border:1px solid rgba(109,124,255,.26);
+    }
+
+    .mini{padding:16px 18px;display:flex;align-items:center;min-height:86px;font-weight:950}
+    .lead{max-width:980px;margin:0 auto;text-align:center;color:var(--muted);line-height:1.7;font-size:1.02rem}
+
+    .contact-card{padding:18px}
+    .contact-card h3{margin:0 0 10px}
+    .big{font-size:1.2rem;font-weight:950;margin:0 0 8px}
+    .muted{color:var(--muted);margin:0 0 14px;line-height:1.5}
+
+    .footer{padding:26px 0 34px;text-align:center;color:rgba(234,234,255,.62);font-size:.92rem}
+
+    /* reveal */
+    .reveal{opacity:0;transform:translateY(22px);transition:.75s ease}
+    .reveal.active{opacity:1;transform:none}
+
+    @media (max-width: 520px){
+      .nav-inner{gap:10px}
+      .brand span{display:none}
+      .hero{padding:56px 0 52px}
+    }
+  </style>
 </head>
+
 <body>
 
-<h1>Skup aut do złomowania Zabrze</h1>
+  <nav class="nav" aria-label="Nawigacja">
+    <div class="nav-inner">
+      <div class="brand">
+        <span class="dot" aria-hidden="true"></span>
+        <span>Auto Mikulski • Zabrze</span>
+      </div>
+      <div class="nav-links">
+        <a class="nav-link" href="#oferta">Oferta</a>
+        <a class="nav-link" href="#jak">Jak działamy</a>
+        <a class="nav-link" href="#kontakt">Kontakt</a>
+        <a class="nav-call" href="tel:517936676">📞 517 936 676</a>
+      </div>
+    </div>
+  </nav>
 
-<p>
-<strong>Auto Mikulski</strong> prowadzi <strong>skup aut do złomowania w Zabrzu</strong> oraz na terenie całego Śląska.
-Skupujemy <strong>samochody uszkodzone, powypadkowe i niesprawne</strong>.
-Działamy na <strong>umowę kupna–sprzedaży</strong> i <strong>odbieramy auta od klienta</strong>.
-</p>
+  <header class="hero">
+    <div class="container">
+      <div class="badge">Zabrze • Śląsk • Odbiór auta</div>
 
-<h2>Skup samochodów Zabrze – jak działamy?</h2>
-<ul>
-<li>✔ szybka wycena telefoniczna</li>
-<li>✔ odbiór auta z Zabrza i okolic</li>
-<li>✔ umowa kupna–sprzedaży</li>
-<li>✔ gotówka lub przelew</li>
-</ul>
+      <h1>Skup aut do złomowania Zabrze</h1>
+      <p>
+        <strong>Auto Mikulski</strong> — <strong>skup aut do złomowania w Zabrzu</strong>,
+        <strong>skup aut uszkodzonych</strong> i <strong>pomoc drogowa 24h</strong>.
+        Działamy na <strong>umowę kupna–sprzedaży</strong> i <strong>odbieramy samochody</strong>.
+      </p>
 
-<h2>Jakie auta skupujemy?</h2>
-<p>
-Skupujemy auta osobowe i dostawcze:
-bez przeglądu, po kolizji, powypadkowe, niesprawne,
-przeznaczone do złomowania.
-</p>
+      <div class="cta">
+        <a href="tel:517936676" class="btn primary">📞 Zadzwoń: 517 936 676</a>
+        <a href="../#miasta" class="btn ghost">← Wróć na stronę główną</a>
+      </div>
+    </div>
+  </header>
 
-<p>
-📞 <a href="tel:517936676">Zadzwoń: 517 936 676</a> – skup aut Zabrze
-</p>
+  <section id="oferta" class="section">
+    <div class="container">
+      <h2 class="section-title">Oferta w Zabrzu</h2>
 
-<p>
-<a href="../">← Wróć na stronę główną</a>
-</p>
+      <div class="grid">
+        <a class="card service reveal" href="tel:517936676" aria-label="Skup samochodów Zabrze">
+          <img src="https://i.postimg.cc/J0tFfMHV/IMG1.jpg" alt="Skup samochodów Zabrze">
+          <div class="overlay">
+            <h3>Skup samochodów Zabrze</h3>
+            <p>Sprawne i uszkodzone. Szybka wycena i umowa kupna–sprzedaży.</p>
+            <div class="pill">Wycena telefoniczna</div>
+          </div>
+        </a>
 
+        <a class="card service reveal" href="tel:517936676" aria-label="Skup aut do złomowania Zabrze">
+          <img src="https://i.postimg.cc/pdG4qmyw/IMG2.png" alt="Skup aut do złomowania Zabrze">
+          <div class="overlay">
+            <h3>Skup aut do złomowania</h3>
+            <p>Odbiór pojazdu w Zabrzu i okolicach. Umowa kupna–sprzedaży.</p>
+            <div class="pill">Odbieramy auta</div>
+          </div>
+        </a>
+
+        <a class="card service reveal" href="tel:517936676" aria-label="Pomoc drogowa 24h Zabrze">
+          <img src="https://i.postimg.cc/0NQHM9ZV/IMG3.png" alt="Pomoc drogowa 24h Zabrze">
+          <div class="overlay">
+            <h3>Pomoc drogowa 24h</h3>
+            <p>Holowanie i transport pojazdów – Zabrze i cały Śląsk.</p>
+            <div class="pill">24/7</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="jak" class="section">
+    <div class="container">
+      <h2 class="section-title">Jak działamy w Zabrzu?</h2>
+      <p class="lead">
+        Dzwonisz → podajesz markę/model/rok i stan auta → robimy wycenę →
+        umawiamy odbiór w Zabrzu → podpisujemy <strong>umowę kupna–sprzedaży</strong>.
+        Skupujemy także auta uszkodzone, powypadkowe, bez przeglądu.
+      </p>
+
+      <div class="grid" style="margin-top:22px;">
+        <div class="card mini reveal">✅ Odbiór auta z Zabrza i okolic</div>
+        <div class="card mini reveal">✅ Umowa kupna–sprzedaży (jasne zasady)</div>
+        <div class="card mini reveal">✅ Skup aut uszkodzonych i powypadkowych</div>
+        <div class="card mini reveal">✅ Szybka wycena telefoniczna</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontakt" class="section">
+    <div class="container">
+      <h2 class="section-title">Kontakt – Zabrze</h2>
+
+      <div class="grid">
+        <div class="card contact-card reveal">
+          <h3>📞 Telefon</h3>
+          <p class="big"><a href="tel:517936676">517 936 676</a></p>
+          <p class="muted">Zabrze: szybka wycena i odbiór auta.</p>
+          <a href="tel:517936676" class="btn primary full">Zadzwoń po wycenę</a>
+        </div>
+
+        <div class="card contact-card reveal">
+          <h3>✉️ Email</h3>
+          <p class="big">automikulski@gmail.com</p>
+          <p class="muted">Napisz: marka/model/rok/stan — oddzwonimy lub odpiszemy.</p>
+          <a href="mailto:automikulski@gmail.com" class="btn ghost full">Wyślij email</a>
+        </div>
+
+        <div class="card contact-card reveal">
+          <h3>📍 Obszar</h3>
+          <p class="big">Zabrze • Śląsk</p>
+          <p class="muted">Odbiór aut: Zabrze i okolice.</p>
+          <a href="tel:517936676" class="btn ghost full">Umów odbiór</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      © Auto Mikulski • Skup aut do złomowania Zabrze • Skup samochodów • Pomoc drogowa 24h
+    </div>
+  </footer>
+
+  <script>
+    // reveal on scroll
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add('active'); });
+    }, { threshold: 0.15 });
+    reveals.forEach((el) => observer.observe(el));
+  </script>
 </body>
 </html>
