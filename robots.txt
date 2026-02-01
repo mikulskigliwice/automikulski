@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mikulskigliwice.github.io/automikulski/sitemap.xml
