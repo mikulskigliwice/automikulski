@@ -1,391 +1,121 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pl">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <title>Skup aut Pyskowice – szybka wycena, odbiór auta i gotówka | Auto Mikulski</title>
-  <meta name="description" content="Skup aut Pyskowice – kupujemy auta sprawne, uszkodzone i powypadkowe. Szybka wycena, odbiór od ręki, legalna umowa. Auto Mikulski – Pyskowice i okolice." />
-  <meta name="robots" content="index,follow" />
-
-  <!-- Ustaw poprawny adres jeśli inny -->
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Skup aut Pyskowice – na umowę + odbiór | Auto Mikulski</title>
+  <meta name="description" content="Skup aut w Pyskowicach: od 2026 kupno auta na umowę kupna–sprzedaży + odbiór. Auta uszkodzone/powypadkowe i laweta 24h. Tel. 517 936 676." />
   <link rel="canonical" href="https://mikulskigliwice.github.io/automikulski/pyskowice/" />
+  <meta name="theme-color" content="#070A14" />
 
-  <!-- OpenGraph -->
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="pl_PL" />
-  <meta property="og:title" content="Skup aut Pyskowice – szybka wycena i gotówka | Auto Mikulski" />
-  <meta property="og:description" content="Skup samochodów w Pyskowicach: sprawne, uszkodzone, powypadkowe. Dojazd i odbiór auta, uczciwa wycena, umowa." />
+  <meta property="og:title" content="Skup aut Pyskowice – odbiór + umowa | Auto Mikulski" />
+  <meta property="og:description" content="Skup aut w Pyskowicach: od 2026 skup na umowę + odbiór. Uszkodzone/powypadkowe i pomoc drogowa 24h. Tel. 517 936 676." />
   <meta property="og:url" content="https://mikulskigliwice.github.io/automikulski/pyskowice/" />
-  <meta property="og:image" content="https://mikulskigliwice.github.io/automikulski/assets/og-cover.jpg" />
+  <meta property="og:image" content="https://i.postimg.cc/J0tFfMHV/IMG1.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Jeśli masz wspólny CSS na stronie, podepnij go TU (odkomentuj i dopasuj ścieżkę) -->
-  <!-- <link rel="stylesheet" href="../assets/style.css"> -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Service",
+    "name":"Skup aut – Pyskowice",
+    "provider":{
+      "@type":"LocalBusiness",
+      "name":"Auto Mikulski",
+      "telephone":"+48517936676",
+      "address":{"@type":"PostalAddress","streetAddress":"Dąbrowskiego 23","postalCode":"44-100","addressLocality":"Gliwice","addressCountry":"PL"},
+      "sameAs":["https://g.page/r/CYCFfoC-NJDsEBM/"]
+    },
+    "areaServed":[{"@type":"City","name":"Pyskowice"},{"@type":"AdministrativeArea","name":"Śląskie"}],
+    "url":"https://mikulskigliwice.github.io/automikulski/pyskowice/",
+    "potentialAction":{"@type":"CommunicateAction","name":"Zadzwoń po wycenę","target":"tel:+48517936676"}
+  }
+  </script>
 
   <style>
-    :root{
-      --bg:#0b1020;
-      --card:#0f1730cc;
-      --text:#e9eefc;
-      --muted:#b8c0dd;
-      --accent:#7c5cff;
-      --accent2:#16c6a3;
-      --line:#263158;
-      --shadow: 0 20px 60px rgba(0,0,0,.35);
-      --radius: 18px;
-      --max: 1100px;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color:var(--text);
-      background: radial-gradient(1200px 600px at 20% 10%, rgba(124,92,255,.25), transparent 60%),
-                  radial-gradient(900px 500px at 80% 20%, rgba(22,198,163,.18), transparent 55%),
-                  linear-gradient(180deg, #050816 0%, #070b18 55%, #050816 100%);
-      line-height:1.6;
-    }
-    a{color:inherit}
-    .wrap{max-width:var(--max); margin:0 auto; padding:22px 18px 70px}
-    header{
-      display:flex; align-items:center; justify-content:space-between; gap:16px;
-      padding:12px 0 6px;
-    }
-    .brand{display:flex; align-items:center; gap:12px; text-decoration:none}
-    .brand img{width:40px; height:40px; object-fit:contain; border-radius:10px}
-    .brand strong{letter-spacing:.2px}
-    nav a{
-      text-decoration:none; color:var(--muted);
-      padding:10px 12px; border-radius:12px;
-    }
-    nav a:hover{background:rgba(255,255,255,.06); color:var(--text)}
-    .hero{
-      margin-top:14px;
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:calc(var(--radius) + 6px);
-      overflow:hidden;
-      box-shadow:var(--shadow);
-      background:
-        linear-gradient(90deg, rgba(11,16,32,.92) 0%, rgba(11,16,32,.78) 55%, rgba(11,16,32,.35) 100%),
-        url("../assets/hero.jpg") center/cover no-repeat; /* <-- PODMIEŃ na Twoje tło */
-      min-height: 320px;
-      display:flex;
-      align-items:flex-end;
-    }
-    .heroInner{
-      padding:26px 22px 22px;
-      width:100%;
-    }
-    .badge{
-      display:inline-flex; gap:10px; align-items:center;
-      padding:8px 12px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(15,23,48,.55);
-      color: var(--muted);
-      font-size: 13px;
-      backdrop-filter: blur(10px);
-    }
-    .badge span{display:inline-block; width:8px; height:8px; border-radius:999px; background:var(--accent2)}
-    h1{
-      margin:12px 0 8px;
-      font-size: clamp(26px, 3.2vw, 42px);
-      line-height:1.15;
-      letter-spacing:.2px;
-    }
-    .sub{
-      margin:0 0 18px;
-      color:var(--muted);
-      max-width: 60ch;
-    }
-    .ctaRow{display:flex; flex-wrap:wrap; gap:10px}
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center; gap:10px;
-      padding:12px 16px;
-      border-radius:14px;
-      text-decoration:none;
-      font-weight:650;
-      border:1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.06);
-      color: var(--text);
-      transition:.15s transform ease, .15s background ease;
-    }
-    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.09)}
-    .btnPrimary{
-      background: linear-gradient(135deg, rgba(124,92,255,.95), rgba(22,198,163,.75));
-      border:none;
-    }
-    .grid{
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap:16px;
-      margin-top:16px;
-    }
-    @media (max-width: 900px){ .grid{grid-template-columns:1fr} nav{display:none} }
-    .card{
-      border:1px solid rgba(255,255,255,.08);
-      border-radius: var(--radius);
-      background: rgba(15,23,48,.55);
-      box-shadow: 0 10px 30px rgba(0,0,0,.22);
-      backdrop-filter: blur(12px);
-      padding:18px;
-    }
-    h2{margin:0 0 8px; font-size: 20px}
-    h3{margin:16px 0 6px; font-size: 16px}
-    .muted{color:var(--muted)}
-    ul{margin:10px 0 0; padding-left:18px}
-    li{margin:6px 0}
-    .pillRow{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
-    .pill{
-      font-size: 13px; color: var(--muted);
-      padding:8px 10px;
-      border:1px solid rgba(255,255,255,.10);
-      border-radius:999px;
-      background: rgba(255,255,255,.04);
-    }
-    .faq details{
-      border-top:1px solid rgba(255,255,255,.10);
-      padding:12px 0;
-    }
-    .faq details:first-child{border-top:none; padding-top:0}
-    .faq summary{cursor:pointer; font-weight:650}
-    .footerLinks{display:flex; flex-wrap:wrap; gap:10px; margin-top:10px}
-    .small{font-size: 13px}
-    .line{height:1px; background: rgba(255,255,255,.10); margin:16px 0}
+    :root{--bg:#070A14;--panel:#0E1630;--panel-2:#0A1024;--text:#EEF0FF;--muted:rgba(238,240,255,.72);--stroke:rgba(115,130,255,.18);--a1:#6D7CFF;--a2:#4FD1C5;--shadow:0 18px 55px rgba(0,0,0,.46);--radius-lg:22px;}
+    *{box-sizing:border-box} html,body{height:100%}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);
+      background:radial-gradient(900px 450px at 15% 15%, rgba(109,124,255,.20), transparent 55%),
+      radial-gradient(700px 380px at 85% 25%, rgba(79,209,197,.16), transparent 55%),
+      radial-gradient(circle at top, #10162f, var(--bg));}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:980px;margin:0 auto;padding:0 18px}
+    .card{background:linear-gradient(180deg,var(--panel),var(--panel-2));border:1px solid var(--stroke);border-radius:var(--radius-lg);box-shadow:var(--shadow);padding:18px}
+    .hero{padding:48px 0 20px}
+    h1{margin:0;font-size:clamp(1.8rem,4.5vw,2.7rem)}
+    .lead{margin-top:12px;color:var(--muted);line-height:1.65}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:14px;font-weight:950;border:1px solid transparent;cursor:pointer}
+    .btn.primary{background:linear-gradient(135deg,var(--a1),var(--a2));color:#061018}
+    .btn.secondary{background:transparent;border-color:rgba(115,130,255,.55)}
+    .grid{display:grid;gap:10px;margin-top:14px}
+    .pills{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+    .pill{display:inline-flex;gap:8px;align-items:center;padding:8px 10px;border-radius:999px;border:1px solid rgba(115,130,255,.18);background:rgba(14,22,48,.24);font-weight:850;font-size:13px}
+    .section{padding:18px 0}
+    ul{margin:0;padding-left:18px;color:rgba(238,240,255,.9);line-height:1.7}
+    .muted{color:var(--muted);line-height:1.65}
+    .topnav{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+    .linku{ text-decoration:underline; text-underline-offset:3px; text-decoration-color:rgba(79,209,197,.55);}
   </style>
-
-  <!-- Schema: Breadcrumbs + LocalBusiness + FAQ -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"BreadcrumbList",
-    "itemListElement":[
-      {"@type":"ListItem","position":1,"name":"Strona główna","item":"https://mikulskigliwice.github.io/automikulski/"},
-      {"@type":"ListItem","position":2,"name":"Skup aut Pyskowice","item":"https://mikulskigliwice.github.io/automikulski/pyskowice/"}
-    ]
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"LocalBusiness",
-    "name":"Auto Mikulski – Skup Aut",
-    "url":"https://mikulskigliwice.github.io/automikulski/",
-    "areaServed":"Pyskowice",
-    "description":"Skup aut Pyskowice – szybka wycena i odbiór samochodu. Kupujemy auta sprawne, uszkodzone i powypadkowe.",
-    "telephone":"WSTAW_TEL",
-    "address":{
-      "@type":"PostalAddress",
-      "addressLocality":"Pyskowice",
-      "addressCountry":"PL"
-    }
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"FAQPage",
-    "mainEntity":[
-      {
-        "@type":"Question",
-        "name":"Jak działa skup aut w Pyskowicach?",
-        "acceptedAnswer":{"@type":"Answer","text":"Wyceniamy auto na podstawie informacji i zdjęć, umawiamy odbiór w Pyskowicach lub okolicy, podpisujemy umowę i płacimy gotówką albo przelewem."}
-      },
-      {
-        "@type":"Question",
-        "name":"Czy kupujecie auta uszkodzone lub powypadkowe?",
-        "acceptedAnswer":{"@type":"Answer","text":"Tak. Skupujemy samochody sprawne, uszkodzone mechanicznie, po kolizji oraz z brakami. Wycena zależy od stanu i kompletności."}
-      },
-      {
-        "@type":"Question",
-        "name":"Ile trwa sprzedaż samochodu w skupie?",
-        "acceptedAnswer":{"@type":"Answer","text":"Najczęściej od kontaktu do finalizacji mija od kilkudziesięciu minut do kilku godzin – w zależności od dostępności i dojazdu."}
-      }
-    ]
-  }
-  </script>
 </head>
-
 <body>
-  <div class="wrap">
-
-    <header>
-      <a class="brand" href="https://mikulskigliwice.github.io/automikulski/">
-        <img src="../assets/logo.png" alt="Auto Mikulski logo" loading="lazy" /> <!-- <-- PODMIEŃ ścieżkę na Twoje logo -->
-        <div>
-          <strong>Auto Mikulski</strong><br>
-          <span class="small muted">Skup aut • szybka wycena</span>
+  <main class="container">
+    <section class="hero">
+      <div class="card">
+        <div class="topnav">
+          <a class="btn secondary" href="../">← Strona główna</a>
+          <a class="btn secondary" href="../skup-aut-do-zlomowania-gliwice/">Skup „do złomowania”</a>
+          <a class="btn secondary" href="../skup-aut-uszkodzonych-gliwice/">Skup uszkodzonych</a>
+          <a class="btn secondary" href="../pomoc-drogowa-laweta-gliwice/">Laweta 24h</a>
         </div>
-      </a>
 
-      <nav>
-        <a href="https://mikulskigliwice.github.io/automikulski/">Home</a>
-        <a href="https://mikulskigliwice.github.io/automikulski/obszar-dzialania/">Obszar działania</a>
-        <a href="https://mikulskigliwice.github.io/automikulski/kontakt/">Kontakt</a>
-      </nav>
-    </header>
-
-    <section class="hero" aria-label="Skup aut Pyskowice – hero">
-      <div class="heroInner">
-        <div class="badge"><span></span> Odbiór w Pyskowicach i okolicy • Umowa • Gotówka/Przelew</div>
-        <h1>Skup aut Pyskowice</h1>
-        <p class="sub">
-          Sprzedaj samochód szybko i bez stresu. Wycena, odbiór auta oraz formalności –
-          wszystko w jednym miejscu. Kupujemy auta sprawne, uszkodzone i powypadkowe.
+        <h1>Skup aut Pyskowice – odbiór + umowa (od 2026)</h1>
+        <p class="lead">
+          Skupuję auta w Pyskowicach i na Śląsku: <strong>niesprawne</strong>, <strong>uszkodzone</strong>, <strong>powypadkowe</strong>
+          oraz auta „do złomowania”. Od 2026 roku to <strong>skup na umowę kupna–sprzedaży</strong> (bez prowadzenia kasacji jako usługi).
         </p>
-        <div class="ctaRow">
-          <a class="btn btnPrimary" href="https://mikulskigliwice.github.io/automikulski/kontakt/">Wyceń auto</a>
-          <a class="btn" href="https://mikulskigliwice.github.io/automikulski/">← Wróć na stronę główną</a>
+
+        <div class="grid">
+          <a class="btn primary" href="tel:517936676">Zadzwoń: 517 936 676</a>
+          <a class="btn secondary" href="mailto:automikulski@gmail.com">Wyślij email</a>
+          <a class="btn secondary" href="https://g.page/r/CYCFfoC-NJDsEBM/" target="_blank" rel="noopener">Opinie / wizytówka Google</a>
+          <a class="btn secondary" href="https://www.google.com/maps/dir/?api=1&destination=D%C4%85browskiego%2023%2C%2044-100%20Gliwice" target="_blank" rel="noopener">Wyznacz trasę</a>
+        </div>
+
+        <div class="pills">
+          <span class="pill">📍 Odbiór: Pyskowice / Śląsk</span>
+          <span class="pill">📝 Umowa kupna–sprzedaży</span>
+          <span class="pill">📞 <a class="linku" href="tel:517936676">517 936 676</a></span>
         </div>
       </div>
     </section>
 
-    <div class="grid">
-      <main class="card">
-        <h2>Skup samochodów Pyskowice – uczciwa wycena i szybka finalizacja</h2>
-        <p class="muted">
-          Jeśli interesuje Cię <strong>skup aut w Pyskowicach</strong>, dobrze trafiłeś.
-          W Auto Mikulski stawiamy na prosty proces: kontakt, wycena, odbiór i płatność.
-          Dzięki temu sprzedaż auta jest szybka, a Ty nie tracisz czasu na dziesiątki rozmów i oględziny.
-        </p>
-
-        <h3>Co skupujemy w Pyskowicach?</h3>
-        <p>
-          Prowadzimy <strong>skup samochodów Pyskowice</strong> dla aut osobowych i dostawczych.
-          Interesują nas zarówno samochody w dobrym stanie, jak i te, które wymagają napraw lub nie są na chodzie.
-          Możesz zgłosić do nas m.in. auta:
-        </p>
+    <section class="section">
+      <div class="card">
+        <h2 style="margin:0 0 10px">Wycena w 2 min – co podać?</h2>
         <ul>
-          <li>sprawne, zadbane, gotowe do jazdy,</li>
-          <li><strong>uszkodzone</strong> (np. skrzynia biegów, silnik, zawieszenie),</li>
-          <li><strong>powypadkowe</strong> i po kolizji,</li>
-          <li>z dużym przebiegiem,</li>
-          <li>z drobnymi brakami lub niedoskonałościami (w zależności od przypadku).</li>
+          <li>marka/model/rocznik</li>
+          <li>czy auto odpala / jeździ</li>
+          <li>opis uszkodzeń lub usterek</li>
+          <li>lokalizacja odbioru w Pyskowicach</li>
         </ul>
-
-        <h3>Jak wygląda sprzedaż auta w skupie?</h3>
-        <p>
-          W praktyce to kilka prostych kroków. Podajesz podstawowe informacje (marka, model, rocznik, przebieg, stan),
-          możesz dosłać zdjęcia, a my przygotujemy <strong>wycenę</strong>. Następnie ustalamy termin i miejsce odbioru –
-          w Pyskowicach lub w okolicy. Finalizacja odbywa się na podstawie <strong>legalnej umowy kupna–sprzedaży</strong>,
-          a płatność realizujemy gotówką lub przelewem (w zależności od ustaleń).
+        <p class="muted" style="margin-top:10px">
+          Częste zapytania: „auto po stłuczce”, „auto nie odpala”, „bez przeglądu” — zadzwoń i opisz sytuację.
         </p>
+      </div>
+    </section>
 
-        <h3>Dlaczego warto: skup aut Pyskowice zamiast ogłoszeń?</h3>
-        <p>
-          Ogłoszenia często oznaczają wiele telefonów, negocjacji i niepewne spotkania. Skup to rozwiązanie dla osób,
-          którym zależy na czasie, bezpieczeństwie i prostych formalnościach. Jeśli Twoim celem jest
-          <strong>szybka sprzedaż samochodu w Pyskowicach</strong>, skup pozwala załatwić temat nawet w jeden dzień.
-        </p>
-
-        <div class="line"></div>
-
-        <h3>Obszar działania: Pyskowice i okolice</h3>
-        <p>
-          Działamy na terenie Pyskowic oraz pobliskich miejscowości. Jeśli jesteś z okolicy i chcesz sprzedać auto,
-          napisz lub zadzwoń – ustalimy szczegóły. Obsługujemy także dojazdy w kierunku sąsiednich miast, gdy ma to sens logistyczny.
-          Najważniejsze jest to, żebyś dostał jasną wycenę i szybki odbiór samochodu.
-        </p>
-
-        <div class="pillRow" aria-label="Frazy pomocnicze">
-          <span class="pill">skup aut Pyskowice</span>
-          <span class="pill">skup samochodów Pyskowice</span>
-          <span class="pill">skup aut uszkodzonych Pyskowice</span>
-          <span class="pill">skup aut powypadkowych Pyskowice</span>
-          <span class="pill">szybka sprzedaż auta Pyskowice</span>
-        </div>
-
-        <div class="line"></div>
-
-        <section class="faq" aria-label="FAQ">
-          <h2>FAQ – skup aut w Pyskowicach</h2>
-
-          <details>
-            <summary>Jak szybko możecie odebrać auto w Pyskowicach?</summary>
-            <p class="muted">
-              Zależy od dostępności, ale często jesteśmy w stanie zorganizować odbiór tego samego dnia.
-              Najpierw robimy wycenę, potem ustalamy termin i miejsce.
-            </p>
-          </details>
-
-          <details>
-            <summary>Czy skupujecie auta niesprawne i powypadkowe?</summary>
-            <p class="muted">
-              Tak. Prowadzimy skup aut uszkodzonych i powypadkowych w Pyskowicach. Kluczowe są informacje o stanie auta i kompletności.
-            </p>
-          </details>
-
-          <details>
-            <summary>Jak wygląda płatność i formalności?</summary>
-            <p class="muted">
-              Podpisujemy umowę kupna–sprzedaży, a płatność realizujemy gotówką lub przelewem – zgodnie z ustaleniami.
-            </p>
-          </details>
-
-          <details>
-            <summary>Czy muszę przygotować auto do sprzedaży?</summary>
-            <p class="muted">
-              Nie musisz. Wystarczy podstawowy komplet dokumentów i uczciwa informacja o stanie pojazdu.
-              Jeśli auto jest niesprawne, ustalimy sposób odbioru.
-            </p>
-          </details>
-        </section>
-
-        <div class="line"></div>
-
-        <div class="ctaRow">
-          <a class="btn btnPrimary" href="https://mikulskigliwice.github.io/automikulski/kontakt/">Skontaktuj się i wyceń auto</a>
-          <a class="btn" href="https://mikulskigliwice.github.io/automikulski/">← Wróć na stronę główną</a>
-        </div>
-
-        <p class="small muted" style="margin-top:14px">
-          Wskazówka: jeśli tworzysz wiele miast, podmieniaj tylko: tytuł, H1, canonical i kilka zdań o okolicy — reszta może być szablonem.
-        </p>
-      </main>
-
-      <aside class="card">
-        <h2>Szybka wycena</h2>
-        <p class="muted">
-          Podaj markę, model, rocznik, przebieg i stan. Jeśli możesz, doślij 3–5 zdjęć.
-          Dostaniesz konkretną propozycję bez zbędnego przeciągania.
-        </p>
-
-        <div class="ctaRow" style="margin-top:10px">
-          <a class="btn btnPrimary" href="https://mikulskigliwice.github.io/automikulski/kontakt/">Wyceń auto</a>
-          <a class="btn" href="https://mikulskigliwice.github.io/automikulski/obszar-dzialania/">Obszar działania</a>
-        </div>
-
-        <div class="line"></div>
-
-        <h3>Linki do miast</h3>
-        <p class="muted small">Dobrze działa pod SEO, jeśli masz kilka mocnych stron-miast:</p>
-        <div class="footerLinks">
-          <a class="btn small" href="https://mikulskigliwice.github.io/automikulski/gliwice/">Gliwice</a>
-          <a class="btn small" href="https://mikulskigliwice.github.io/automikulski/zabrze/">Zabrze</a>
-          <a class="btn small" href="https://mikulskigliwice.github.io/automikulski/knurow/">Knurów</a>
-        </div>
-
-        <div class="line"></div>
-
-        <h3>Ustaw NAP</h3>
-        <p class="muted small">
-          Dla najlepszego SEO uzupełnij w kodzie: <br>
-          <strong>telephone</strong> w schema (WSTAW_TEL) oraz ewentualnie adres (jeśli masz).
-        </p>
-      </aside>
-    </div>
-
-    <footer class="wrap" style="padding:18px 0 0; max-width:var(--max)">
-      <p class="small muted">
-        © <span id="y"></span> Auto Mikulski • Skup aut Pyskowice
-      </p>
-    </footer>
-  </div>
-
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+    <section class="section" style="padding-bottom:60px">
+      <div class="card">
+        <h2 style="margin:0 0 10px">FAQ</h2>
+        <p class="muted"><strong>Czy odbierasz auto z miejsca?</strong> Tak — termin ustalamy telefonicznie.</p>
+        <p class="muted" style="margin-top:8px"><strong>Czy to kasacja?</strong> Nie — od 2026 skup na umowę.</p>
+        <p class="muted" style="margin-top:12px">Zobacz: <a class="linku" href="../">strona główna</a>.</p>
+      </div>
+    </section>
+  </main>
 </body>
 </html>
+
