@@ -64,34 +64,43 @@
   }
   </script>
 
-  <!-- JSON-LD: WebPage + Breadcrumb -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@graph":[
-      {
-        "@type":"WebPage",
-        "@id":"https://automikulski.pl/#webpage",
-        "url":"https://automikulski.pl/",
-        "name":"Skup aut Gliwice i Śląsk | Auto Mikulski",
-        "description":"Skup aut na umowę + odbiór auta z miejsca. Auta uszkodzone/powypadkowe, niesprawne, bez przeglądu.",
-        "inLanguage":"pl-PL",
-        "isPartOf":{"@id":"https://automikulski.pl/#website"},
-        "primaryImageOfPage":{"@type":"ImageObject","url":"https://i.postimg.cc/J0tFfMHV/IMG1.jpg"},
-        "datePublished":"2024-01-01",
-        "dateModified":"2026-02-03"
-        "datePublished":"2024-01-01T08:00:00+01:00",
-        "dateModified":"2026-02-03T08:00:00+01:00"
+ <!-- JSON-LD: WebPage + Breadcrumb -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://automikulski.pl/#webpage",
+      "url": "https://automikulski.pl/",
+      "name": "Skup aut Gliwice i Śląsk | Auto Mikulski",
+      "description": "Skup aut na umowę + odbiór auta z miejsca. Auta uszkodzone, powypadkowe, niesprawne i bez przeglądu.",
+      "inLanguage": "pl-PL",
+      "isPartOf": {
+        "@id": "https://automikulski.pl/#website"
       },
-      {
-        "@type":"BreadcrumbList",
-        "itemListElement":[
-          {"@type":"ListItem","position":1,"name":"Auto Mikulski","item":"https://automikulski.pl/"}
-        ]
-      }
-    ]
-  }
-  </script>
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://i.postimg.cc/J0tFfMHV/IMG1.jpg"
+      },
+      "datePublished": "2024-01-01T08:00:00+01:00",
+      "dateModified": "2026-02-03T08:00:00+01:00"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Auto Mikulski",
+          "item": "https://automikulski.pl/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
 
   <!-- JSON-LD: LocalBusiness (bez TowingService / bez lawety) -->
   <script type="application/ld+json">
