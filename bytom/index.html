@@ -447,75 +447,122 @@
       </div>
     </section>
 <!-- OPINIE (Google) -->
+<!-- OPINIE (Google) – RAMKA + KARTY -->
 <section class="section" id="opinie" aria-label="Opinie klientów z Google">
   <div class="container">
-    <h2 class="section-title">Opinie klientów z Google</h2>
-    <p class="section-lead">
-      Kilka krótkich opinii z wizytówki <strong>Auto Mikulski</strong>. Najczęściej klienci chwalą: kontakt, punktualność i szybkie formalności na miejscu.
-    </p>
 
-    <div class="review-grid" role="list">
-      <figure class="review-card" role="listitem">
-        <blockquote class="review-text">„Kasacja pojazdu bez najmniejszych problemów z dobrą ceną. Pan bardzo miły i uprzejmy, przyjechał, odebrał auto, dokumenty na miejscu — 15 minut i po sprawie. Serdecznie polecam.”</blockquote>
-        <figcaption class="review-meta">
-          <span class="review-name">Tomasz Walczak</span>
-          <span class="review-badge" aria-label="Ocena 5 na 5">★★★★★</span>
-        </figcaption>
-      </figure>
+    <!-- RAMKA SEKCJI -->
+    <div style="
+      background: linear-gradient(180deg, rgba(14,22,48,.65), rgba(10,16,36,.55));
+      border: 1px solid rgba(115,130,255,.20);
+      border-radius: 22px;
+      box-shadow: 0 22px 60px rgba(0,0,0,.45);
+      padding: 26px 18px;
+    ">
 
-      <figure class="review-card" role="listitem">
-        <blockquote class="review-text">„Bardzo sympatyczny i pomocny właściciel firmy — dzięki niemu rozwiązałem problem połamanych lamp.”</blockquote>
-        <figcaption class="review-meta">
-          <span class="review-name">Witold Pęcherski</span>
-          <span class="review-badge" aria-label="Ocena 5 na 5">★★★★★</span>
-        </figcaption>
-      </figure>
+      <h2 class="section-title" style="margin-bottom:10px;">Opinie klientów z Google</h2>
+      <p class="section-lead" style="max-width:900px;">
+        Kilka krótkich opinii z wizytówki <strong>Auto Mikulski</strong>. Najczęściej klienci chwalą:
+        kontakt, punktualność i szybkie formalności na miejscu.
+      </p>
 
-      <figure class="review-card" role="listitem">
-        <blockquote class="review-text">„Super kontakt, punktualność, przygotowanie, profesjonalizm. Wszystko tak jak sobie wyobrażałem. Więcej niż 5 gwiazdek należy się za osobowość właściciela i dobrą energię.”</blockquote>
-        <figcaption class="review-meta">
-          <span class="review-name">Piotr K</span>
-          <span class="review-badge" aria-label="Ocena 5 na 5">★★★★★</span>
-        </figcaption>
-      </figure>
+      <!-- GRID OPINII -->
+      <div style="
+        display:grid;
+        grid-template-columns: repeat(3, minmax(0,1fr));
+        gap: 16px;
+        margin-top: 18px;
+      ">
 
-      <figure class="review-card" role="listitem">
-        <blockquote class="review-text">„Wszystko zgodnie z moimi oczekiwaniami: ciągły kontakt, punktualność, pieniądze do ręki, dokumenty przygotowane przed przyjazdem. Polecam!”</blockquote>
-        <figcaption class="review-meta">
-          <span class="review-name">Denis Jacheć</span>
-          <span class="review-badge" aria-label="Ocena 5 na 5">★★★★★</span>
-        </figcaption>
-      </figure>
+        <!-- 1 -->
+        <figure style="
+          margin:0;
+          background: linear-gradient(180deg, rgba(14,22,48,.85), rgba(10,16,36,.80));
+          border: 1px solid rgba(115,130,255,.22);
+          border-radius: 18px;
+          padding: 16px;
+          box-shadow: 0 14px 40px rgba(0,0,0,.35);
+        ">
+          <blockquote style="margin:0;color:rgba(238,240,255,.88);line-height:1.7;font-size:.95rem;">
+            „Kasacja pojazdu bez najmniejszych problemów z dobrą ceną. Pan bardzo miły i uprzejmy, przyjechał,
+            odebrał auto, dokumenty na miejscu — 15 minut i po sprawie. Serdecznie polecam.”
+          </blockquote>
+          <figcaption style="
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid rgba(115,130,255,.16);
+            display:flex;align-items:center;justify-content:space-between;gap:10px;
+          ">
+            <span style="font-weight:950;font-size:13px;color:rgba(238,240,255,.92);">Tomasz Walczak</span>
+            <span style="
+              display:inline-flex;align-items:center;
+              padding:6px 10px;border-radius:999px;
+              background: rgba(79,209,197,.12);
+              border: 1px solid rgba(79,209,197,.28);
+              font-weight:950;font-size:12px;color:rgba(238,240,255,.92);
+            " aria-label="Ocena 5 na 5">★★★★★</span>
+          </figcaption>
+        </figure>
 
-      <figure class="review-card" role="listitem">
-        <blockquote class="review-text">„Zdecydowanie polecam! Dobry kontakt telefoniczny, profesjonalne podejście do klienta, wszystko wytłumaczone. Dziękuję i pozdrawiam 🙂”</blockquote>
-        <figcaption class="review-meta">
-          <span class="review-name">Grażyna P</span>
-          <span class="review-badge" aria-label="Ocena 5 na 5">★★★★★</span>
-        </figcaption>
-      </figure>
+        <!-- 2 -->
+        <figure style="margin:0;background:linear-gradient(180deg, rgba(14,22,48,.85), rgba(10,16,36,.80));
+          border:1px solid rgba(115,130,255,.22);border-radius:18px;padding:16px;box-shadow:0 14px 40px rgba(0,0,0,.35);">
+          <blockquote style="margin:0;color:rgba(238,240,255,.88);line-height:1.7;font-size:.95rem;">
+            „Bardzo sympatyczny i pomocny właściciel firmy — dzięki niemu rozwiązałem problem połamanych lamp.”
+          </blockquote>
+          <figcaption style="margin-top:14px;padding-top:12px;border-top:1px solid rgba(115,130,255,.16);
+            display:flex;align-items:center;justify-content:space-between;gap:10px;">
+            <span style="font-weight:950;font-size:13px;color:rgba(238,240,255,.92);">Witold Pęcherski</span>
+            <span style="display:inline-flex;align-items:center;padding:6px 10px;border-radius:999px;
+              background: rgba(79,209,197,.12);border:1px solid rgba(79,209,197,.28);font-weight:950;font-size:12px;color:rgba(238,240,255,.92);"
+              aria-label="Ocena 5 na 5">★★★★★</span>
+          </figcaption>
+        </figure>
 
-      <figure class="review-card" role="listitem">
-        <blockquote class="review-text">„Szybko, sprawnie, kulturalnie i sympatycznie.”</blockquote>
-        <figcaption class="review-meta">
-          <span class="review-name">Robert Lis</span>
-          <span class="review-badge" aria-label="Ocena 5 na 5">★★★★★</span>
-        </figcaption>
-      </figure>
-    </div>
+        <!-- 3 -->
+        <figure style="margin:0;background:linear-gradient(180deg, rgba(14,22,48,.85), rgba(10,16,36,.80));
+          border:1px solid rgba(115,130,255,.22);border-radius:18px;padding:16px;box-shadow:0 14px 40px rgba(0,0,0,.35);">
+          <blockquote style="margin:0;color:rgba(238,240,255,.88);line-height:1.7;font-size:.95rem;">
+            „Super kontakt, punktualność, przygotowanie, profesjonalizm. Wszystko tak jak sobie wyobrażałem.
+            Więcej niż 5 gwiazdek należy się za osobowość właściciela i dobrą energię.”
+          </blockquote>
+          <figcaption style="margin-top:14px;padding-top:12px;border-top:1px solid rgba(115,130,255,.16);
+            display:flex;align-items:center;justify-content:space-between;gap:10px;">
+            <span style="font-weight:950;font-size:13px;color:rgba(238,240,255,.92);">Piotr K</span>
+            <span style="display:inline-flex;align-items:center;padding:6px 10px;border-radius:999px;
+              background: rgba(79,209,197,.12);border:1px solid rgba(79,209,197,.28);font-weight:950;font-size:12px;color:rgba(238,240,255,.92);"
+              aria-label="Ocena 5 na 5">★★★★★</span>
+          </figcaption>
+        </figure>
 
-    <div class="review-actions" role="group" aria-label="Akcje opinii">
-      <a class="btn btn-primary" href="https://g.page/r/CYCFfoC-NJDsEBM/" target="_blank" rel="noopener">
-        Zobacz wszystkie opinie w Google
-      </a>
-      <a class="btn btn-secondary" href="tel:517936676">Zadzwoń po wycenę</a>
-    </div>
+        <!-- 4 -->
+        <figure style="margin:0;background:linear-gradient(180deg, rgba(14,22,48,.85), rgba(10,16,36,.80));
+          border:1px solid rgba(115,130,255,.22);border-radius:18px;padding:16px;box-shadow:0 14px 40px rgba(0,0,0,.35);">
+          <blockquote style="margin:0;color:rgba(238,240,255,.88);line-height:1.7;font-size:.95rem;">
+            „Wszystko zgodnie z moimi oczekiwaniami: ciągły kontakt, punktualność, pieniądze do ręki,
+            dokumenty przygotowane przed przyjazdem. Polecam!”
+          </blockquote>
+          <figcaption style="margin-top:14px;padding-top:12px;border-top:1px solid rgba(115,130,255,.16);
+            display:flex;align-items:center;justify-content:space-between;gap:10px;">
+            <span style="font-weight:950;font-size:13px;color:rgba(238,240,255,.92);">Denis Jacheć</span>
+            <span style="display:inline-flex;align-items:center;padding:6px 10px;border-radius:999px;
+              background: rgba(79,209,197,.12);border:1px solid rgba(79,209,197,.28);font-weight:950;font-size:12px;color:rgba(238,240,255,.92);"
+              aria-label="Ocena 5 na 5">★★★★★</span>
+          </figcaption>
+        </figure>
 
-    <p class="review-note">
-      <strong>Uwaga:</strong> Działam jako <strong>skup aut na umowę kupna–sprzedaży</strong> (odbiór auta z miejsca). Nie prowadzę stacji demontażu.
-    </p>
-  </div>
-</section>
+        <!-- 5 -->
+        <figure style="margin:0;background:linear-gradient(180deg, rgba(14,22,48,.85), rgba(10,16,36,.80));
+          border:1px solid rgba(115,130,255,.22);border-radius:18px;padding:16px;box-shadow:0 14px 40px rgba(0,0,0,.35);">
+          <blockquote style="margin:0;color:rgba(238,240,255,.88);line-height:1.7;font-size:.95rem;">
+            „Zdecydowanie polecam! Dobry kontakt telefoniczny, profesjonalne podejście do klienta,
+            wszystko wytłumaczone. Dziękuję i pozdrawiam 🙂”
+          </blockquote>
+          <figcaption style="margin-top:14px;padding-top:12px;border-top:1px solid rgba(115,130,255,.16);
+            display:flex;align-items:center;justify-content:space-between;gap:10px;">
+            <span style="font-weight:950;font-size:13px;color:rgba(238,240,255,.92);">Grażyna P</span>
+            <span style="display:inline-flex;align-items:center;padding:6px 10px;border-radius:999px
+
 
     <!-- USŁUGI (grube) -->
     <section id="uslugi" class="section" aria-label="Usługi – Skup aut Bytom">
