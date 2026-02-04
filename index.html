@@ -1,4 +1,3 @@
-@@ -1,1242 +1,751 @@
 <!doctype html>
 <html lang="pl">
 <head>
@@ -19,15 +18,17 @@
   <link rel="canonical" href="https://automikulski.pl/" />
 
   <meta name="theme-color" content="#070A14" />
-  <meta name="robots" content="index,follow" />
-  <meta name="revisit-after" content="3 days" />
-  <meta name="language" content="Polish" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
   <meta name="geo.region" content="PL-SL" />
   <meta name="geo.placename" content="Gliwice, Śląsk" />
   <meta name="geo.coordinates" content="50.2945, 18.6714" />
 
+  <!-- Performance hints -->
   <link rel="preconnect" href="https://i.postimg.cc" crossorigin />
   <link rel="dns-prefetch" href="https://i.postimg.cc" />
+  <link rel="preload" as="image" href="https://i.postimg.cc/J0tFfMHV/IMG1.jpg" fetchpriority="high">
+  <link rel="preload" as="image" href="https://i.postimg.cc/pdG4qmyw/IMG2.png">
+  <link rel="preload" as="image" href="https://i.postimg.cc/0NQHM9ZV/IMG3.png">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
@@ -40,278 +41,230 @@
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <link rel="icon" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="%236D7CFF"/><stop offset="1" stop-color="%234FD1C5"/></linearGradient></defs><rect width="64" height="64" rx="16" fill="%23070A14"/><circle cx="32" cy="32" r="14" fill="url(%23g)"/></svg>' />
-  <!-- Favicons (porządnie) -->
+  <!-- Favicon (jedna, porządnie) -->
   <link rel="icon" type="image/svg+xml" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="%236D7CFF"/><stop offset="1" stop-color="%234FD1C5"/></linearGradient></defs><rect width="64" height="64" rx="16" fill="%23070A14"/><circle cx="32" cy="32" r="14" fill="url(%23g)"/></svg>' />
-  <link rel="icon" sizes="any" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="%236D7CFF"/><stop offset="1" stop-color="%234FD1C5"/></linearGradient></defs><rect width="64" height="64" rx="16" fill="%23070A14"/><circle cx="32" cy="32" r="14" fill="url(%23g)"/></svg>' />
   <link rel="apple-touch-icon" href="https://i.postimg.cc/J0tFfMHV/IMG1.jpg" />
-  <link rel="shortcut icon" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="%236D7CFF"/><stop offset="1" stop-color="%234FD1C5"/></linearGradient></defs><rect width="64" height="64" rx="16" fill="%23070A14"/><circle cx="32" cy="32" r="14" fill="url(%23g)"/></svg>' />
 
-  <!-- JSON-LD: WebSite -->
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@graph":[
-    {
-      "@type":"WebPage",
-      "@id":"https://automikulski.pl/#webpage",
-      "url":"https://automikulski.pl/",
-      "name":"Skup aut Gliwice i Śląsk | Auto Mikulski",
-      "description":"Skup aut na umowę + odbiór auta z miejsca. Auta uszkodzone/powypadkowe, niesprawne, bez przeglądu.",
-      "inLanguage":"pl-PL",
-      "isPartOf":{"@id":"https://automikulski.pl/#website"},
-      "primaryImageOfPage":{"@type":"ImageObject","url":"https://i.postimg.cc/J0tFfMHV/IMG1.jpg"},
-      "datePublished":"2024-01-01T08:00:00+01:00",
-      "dateModified":"2026-02-03T08:00:00+01:00"
-    },
-    {
-      "@type":"BreadcrumbList",
-      "itemListElement":[
-        {"@type":"ListItem","position":1,"name":"Auto Mikulski","item":"https://automikulski.pl/"}
-      ]
-    }
-  ]
-}
-</script>
-
-
- <!-- JSON-LD: WebPage + Breadcrumb -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebPage",
-      "@id": "https://automikulski.pl/#webpage",
-      "url": "https://automikulski.pl/",
-      "name": "Skup aut Gliwice i Śląsk | Auto Mikulski",
-      "description": "Skup aut na umowę + odbiór auta z miejsca. Auta uszkodzone, powypadkowe, niesprawne i bez przeglądu.",
-      "inLanguage": "pl-PL",
-      "isPartOf": {
-        "@id": "https://automikulski.pl/#website"
+  <!-- ✅ JSON-LD (JEDEN POPRAWNY BLOK) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://automikulski.pl/#website",
+        "name": "Auto Mikulski",
+        "url": "https://automikulski.pl/",
+        "inLanguage": "pl-PL"
       },
-      "primaryImageOfPage": {
-        "@type": "ImageObject",
-        "url": "https://i.postimg.cc/J0tFfMHV/IMG1.jpg"
+      {
+        "@type": "WebPage",
+        "@id": "https://automikulski.pl/#webpage",
+        "url": "https://automikulski.pl/",
+        "name": "Skup aut Gliwice i Śląsk | Auto Mikulski",
+        "description": "Skup aut na umowę + odbiór auta z miejsca. Auta uszkodzone/powypadkowe, niesprawne, bez przeglądu.",
+        "inLanguage": "pl-PL",
+        "isPartOf": { "@id": "https://automikulski.pl/#website" },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://i.postimg.cc/J0tFfMHV/IMG1.jpg"
+        },
+        "datePublished": "2024-01-01T08:00:00+01:00",
+        "dateModified": "2026-02-03T08:00:00+01:00"
       },
-      "datePublished": "2024-01-01T08:00:00+01:00",
-      "dateModified": "2026-02-03T08:00:00+01:00"
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://automikulski.pl/#breadcrumbs",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Auto Mikulski",
+            "item": "https://automikulski.pl/"
+          }
+        ]
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://automikulski.pl/#localbusiness",
+        "additionalType": [
+          "https://schema.org/AutoDealer",
+          "https://schema.org/UsedCarDealer"
+        ],
+        "name": "Auto Mikulski",
+        "description": "Skup aut na umowę kupna–sprzedaży + odbiór auta z miejsca. Skup aut uszkodzonych, powypadkowych, niesprawnych i bez przeglądu. Gliwice i województwo śląskie.",
+        "url": "https://automikulski.pl/",
+        "telephone": "+48517936676",
+        "email": "automikulski@gmail.com",
+        "image": [
+          "https://i.postimg.cc/J0tFfMHV/IMG1.jpg",
+          "https://i.postimg.cc/pdG4qmyw/IMG2.png",
+          "https://i.postimg.cc/0NQHM9ZV/IMG3.png"
+        ],
+        "logo": "https://i.postimg.cc/J0tFfMHV/IMG1.jpg",
+        "sameAs": [
+          "https://g.page/r/CYCFfoC-NJDsEBM/"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Dąbrowskiego 23",
+          "postalCode": "44-100",
+          "addressLocality": "Gliwice",
+          "addressRegion": "Śląskie",
+          "addressCountry": "PL"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 50.2945,
+          "longitude": 18.6714
+        },
+        "hasMap": "https://www.google.com/maps/dir/?api=1&destination=D%C4%85browskiego%2023%2C%2044-100%20Gliwice",
+        "areaServed": [
+          { "@type": "City", "name": "Gliwice" },
+          { "@type": "City", "name": "Zabrze" },
+          { "@type": "City", "name": "Bytom" },
+          { "@type": "City", "name": "Ruda Śląska" },
+          { "@type": "City", "name": "Knurów" },
+          { "@type": "City", "name": "Pyskowice" },
+          { "@type": "City", "name": "Katowice" },
+          { "@type": "City", "name": "Sosnowiec" },
+          { "@type": "City", "name": "Tychy" },
+          { "@type": "City", "name": "Mikołów" },
+          { "@type": "City", "name": "Tarnowskie Góry" },
+          { "@type": "AdministrativeArea", "name": "Śląskie" }
+        ],
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"
+            ],
+            "opens": "00:00",
+            "closes": "23:59"
+          }
+        ],
+        "currenciesAccepted": "PLN",
+        "paymentAccepted": "Cash, Bank Transfer",
+        "potentialAction": [
+          { "@type": "CommunicateAction", "name": "Zadzwoń po wycenę", "target": "tel:+48517936676" },
+          { "@type": "ViewAction", "name": "Zobacz wizytówkę Google", "target": "https://g.page/r/CYCFfoC-NJDsEBM/" }
+        ]
+      },
+      {
+        "@type": "Service",
+        "@id": "https://automikulski.pl/#service-1",
+        "name": "Skup aut na umowę kupna–sprzedaży",
+        "serviceType": "Skup aut",
+        "provider": { "@id": "https://automikulski.pl/#localbusiness" },
+        "areaServed": { "@type": "AdministrativeArea", "name": "Śląskie" },
+        "url": "https://automikulski.pl/skup-aut-do-zlomowania-gliwice/",
+        "offers": { "@type": "Offer", "priceCurrency": "PLN", "availability": "https://schema.org/InStock" }
+      },
+      {
+        "@type": "Service",
+        "@id": "https://automikulski.pl/#service-2",
+        "name": "Skup aut uszkodzonych i powypadkowych",
+        "serviceType": "Skup aut uszkodzonych",
+        "provider": { "@id": "https://automikulski.pl/#localbusiness" },
+        "areaServed": { "@type": "AdministrativeArea", "name": "Śląskie" },
+        "url": "https://automikulski.pl/skup-aut-uszkodzonych-gliwice/",
+        "offers": { "@type": "Offer", "priceCurrency": "PLN", "availability": "https://schema.org/InStock" }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://automikulski.pl/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Jakie dokumenty są potrzebne do sprzedaży auta?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Najczęściej wystarczy dowód rejestracyjny i dokument tożsamości właściciela. Jeśli sytuacja jest nietypowa (np. współwłasność, brak przeglądu, auto po długim postoju) — powiedz w rozmowie, podpowiem najprostsze rozwiązanie."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Czy odbierasz auto z miejsca w Gliwicach i na Śląsku?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Tak. Oferuję odbiór auta w Gliwicach i na terenie woj. śląskiego — termin ustalamy telefonicznie. Przyjeżdżam także do Zabrza, Bytomia, Rudy Śląskiej, Knurowa, Pyskowic i okolic."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Czy skupujesz auta bez przeglądu lub niesprawne?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Tak. Skupuję auta bez przeglądu, niesprawne, uszkodzone i powypadkowe — także te, które nie odpalają lub stoją dłuższy czas. Nie musi być sprawne ani mieć aktualnych badań."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Jak wygląda umowa i rozliczenie?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Działam jako skup: kupuję auto na umowę kupna–sprzedaży. Na miejscu potwierdzamy dane, opis auta i ustalenia odbioru. Całość jest prosta i czytelna."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Ile trwa wycena?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Wycena telefoniczna zwykle trwa ok. 2 minuty. Najlepiej podać markę/model, rocznik, co jest uszkodzone i miasto odbioru. Jeśli auto nie odpala — też OK."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Czy skupujesz auta do złomowania?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Tak — skupuję auta przeznaczone do złomowania na umowę kupna–sprzedaży. Samochody kompletne, uszkodzone mechanicznie, powypadkowe, nadpalone i spalone. Odbieram z miejsca."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Czy skupujesz auto spalone lub nadpalone?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Tak, skupuję auta spalone i nadpalone — kompletne i zdekompletowane. Odbieram z miejsca na terenie Śląska. Wycenę robię po krótkim telefonie."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "Article",
+        "@id": "https://automikulski.pl/#article-1",
+        "headline": "Jak sprzedać auto uszkodzone w Gliwicach? Poradnik krok po kroku",
+        "description": "Jak sprzedać uszkodzone auto w Gliwicach na Śląsku? Skup aut powypadkowych, bez przeglądu i nieodpalających — krok po kroku.",
+        "image": [ "https://i.postimg.cc/J0tFfMHV/IMG1.jpg" ],
+        "author": { "@type": "Organization", "name": "Auto Mikulski", "url": "https://automikulski.pl/" },
+        "publisher": {
+          "@type": "Organization",
           "name": "Auto Mikulski",
-          "item": "https://automikulski.pl/"
-        }
-      ]
-    }
-  ]
-}
-</script>
-
-
-  <!-- JSON-LD: LocalBusiness (bez TowingService / bez lawety) -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"LocalBusiness",
-    "@id":"https://automikulski.pl/#localbusiness",
-    "additionalType":[
-      "https://schema.org/AutoDealer",
-      "https://schema.org/UsedCarDealer"
-    ],
-    "name":"Auto Mikulski",
-    "description":"Skup aut na umowę kupna–sprzedaży + odbiór auta z miejsca. Skup aut uszkodzonych, powypadkowych, niesprawnych i bez przeglądu. Gliwice i województwo śląskie.",
-    "telephone":"+48517936676",
-    "email":"automikulski@gmail.com",
-    "url":"https://automikulski.pl/",
-    "image":[
-      "https://i.postimg.cc/J0tFfMHV/IMG1.jpg",
-      "https://i.postimg.cc/pdG4qmyw/IMG2.png",
-      "https://i.postimg.cc/0NQHM9ZV/IMG3.png"
-    ],
-    "logo":"https://i.postimg.cc/J0tFfMHV/IMG1.jpg",
-    "sameAs":["https://g.page/r/CYCFfoC-NJDsEBM/"],
-    "address":{
-      "@type":"PostalAddress",
-      "streetAddress":"Dąbrowskiego 23",
-      "postalCode":"44-100",
-      "addressLocality":"Gliwice",
-      "addressRegion":"Śląskie",
-      "addressCountry":"PL"
-    },
-    "geo":{
-      "@type":"GeoCoordinates",
-      "latitude":50.2945,
-      "longitude":18.6714
-    },
-    "hasMap":"https://www.google.com/maps/dir/?api=1&destination=D%C4%85browskiego%2023%2C%2044-100%20Gliwice",
-    "areaServed":[
-      {"@type":"City","name":"Gliwice"},
-      {"@type":"City","name":"Zabrze"},
-      {"@type":"City","name":"Bytom"},
-      {"@type":"City","name":"Ruda Śląska"},
-      {"@type":"City","name":"Knurów"},
-      {"@type":"City","name":"Pyskowice"},
-      {"@type":"City","name":"Katowice"},
-      {"@type":"City","name":"Sosnowiec"},
-      {"@type":"City","name":"Tychy"},
-      {"@type":"City","name":"Mikołów"},
-      {"@type":"City","name":"Tarnowskie Góry"},
-      {"@type":"AdministrativeArea","name":"Śląskie"}
-    ],
-    "openingHoursSpecification":[
-      {
-        "@type":"OpeningHoursSpecification",
-        "dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-        "opens":"00:00",
-        "closes":"23:59"
-      }
-    ],
-    "priceRange":"PLN",
-    "currenciesAccepted":"PLN",
-    "paymentAccepted":"Cash, Bank Transfer",
-    "potentialAction":[
-      {"@type":"CommunicateAction","name":"Zadzwoń po wycenę","target":"tel:+48517936676"},
-      {"@type":"ViewAction","name":"Zobacz wizytówkę Google","target":"https://g.page/r/CYCFfoC-NJDsEBM/"}
-    ]
-  }
-  </script>
-
-  <!-- JSON-LD: Services (tylko skup) -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@graph":[
-      {
-        "@type":"Service",
-        "name":"Skup aut na umowę kupna–sprzedaży",
-        "provider":{"@type":"LocalBusiness","@id":"https://automikulski.pl/#localbusiness","name":"Auto Mikulski","telephone":"+48517936676"},
-        "serviceType":"Skup aut",
-        "description":"Skupuję auta uszkodzone, powypadkowe, niesprawne, bez przeglądu i po długim postoju na umowę kupna–sprzedaży z odbiorem z miejsca na terenie Gliwic i województwa śląskiego.",
-        "areaServed":{"@type":"AdministrativeArea","name":"Śląskie"},
-        "url":"https://automikulski.pl/skup-aut-do-zlomowania-gliwice/",
-        "offers":{"@type":"Offer","priceCurrency":"PLN","availability":"https://schema.org/InStock"}
-      },
-      {
-        "@type":"Service",
-        "name":"Skup aut uszkodzonych i powypadkowych",
-        "provider":{"@type":"LocalBusiness","@id":"https://automikulski.pl/#localbusiness","name":"Auto Mikulski","telephone":"+48517936676"},
-        "serviceType":"Skup aut uszkodzonych",
-        "description":"Skupuję auta po wypadku, po kolizji, z usterkami silnika, skrzyni lub elektroniki. Auta nieodpalające, po długim postoju, zdekompletowane.",
-        "areaServed":{"@type":"AdministrativeArea","name":"Śląskie"},
-        "url":"https://automikulski.pl/skup-aut-uszkodzonych-gliwice/",
-        "offers":{"@type":"Offer","priceCurrency":"PLN","availability":"https://schema.org/InStock"}
-      }
-    ]
-  }
-  </script>
-
-  <!-- JSON-LD: FAQ (bez pomocy drogowej / lawety) -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"FAQPage",
-    "mainEntity":[
-      {
-        "@type":"Question",
-        "name":"Jakie dokumenty są potrzebne do sprzedaży auta?",
-        "acceptedAnswer":{"@type":"Answer","text":"Najczęściej wystarczy dowód rejestracyjny i dokument tożsamości właściciela. Jeśli sytuacja jest nietypowa (np. współwłasność, brak przeglądu, auto po długim postoju) — powiedz w rozmowie, podpowiem najprostsze rozwiązanie."}
-      },
-      {
-        "@type":"Question",
-        "name":"Czy odbierasz auto z miejsca w Gliwicach i na Śląsku?",
-        "acceptedAnswer":{"@type":"Answer","text":"Tak. Oferuję odbiór auta w Gliwicach i na terenie woj. śląskiego — termin ustalamy telefonicznie. Przyjeżdżam także do Zabrza, Bytomia, Rudy Śląskiej, Knurowa, Pyskowic i okolic."}
-      },
-      {
-        "@type":"Question",
-        "name":"Czy skupujesz auta bez przeglądu lub niesprawne?",
-        "acceptedAnswer":{"@type":"Answer","text":"Tak. Skupuję auta bez przeglądu, niesprawne, uszkodzone i powypadkowe — także te, które nie odpalają lub stoją dłuższy czas. Nie musi być sprawne ani mieć aktualnych badań."}
-      },
-      {
-        "@type":"Question",
-        "name":"Jak wygląda umowa i rozliczenie?",
-        "acceptedAnswer":{"@type":"Answer","text":"Działam jako skup: kupuję auto na umowę kupna–sprzedaży. Na miejscu potwierdzamy dane, opis auta i ustalenia odbioru. Całość jest prosta i czytelna."}
-      },
-      {
-        "@type":"Question",
-        "name":"Ile trwa wycena?",
-        "acceptedAnswer":{"@type":"Answer","text":"Wycena telefoniczna zwykle trwa ok. 2 minuty. Najlepiej podać markę/model, rocznik, co jest uszkodzone i miasto odbioru. Jeśli auto nie odpala — też OK, to normalna sytuacja."}
-      },
-      {
-        "@type":"Question",
-        "name":"Czy skupujesz auta do złomowania?",
-        "acceptedAnswer":{"@type":"Answer","text":"Tak — skupuję auta przeznaczone do złomowania na umowę kupna–sprzedaży. Samochody kompletne, uszkodzone mechanicznie, powypadkowe, nadpalone i spalone. Odbieram z miejsca."}
-      },
-      {
-        "@type":"Question",
-        "name":"Czy skupujesz auto spalone lub nadpalone?",
-        "acceptedAnswer":{"@type":"Answer","text":"Tak, skupuję auta spalone i nadpalone — kompletne i zdekompletowane. Odbieram z miejsca na terenie Śląska. Wycenę robię po krótkim telefonie."}
-      }
-    ]
-  }
-  </script>
-
-  <!-- JSON-LD: Articles (bez pomocy drogowej) -->
-  <!-- JSON-LD: Articles (naprawione: image + author.url + daty ISO+TZ) -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@graph":[
-      {
-        "@type":"Article",
-        "@id":"https://automikulski.pl/#artykul-1",
-        "headline":"Jak sprzedać auto uszkodzone w Gliwicach? Poradnik krok po kroku",
-        "author":{"@type":"Organization","name":"Auto Mikulski"},
-        "datePublished":"2025-01-10",
-        "dateModified":"2026-02-03",
-        "publisher":{"@type":"Organization","name":"Auto Mikulski","logo":{"@type":"ImageObject","url":"https://i.postimg.cc/J0tFfMHV/IMG1.jpg"}},
-        "description":"Jak sprzedać uszkodzone auto w Gliwicach na Śląsku? Skup aut powypadkowych, bez przeglądu i nieodpalających — krok po kroku.",
-        "mainEntityOfPage":{"@type":"WebPage","@id":"https://automikulski.pl/#artykul-1"}
-        "image":["https://i.postimg.cc/J0tFfMHV/IMG1.jpg"],
-        "author":{
-          "@type":"Organization",
-          "name":"Auto Mikulski",
-          "url":"https://automikulski.pl/"
+          "url": "https://automikulski.pl/",
+          "logo": { "@type": "ImageObject", "url": "https://i.postimg.cc/J0tFfMHV/IMG1.jpg" }
         },
-        "publisher":{
-          "@type":"Organization",
-          "name":"Auto Mikulski",
-          "url":"https://automikulski.pl/",
-          "logo":{"@type":"ImageObject","url":"https://i.postimg.cc/J0tFfMHV/IMG1.jpg"}
-        },
-        "datePublished":"2025-01-10T08:00:00+01:00",
-        "dateModified":"2026-02-03T08:00:00+01:00",
-        "mainEntityOfPage":{"@type":"WebPage","@id":"https://automikulski.pl/#webpage"}
+        "datePublished": "2025-01-10T08:00:00+01:00",
+        "dateModified": "2026-02-03T08:00:00+01:00",
+        "mainEntityOfPage": { "@id": "https://automikulski.pl/#webpage" }
       },
       {
-        "@type":"Article",
-        "@id":"https://automikulski.pl/#artykul-2",
-        "headline":"Skup aut do złomowania w Gliwicach – co warto wiedzieć przed sprzedażą?",
-        "author":{"@type":"Organization","name":"Auto Mikulski"},
-        "datePublished":"2025-02-15",
-        "dateModified":"2026-02-03",
-        "publisher":{"@type":"Organization","name":"Auto Mikulski","logo":{"@type":"ImageObject","url":"https://i.postimg.cc/J0tFfMHV/IMG1.jpg"}},
-        "description":"Co warto wiedzieć przed sprzedażą auta do złomowania w Gliwicach? Dokumenty, cena, odbiór — wszystko na jednej stronie.",
-        "mainEntityOfPage":{"@type":"WebPage","@id":"https://automikulski.pl/#artykul-2"}
-        "image":["https://i.postimg.cc/J0tFfMHV/IMG1.jpg"],
-        "author":{
-          "@type":"Organization",
-          "name":"Auto Mikulski",
-          "url":"https://automikulski.pl/"
+        "@type": "Article",
+        "@id": "https://automikulski.pl/#article-2",
+        "headline": "Skup aut do złomowania w Gliwicach – co warto wiedzieć przed sprzedażą?",
+        "description": "Co warto wiedzieć przed sprzedażą auta do złomowania w Gliwicach? Dokumenty, cena, odbiór — wszystko na jednej stronie.",
+        "image": [ "https://i.postimg.cc/J0tFfMHV/IMG1.jpg" ],
+        "author": { "@type": "Organization", "name": "Auto Mikulski", "url": "https://automikulski.pl/" },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Auto Mikulski",
+          "url": "https://automikulski.pl/",
+          "logo": { "@type": "ImageObject", "url": "https://i.postimg.cc/J0tFfMHV/IMG1.jpg" }
         },
-        "publisher":{
-          "@type":"Organization",
-          "name":"Auto Mikulski",
-          "url":"https://automikulski.pl/",
-          "logo":{"@type":"ImageObject","url":"https://i.postimg.cc/J0tFfMHV/IMG1.jpg"}
-        },
-        "datePublished":"2025-02-15T08:00:00+01:00",
-        "dateModified":"2026-02-03T08:00:00+01:00",
-        "mainEntityOfPage":{"@type":"WebPage","@id":"https://automikulski.pl/#webpage"}
+        "datePublished": "2025-02-15T08:00:00+01:00",
+        "dateModified": "2026-02-03T08:00:00+01:00",
+        "mainEntityOfPage": { "@id": "https://automikulski.pl/#webpage" }
       }
     ]
   }
@@ -566,7 +519,7 @@
     .form{ display:grid; gap: 10px; margin-top: 12px; }
     .field{ display:grid; gap: 6px; }
     label{ font-weight: 850; font-size: 13px; color: rgba(238,240,255,.86); }
-    input, textarea, select{
+    input, textarea{
       width: 100%; padding: 12px 12px; border-radius: 14px;
       border: 1px solid rgba(115,130,255,.22);
       background: rgba(14,22,48,.35); color: var(--text); outline: none;
@@ -650,7 +603,7 @@
         <a class="nav-link" href="#miasta">Miasta</a>
         <a class="nav-link" href="#faq">FAQ</a>
         <a class="nav-link" href="#kontakt">Kontakt</a>
-        <a class="nav-cta" href="tel:517936676" aria-label="Zadzwoń 517 936 676">Zadzwoń</a>
+        <a class="nav-cta" href="tel:+48517936676" aria-label="Zadzwoń 517 936 676">Zadzwoń</a>
       </nav>
     </div>
   </header>
@@ -668,7 +621,7 @@
             Działam jako <strong>skup aut na umowę kupna–sprzedaży</strong>. Jeśli trzeba, <strong>odbieram auto z miejsca</strong>.
           </p>
           <div class="hero-cta" role="group" aria-label="Główne działania">
-            <a class="btn btn-primary" href="tel:517936676" aria-label="Zadzwoń: 517 936 676">Zadzwoń: 517 936 676</a>
+            <a class="btn btn-primary" href="tel:+48517936676" aria-label="Zadzwoń: 517 936 676">Zadzwoń: 517 936 676</a>
             <a class="btn btn-secondary" href="#wycena" data-scrollto="wycena">Wyceń auto w ~2 min</a>
             <a class="btn btn-secondary" href="https://g.page/r/CYCFfoC-NJDsEBM/" target="_blank" rel="noopener">Opinie / wizytówka Google</a>
           </div>
@@ -686,7 +639,7 @@
             <div class="nap-row">
               <span class="nap-pill">🏷️ <strong>Auto Mikulski</strong></span>
               <span class="nap-pill">📍 Dąbrowskiego 23, 44-100 Gliwice</span>
-              <span class="nap-pill">📞 <a href="tel:517936676">517 936 676</a></span>
+              <span class="nap-pill">📞 <a href="tel:+48517936676">517 936 676</a></span>
             </div>
             <div class="nap-row">
               <span class="nap-pill">🧭 <a href="https://www.google.com/maps/dir/?api=1&destination=D%C4%85browskiego%2023%2C%2044-100%20Gliwice" target="_blank" rel="noopener">Wyznacz trasę</a></span>
@@ -704,7 +657,7 @@
               Najczęściej decyzję cenową da się podjąć w trakcie rozmowy — bez wizyt, bez stresu.
             </p>
             <div class="card-actions">
-              <a class="btn btn-primary btn-full" href="tel:517936676">Zadzwoń teraz</a>
+              <a class="btn btn-primary btn-full" href="tel:+48517936676">Zadzwoń teraz</a>
               <a class="btn btn-secondary btn-full" href="#kontakt" data-scrollto="kontakt">Napisz (formularz)</a>
             </div>
             <p class="card-note">
@@ -758,7 +711,7 @@
             </ul>
             <div class="service-actions two" role="group" aria-label="Akcje">
               <a class="btn btn-primary btn-full" href="skup-aut-do-zlomowania-gliwice/">Szczegóły</a>
-              <a class="btn btn-secondary btn-full" href="tel:517936676">Zadzwoń</a>
+              <a class="btn btn-secondary btn-full" href="tel:+48517936676">Zadzwoń</a>
             </div>
           </article>
 
@@ -776,7 +729,7 @@
             </ul>
             <div class="service-actions two" role="group" aria-label="Akcje">
               <a class="btn btn-secondary btn-full" href="skup-aut-uszkodzonych-gliwice/">Szczegóły</a>
-              <a class="btn btn-primary btn-full" href="tel:517936676">Zadzwoń</a>
+              <a class="btn btn-primary btn-full" href="tel:+48517936676">Zadzwoń</a>
             </div>
           </article>
 
@@ -793,7 +746,7 @@
             </ul>
             <div class="service-actions two" role="group" aria-label="Akcje">
               <a class="btn btn-primary btn-full" href="#kontakt" data-scrollto="kontakt">Ustal odbiór</a>
-              <a class="btn btn-secondary btn-full" href="tel:517936676">Zadzwoń</a>
+              <a class="btn btn-secondary btn-full" href="tel:+48517936676">Zadzwoń</a>
             </div>
           </article>
         </div>
@@ -847,7 +800,7 @@
               <li>nie chcesz inwestować w naprawy — sprzedasz do złomowania</li>
               <li>auto spalone lub nadpalone</li>
             </ul>
-            <p class="muted">Masz nietypową sytuację? Zadzwoń — opowiesz, jak wygląda temat i dobierzemy rozwiązanie. Każdy przypadek jest inny.</p>
+            <p class="muted">Masz nietypową sytuację? Zadzwoń — opowiesz, jak wygląda temat i dobierzemy rozwiązanie.</p>
           </article>
 
           <article class="panel">
@@ -859,7 +812,7 @@
               <li>lokalizacja odbioru (miasto / dzielnica)</li>
             </ul>
             <div class="panel-actions">
-              <a class="btn btn-primary btn-full" href="tel:517936676">Zadzwoń: 517 936 676</a>
+              <a class="btn btn-primary btn-full" href="tel:+48517936676">Zadzwoń: 517 936 676</a>
               <a class="btn btn-secondary btn-full" href="#kontakt" data-scrollto="kontakt">Napisz teraz</a>
             </div>
           </article>
@@ -878,7 +831,7 @@
           <div class="reason" role="listitem">🚗 Auto <strong>nie odpala</strong> / po długim postoju / niejeżdżące</div>
           <div class="reason" role="listitem">🧰 <strong>Silnik / skrzynia biegów</strong> do naprawy — wycieki, usterki mechaniczne</div>
           <div class="reason" role="listitem">💥 Auto <strong>powypadkowe</strong> — po kolizji, szkoda blacharska, uszkodzone</div>
-          <div class="reason" role="listitem">🧾 Auto <strong>bez przeglądu</strong> / bez badań technicznych — do ogarnięcia formalnie</div>
+          <div class="reason" role="listitem">🧾 Auto <strong>bez przeglądu</strong> / bez badań technicznych</div>
           <div class="reason" role="listitem">🛞 Zawieszenie, hamulce, elektronika — auto nie jeździ bezpiecznie</div>
           <div class="reason" role="listitem">🔥 Auto <strong>spalone lub nadpalone</strong> — kompletne i zdekompletowane</div>
           <div class="reason" role="listitem">📦 <strong>Skup aut do złomowania</strong> — bez inwestowania w naprawy</div>
@@ -915,10 +868,10 @@
             <h3>Wycena w 2 min — co powiedzieć?</h3>
             <p class="muted">
               Wystarczą 3 informacje: <strong>marka / model</strong>, <strong>rocznik</strong>, <strong>stan / uszkodzenia</strong> + <strong>miasto odbioru</strong>.
-              Jeśli auto stoi i nie odpala — to też normalny temat. Skupuję auta do złomowania i na umowę.
+              Jeśli auto stoi i nie odpala — to też normalny temat.
             </p>
             <div class="panel-actions">
-              <a class="btn btn-primary btn-full" href="tel:517936676">Zadzwoń po wycenę</a>
+              <a class="btn btn-primary btn-full" href="tel:+48517936676">Zadzwoń po wycenę</a>
               <a class="btn btn-secondary btn-full" href="#kontakt" data-scrollto="kontakt">Napisz wiadomość</a>
               <a class="btn btn-secondary btn-full" href="https://g.page/r/CYCFfoC-NJDsEBM/" target="_blank" rel="noopener">Sprawdź opinie Google</a>
             </div>
@@ -937,7 +890,7 @@
 
         <div class="gallery" role="list">
           <figure class="photo" role="listitem">
-            <img src="https://i.postimg.cc/J0tFfMHV/IMG1.jpg" alt="Skup aut Gliwice – odbiór auta z miejsca na Śląsku Auto Mikulski" loading="lazy" decoding="async" width="1200" height="800" />
+            <img src="https://i.postimg.cc/J0tFfMHV/IMG1.jpg" alt="Skup aut Gliwice – odbiór auta z miejsca na Śląsku Auto Mikulski" loading="eager" fetchpriority="high" decoding="async" width="1200" height="800" />
             <figcaption><strong>Odbiór auta z miejsca</strong> — Gliwice i okolice, województwo śląskie. Skup aut uszkodzonych na umowę kupna–sprzedaży.</figcaption>
           </figure>
           <figure class="photo" role="listitem">
@@ -957,7 +910,7 @@
       <div class="container">
         <h2 class="section-title">Dlaczego Auto Mikulski? Skup aut Gliwice – Śląsk</h2>
         <p class="section-lead">
-          Ludzie wybierają konkret: <strong>szybki kontakt</strong>, <strong>jasne zasady</strong>, <strong>umowa kupna–sprzedaży</strong> i <strong>odbiór auta</strong> bez kombinowania.
+          Ludzie wybierają konkret: <strong>szybki kontakt</strong>, <strong>jasne zasady</strong>, <strong>umowa kupna–sprzedaży</strong> i <strong>odbiór auta</strong>.
         </p>
         <div class="reasons" role="list">
           <div class="reason" role="listitem">✅ Szybka wycena (~2 min) i konkretny kontakt</div>
@@ -977,99 +930,77 @@
       <div class="container">
         <h2 class="section-title">Artykuły – wiedza o skupie aut na Śląsku</h2>
         <p class="section-lead">
-          Przydatne informacje dla każdego, kto chce sprzedać auto w Gliwicach lub na Śląsku. Skup aut i złomowanie — wszystko w jednym miejscu.
+          Przydatne informacje dla każdego, kto chce sprzedać auto w Gliwicach lub na Śląsku.
         </p>
 
         <div class="articles-grid">
-          <!-- ARTICLE 1 -->
           <article class="article-block" id="artykul-1">
             <span class="article-tag">Poradnik</span>
             <h2>Jak sprzedać auto uszkodzone w Gliwicach? Krok po kroku</h2>
             <p class="article-meta">Auto Mikulski • Gliwice, Śląsk • Zaktualizowane: 2026</p>
 
             <p>
-              Masz <strong>uszkodzone auto w Gliwicach</strong> i nie wiesz, co z nim zrobić? Sprzedaż samochodu po wypadku, kolizji albo z usterką mechaniczną nie musi być trudna.
-              <strong>Skup aut Gliwice</strong> — Auto Mikulski — specjalizuje się właśnie w tym: kupuję <strong>auta uszkodzone</strong>, <strong>powypadkowe</strong> i <strong>niesprawne</strong>
-              na terenie Gliwic i województwa śląskiego. Poniżej wyjaśniam, jak to działa od A do Z.
+              Masz <strong>uszkodzone auto w Gliwicach</strong> i nie wiesz, co z nim zrobić?
+              Sprzedaż samochodu po wypadku, kolizji albo z usterką mechaniczną nie musi być trudna.
+              <strong>Skup aut Gliwice</strong> — Auto Mikulski — kupuję <strong>auta uszkodzone</strong>, <strong>powypadkowe</strong> i <strong>niesprawne</strong>.
             </p>
-    <!-- ...RESZTA TWOJEGO KODU BEZ ZMIAN... -->
 
             <h3>Krok 1: Zadzwoń lub napisz</h3>
             <p>
               Wystarczy jeden telefon pod <strong>517 936 676</strong>. Podaj mi <strong>markę i model</strong>, <strong>rocznik</strong> oraz <strong>co jest uszkodzone</strong>.
-              Jeśli auto nie odpala albo stoi od miesięcy — też OK, to normalna sytuacja.
-              Wycenę robię <strong>w trakcie rozmowy</strong> — najczęściej trwa to około 2 minuty.
+              Jeśli auto nie odpala albo stoi od miesięcy — też OK. Wycena często trwa ~2 minuty.
             </p>
 
             <h3>Krok 2: Wycena bez zobowiązań</h3>
             <p>
-              Po podaniu podstawowych danych mogę zaproponować <strong>cenę za auto</strong>.
-              Cena zależy od <strong>marki, rocznika, stanu technicznego</strong> i <strong>lokalizacji odbioru</strong>.
-              Nie musisz się decydować od razu — możesz spokojnie się zastanowić.
-              Jeśli cenę akceptujesz, umawiamy się na <strong>odbiór auta z miejsca</strong>.
+              Po podaniu podstawowych danych proponuję <strong>cenę</strong>. Zależy od marki, rocznika, stanu i lokalizacji odbioru.
+              Jeśli akceptujesz — umawiamy <strong>odbiór auta z miejsca</strong>.
             </p>
 
             <h3>Krok 3: Odbiór auta i podpisanie umowy</h3>
             <p>
-              Przyjeżdżam pod wskazany adres, jeśli auto nie jeździ — organizuję <strong>odbiór z miejsca</strong>.
-              Na miejscu podpisujemy <strong>umowę kupna–sprzedaży</strong> na prawdziwe dane firmy Auto Mikulski.
-              Dokumenty dostajesz <strong>od ręki</strong> — mogą być potrzebne do <strong>wyrejestrowania</strong> w wydziale komunikacji.
-              Temat załatwiony.
+              Przyjeżdżam pod adres (jeśli auto nie jeździ — odbiór z miejsca). Na miejscu podpisujemy <strong>umowę kupna–sprzedaży</strong>
+              na dane firmy. Dokumenty dostajesz od ręki.
             </p>
 
-            <h3>Jakie auta uszkodzone skupuję w Gliwicach?</h3>
+            <h3>Jakie auta uszkodzone skupuję?</h3>
             <ul>
               <li><strong>Auta powypadkowe</strong> — po kolizji, z uszkodzeniami karoserii i mechaniki</li>
               <li><strong>Auta nieodpalające</strong> — problem z silnikiem lub elektroniką</li>
-              <li><strong>Auta z usterką skrzyni biegów</strong> — naprawa często jest nieopłacalna</li>
-              <li><strong>Auta bez przeglądu</strong> — bez ważnych badań technicznych</li>
-              <li><strong>Auta spalone i nadpalone</strong> — kompletne lub zdekompletowane</li>
-              <li><strong>Auta do złomowania</strong> — gdy nie ma sensu inwestować w naprawy</li>
+              <li><strong>Auta z usterką skrzyni biegów</strong></li>
+              <li><strong>Auta bez przeglądu</strong></li>
+              <li><strong>Auta spalone i nadpalone</strong></li>
+              <li><strong>Auta do złomowania</strong></li>
             </ul>
 
             <p>
-              Jeśli masz <strong>uszkodzone auto w Gliwicach lub na Śląsku</strong> — zadzwoń.
-              <strong>Tel. 517 936 676</strong>.
+              Jeśli masz <strong>uszkodzone auto w Gliwicach lub na Śląsku</strong> — zadzwoń: <strong>517 936 676</strong>.
             </p>
           </article>
 
-          <!-- ARTICLE 2 -->
           <article class="article-block" id="artykul-2">
             <span class="article-tag">Wiedza</span>
             <h2>Skup aut do złomowania w Gliwicach – co warto wiedzieć przed sprzedażą?</h2>
             <p class="article-meta">Auto Mikulski • Gliwice, Śląsk • Zaktualizowane: 2026</p>
 
             <p>
-              Masz stare auto, które nie jest warte naprawy? <strong>Skup aut do złomowania w Gliwicach</strong> to najszybszy sposób na pozbycie się pojazdu bez kłopotów.
-              Nie musisz stać w kolejkach ani samodzielnie transportować samochodu.
-              <strong>Auto Mikulski</strong> — skup aut Gliwice — kupuję auto <strong>do złomowania na umowę kupna–sprzedaży</strong> i odbieram je z miejsca.
-            </p>
-
-            <h3>Skup do złomowania — na umowę, bez komplikacji</h3>
-            <p>
-              W praktyce: <strong>kupuję auto od Ciebie</strong> jako firma, płacę ustaloną cenę i podpisujemy umowę kupna–sprzedaży.
-              Odbiór auta z miejsca ustalamy telefonicznie.
+              Masz stare auto, które nie jest warte naprawy? <strong>Skup aut do złomowania w Gliwicach</strong> to szybki sposób na temat bez kłopotów.
+              <strong>Auto Mikulski</strong> kupuje auto <strong>na umowę kupna–sprzedaży</strong> i odbiera je z miejsca.
             </p>
 
             <h3>Jakie dokumenty potrzebujesz?</h3>
             <p>
-              Do sprzedaży auta do złomowania najczęściej wystarczy <strong>dowód rejestracyjny</strong> i <strong>dokument tożsamości</strong> właściciela.
-              Jeśli auto nie ma dowodu rejestracyjnego, jest po długim postoju albo jest jakaś nietypowa sytuacja — <strong>powiedz mi o tym</strong> w rozmowie.
-              Podpowiem najprostsze rozwiązanie.
+              Najczęściej wystarczy <strong>dowód rejestracyjny</strong> i <strong>dokument tożsamości</strong>. Jeśli sytuacja jest nietypowa — powiedz w rozmowie.
             </p>
 
-            <h3>Odbiór auta do złomowania – jak to działa?</h3>
+            <h3>Odbiór auta do złomowania</h3>
             <p>
-              Jeśli auto nie jeździ — odbiór z miejsca ustalamy telefonicznie.
-              Działam na terenie <strong>Gliwic, Zabrza, Bytomia, Rudy Śląskiej, Knurowa, Pyskowic</strong> i innych miast województwa śląskiego.
-              Termin ustalamy telefonicznie — często da się to zrobić tego samego dnia.
+              Działam na terenie <strong>Gliwic, Zabrza, Bytomia, Rudy Śląskiej, Knurowa, Pyskowic</strong> i innych miast woj. śląskiego.
             </p>
 
-            <h3>Ile dostaniesz za auto do złomowania?</h3>
+            <h3>Ile dostaniesz za auto?</h3>
             <p>
-              Cena zależy od <strong>marki, modelu, rocznika</strong> i <strong>stanu auta</strong>.
-              Nawet jeśli auto jest niesprawne, spalone albo zdekompletowane — często ma wartość, za którą mogę zapłacić.
-              Wycena telefoniczna trwa ok. <strong>2 minuty</strong>. Zadzwoń pod <strong>517 936 676</strong>.
+              Cena zależy od marki, modelu, rocznika i stanu. Wycena telefoniczna trwa ~2 minuty. Zadzwoń: <strong>517 936 676</strong>.
             </p>
           </article>
         </div>
@@ -1104,7 +1035,7 @@
             <div class="city-name">Ruda Śląska</div>
             <div class="city-desc">Skup aut • powypadkowe • do złomowania • odbiór auta z miejsca</div>
           </a>
-<a class="city-card" role="listitem" href="skup-aut-bytom/" aria-label="Bytom — skup aut">
+          <a class="city-card" role="listitem" href="skup-aut-bytom/" aria-label="Bytom — skup aut">
             <div class="city-name">Bytom</div>
             <div class="city-desc">Skup aut • odbiór • uszkodzone i niesprawne • umowa</div>
           </a>
@@ -1119,61 +1050,48 @@
     <section id="faq" class="section" aria-label="Najczęstsze pytania">
       <div class="container">
         <h2 class="section-title">FAQ – Skup aut Gliwice</h2>
-        <div class="faq" data-accordion>
+        <div class="faq">
           <details class="faq-item">
             <summary>Jakie dokumenty są potrzebne do sprzedaży auta?</summary>
             <div class="faq-body">
-              Najczęściej wystarczy <strong>dowód rejestracyjny</strong> i <strong>dokument tożsamości właściciela</strong>.
-              Jeśli jest współwłasność, brak dowodu rejestracyjnego albo auto ma nietypową sytuację — powiedz mi w rozmowie.
-              Podpowiem, jak ogarnąć to najprościej. Dotyczy to też aut do złomowania.
+              Najczęściej wystarczy <strong>dowód rejestracyjny</strong> i <strong>dokument tożsamości</strong>.
+              Jeśli jest współwłasność albo nietypowa sytuacja — powiedz w rozmowie.
             </div>
           </details>
 
           <details class="faq-item">
             <summary>Czy odbierasz auto z miejsca w Gliwicach i na Śląsku?</summary>
             <div class="faq-body">
-              Tak. Odbieram auta z miejsca na terenie <strong>Gliwic i województwa śląskiego</strong> — Zabrze, Bytom, Ruda Śląska, Knurów, Pyskowice i okolice.
-              Termin odbioru ustalamy telefonicznie.
+              Tak. Odbieram auta z miejsca na terenie <strong>Gliwic i woj. śląskiego</strong> — Zabrze, Bytom, Ruda Śląska, Knurów, Pyskowice i okolice.
+              Termin ustalamy telefonicznie.
             </div>
           </details>
 
           <details class="faq-item">
             <summary>Czy skupujesz auto bez przeglądu lub niesprawne?</summary>
             <div class="faq-body">
-              Tak. Skupuję <strong>auta bez przeglądu</strong>, <strong>niesprawne</strong>, <strong>uszkodzone</strong> i <strong>powypadkowe</strong> —
-              również te, które <strong>nie odpalają</strong> lub stoją dłuższy czas bez użycia. Nie musi mieć ważnych badań ani OC.
+              Tak. Skupuję <strong>auta bez przeglądu</strong>, <strong>niesprawne</strong>, <strong>uszkodzone</strong> i <strong>powypadkowe</strong> — również te, które <strong>nie odpalają</strong>.
             </div>
           </details>
 
           <details class="faq-item">
             <summary>Jak wygląda umowa i rozliczenie?</summary>
             <div class="faq-body">
-              Działam jako <strong>skup aut</strong>: kupuję auto na <strong>umowę kupna–sprzedaży</strong> na prawdziwe dane firmy Auto Mikulski.
-              Na miejscu potwierdzamy dane, opis auta i ustalenia odbioru. Umowa jest czytelna i gotowa <strong>do wyrejestrowania</strong> w komunikacji.
+              Kupuję auto na <strong>umowę kupna–sprzedaży</strong> na dane firmy Auto Mikulski. Umowa jest czytelna i gotowa do Twoich formalności.
             </div>
           </details>
 
           <details class="faq-item">
             <summary>Ile trwa wycena i odbiór?</summary>
             <div class="faq-body">
-              <strong>Wycena telefoniczna</strong> trwa zwykle ok. 2 minuty. <strong>Odbiór auta</strong> da się umówić najczęściej tego samego dnia lub w najbliższym możliwym terminie.
-              Jeśli auto stoi dalej — uzgodnimy dojazd i termin razem.
+              Wycena zwykle trwa ok. 2 minuty. Odbiór auta najczęściej da się umówić szybko (zależnie od lokalizacji i dnia).
             </div>
           </details>
 
           <details class="faq-item">
             <summary>Czy skupujesz auta do złomowania?</summary>
             <div class="faq-body">
-              Tak. <strong>Skup aut do złomowania</strong> — kupuję samochody kompletne, uszkodzone mechanicznie, powypadkowe,
-              <strong>nadpalone</strong> oraz <strong>spalone</strong>. Odbieram z miejsca na umowę kupna–sprzedaży.
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary>Czy skupujesz auto spalone lub nadpalone?</summary>
-            <div class="faq-body">
-              Tak. <strong>Skupuję auta spalone i nadpalone</strong> — kompletne i zdekompletowane.
-              Odbieram z miejsca na terenie Śląska. Wycenę robię po krótkim telefonie — tel. 517 936 676.
+              Tak. Skupuję auta kompletne, uszkodzone, <strong>nadpalone</strong> i <strong>spalone</strong>. Odbieram z miejsca na Śląsku.
             </div>
           </details>
         </div>
@@ -1185,25 +1103,25 @@
       <div class="container">
         <h2 class="section-title">Kontakt – Auto Mikulski Gliwice</h2>
         <p class="section-lead">
-          Najszybciej: <strong>telefon</strong>. Jeśli wolisz — napisz wiadomość (od razu podaj markę/model, rocznik i stan auta).
-          Skup aut Gliwice — tel. <strong>517 936 676</strong>.
+          Najszybciej: <strong>telefon</strong>. Jeśli wolisz — napisz wiadomość (podaj markę/model, rocznik i stan auta).
+          Tel. <strong>517 936 676</strong>.
         </p>
 
         <div class="contact-grid">
           <article class="contact-card">
             <h3>📞 Telefon (najszybciej)</h3>
-            <p class="contact-big"><a href="tel:517936676" style="text-decoration:underline;text-underline-offset:3px;">517 936 676</a></p>
-            <p class="muted">Powiedz: marka/model, rocznik, co jest uszkodzone + miasto. Jeśli auto nie odpala — też OK. Skup aut + odbiór auta z miejsca.</p>
+            <p class="contact-big"><a href="tel:+48517936676" style="text-decoration:underline;text-underline-offset:3px;">517 936 676</a></p>
+            <p class="muted">Powiedz: marka/model, rocznik, co jest uszkodzone + miasto. Jeśli auto nie odpala — też OK.</p>
             <div class="panel-actions" style="margin-top:12px;">
-              <a class="btn btn-primary btn-full" href="tel:517936676">Zadzwoń teraz</a>
-              <a class="btn btn-secondary btn-full" href="sms:517936676">Wyślij SMS</a>
+              <a class="btn btn-primary btn-full" href="tel:+48517936676">Zadzwoń teraz</a>
+              <a class="btn btn-secondary btn-full" href="sms:+48517936676">Wyślij SMS</a>
             </div>
           </article>
 
           <article class="contact-card">
             <h3>📍 Adres i dojazd</h3>
             <p class="contact-big">Dąbrowskiego 23, 44-100 Gliwice</p>
-            <p class="muted">Działam mobilnie — przy <strong>skupie aut</strong> i <strong>odbiorze auta</strong> liczy się lokalizacja Twojego samochodu, a nie to, żebyś przyjeżdżał do mnie.</p>
+            <p class="muted">Działam mobilnie — przy skupie liczy się lokalizacja Twojego auta.</p>
             <div class="panel-actions" style="margin-top:12px;">
               <a class="btn btn-secondary btn-full" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=D%C4%85browskiego%2023%2C%2044-100%20Gliwice">Wyznacz trasę</a>
               <a class="btn btn-secondary btn-full" target="_blank" rel="noopener" href="https://g.page/r/CYCFfoC-NJDsEBM/">Wizytówka Google / opinie</a>
@@ -1213,7 +1131,7 @@
           <article class="contact-card">
             <h3>✉️ Napisz wiadomość</h3>
             <p class="muted">Formularz otwiera wiadomość e-mail do automikulski@gmail.com. Im więcej konkretów, tym szybciej wrócę z wyceną.</p>
-            <form class="form" id="leadForm">
+            <form class="form" id="leadForm" aria-label="Formularz wyceny (e-mail)">
               <div class="field">
                 <label for="f1">Miasto odbioru</label>
                 <input id="f1" name="city" autocomplete="address-level2" placeholder="np. Gliwice / Zabrze / Bytom" />
@@ -1227,7 +1145,7 @@
                 <textarea id="f3" name="state" placeholder="np. po kolizji przód, nie odpala / brak przeglądu / do złomowania / usterka skrzyni"></textarea>
               </div>
               <button class="btn btn-primary btn-full" type="button" id="sendMail">Wyślij wycenę e-mailem</button>
-              <p class="hint">Albo napisz od razu: <a href="mailto:automikulski@gmail.com" style="text-decoration:underline;text-underline-offset:3px;">automikulski@gmail.com</a></p>
+              <p class="hint">Albo napisz: <a href="mailto:automikulski@gmail.com" style="text-decoration:underline;text-underline-offset:3px;">automikulski@gmail.com</a></p>
             </form>
           </article>
         </div>
@@ -1235,11 +1153,10 @@
     </section>
   </main>
 
-  <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <p><strong>Auto Mikulski</strong> — Skup aut Gliwice i woj. śląskie • Odbiór auta z miejsca • Skup aut do złomowania</p>
-      <p class="muted">Tel.: <a href="tel:517936676" style="text-decoration:underline;text-underline-offset:3px;">517 936 676</a> • Dąbrowskiego 23, 44-100 Gliwice • automikulski@gmail.com</p>
+      <p class="muted">Tel.: <a href="tel:+48517936676" style="text-decoration:underline;text-underline-offset:3px;">517 936 676</a> • Dąbrowskiego 23, 44-100 Gliwice • automikulski@gmail.com</p>
       <p class="footer-keywords">
         skup aut Gliwice | skup aut uszkodzonych Śląsk | skup aut do złomowania Gliwice |
         skup aut powypadkowych | skup aut bez przeglądu | skup aut nieodpalających | skup aut spalone |
@@ -1250,16 +1167,14 @@
     </div>
   </footer>
 
-  <!-- Mobile CTA -->
   <div class="mobile-cta" aria-label="Szybkie przyciski">
-    <a class="mobile-cta-btn primary" href="tel:517936676">📞 Zadzwoń</a>
+    <a class="mobile-cta-btn primary" href="tel:+48517936676">📞 Zadzwoń</a>
     <a class="mobile-cta-btn secondary" href="#kontakt" data-scrollto="kontakt">✉️ Napisz</a>
   </div>
 
-  <!-- Back to top -->
   <button class="to-top" id="toTop" aria-label="Wróć na górę">↑</button>
 
-  <script>
+  <script defer>
     // Smooth scroll
     document.addEventListener('click', (e) => {
       const a = e.target.closest('[data-scrollto]');
@@ -1293,7 +1208,7 @@
         `Auto (marka/model/rocznik): ${car || '-'}\n` +
         `Stan / uszkodzenia: ${st || '-'}\n\n` +
         `Kontakt zwrotny (telefon): \n\n` +
-        `Dziękuję — Auto Mikulski, skup aut Gliwice, tel. 517 936 676\n`
+        `Dziękuję.\n`
       );
       window.location.href = `mailto:automikulski@gmail.com?subject=${subject}&body=${body}`;
     });
