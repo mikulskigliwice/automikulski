@@ -579,6 +579,34 @@
       .brand-sub{ display:none; }
     }
   </style>
+  <script>
+  (function () {
+    const host = location.hostname.toLowerCase();
+
+    // GitHub Pages: NIE indeksuj
+    const isGithub = host.endsWith('github.io');
+
+    // automikulski.pl: indeksuj normalnie
+    if (isGithub) {
+      // usuń ewentualne meta robots już istniejące
+      document.querySelectorAll('meta[name="robots"]').forEach(m => m.remove());
+
+      const m = document.createElement('meta');
+      m.setAttribute('name', 'robots');
+      m.setAttribute('content', 'noindex,follow');
+      document.head.appendChild(m);
+
+      // ustaw canonical na docelową domenę (żeby Google zrozumiał gdzie jest "prawdziwa" strona)
+      let c = document.querySelector('link[rel="canonical"]');
+      if (!c) {
+        c = document.createElement('link');
+        c.setAttribute('rel', 'canonical');
+        document.head.appendChild(c);
+      }
+      c.setAttribute('href', 'https://automikulski.pl/');
+    }
+  })();
+</script>
 </head>
 
 <body>
