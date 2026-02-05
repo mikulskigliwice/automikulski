@@ -16,17 +16,19 @@
   <title>Skup aut Bytom – do złomowania, uszkodzone | Odbiór z miejsca 24h</title>
   <meta name="description" content="Skup aut Bytom: auta do złomowania, uszkodzone, powypadkowe i nieodpalające. Umowa kupna–sprzedaży + odbiór z miejsca. Wycena w ~2 min. Tel. 517 936 676." />
 
-  <!-- WAŻNE: dopasuj canonical do realnego URL tej podstrony -->
+  <!-- Canonical -->
   <link rel="canonical" href="https://automikulski.pl/skup-aut-bytom/" />
 
   <meta name="theme-color" content="#070A14" />
-  <meta name="robots" content="index,follow" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
   <meta name="language" content="Polish" />
   <meta name="geo.region" content="PL-SL" />
   <meta name="geo.placename" content="Bytom, Śląsk" />
 
+  <!-- Performance hints -->
   <link rel="preconnect" href="https://i.postimg.cc" crossorigin />
   <link rel="dns-prefetch" href="https://i.postimg.cc" />
+  <link rel="preload" as="image" href="https://i.postimg.cc/J0tFfMHV/IMG1.jpg" fetchpriority="high">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
@@ -35,6 +37,7 @@
   <meta property="og:description" content="Skup aut w Bytomiu: auta do złomowania, uszkodzone, powypadkowe i nieodpalające. Odbiór z miejsca + umowa. Tel. 517 936 676." />
   <meta property="og:url" content="https://automikulski.pl/skup-aut-bytom/" />
   <meta property="og:image" content="https://i.postimg.cc/J0tFfMHV/IMG1.jpg" />
+  <meta property="og:image:alt" content="Skup aut Bytom – odbiór auta z miejsca, Auto Mikulski" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -42,136 +45,138 @@
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="%236D7CFF"/><stop offset="1" stop-color="%234FD1C5"/></linearGradient></defs><rect width="64" height="64" rx="16" fill="%23070A14"/><circle cx="32" cy="32" r="14" fill="url(%23g)"/></svg>' />
 
-  <!-- JSON-LD: WebSite -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"WebSite",
-    "@id":"https://automikulski.pl/#website",
-    "name":"Auto Mikulski",
-    "url":"https://automikulski.pl/",
-    "inLanguage":"pl-PL"
-  }
-  </script>
+  <!-- GitHub Pages: noindex + canonical (bez wpływu na automikulski.pl) -->
+  <script>
+    (function () {
+      const host = location.hostname.toLowerCase();
+      const isGithub = host.endsWith('github.io');
+      if (!isGithub) return;
 
-  <!-- JSON-LD: WebPage (Bytom) -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"WebPage",
-    "@id":"https://automikulski.pl/skup-aut-bytom/#webpage",
-    "url":"https://automikulski.pl/skup-aut-bytom/",
-    "name":"Skup aut Bytom – do złomowania, uszkodzone | Odbiór z miejsca 24h",
-    "description":"Skup aut Bytom: auta do złomowania, uszkodzone, powypadkowe i nieodpalające. Umowa kupna–sprzedaży + odbiór z miejsca. Wycena w ~2 min.",
-    "inLanguage":"pl-PL",
-    "isPartOf":{"@id":"https://automikulski.pl/#website"},
-    "primaryImageOfPage":{"@type":"ImageObject","url":"https://i.postimg.cc/J0tFfMHV/IMG1.jpg"},
-    "datePublished":"2025-02-04T08:00:00+01:00",
-    "dateModified":"2026-02-04T08:00:00+01:00"
-  }
-  </script>
+      document.querySelectorAll('meta[name="robots"]').forEach(m => m.remove());
+      const m = document.createElement('meta');
+      m.setAttribute('name', 'robots');
+      m.setAttribute('content', 'noindex,follow');
+      document.head.appendChild(m);
 
-  <!-- JSON-LD: LocalBusiness -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"LocalBusiness",
-    "@id":"https://automikulski.pl/#localbusiness",
-    "additionalType":[
-      "https://schema.org/AutoDealer",
-      "https://schema.org/UsedCarDealer"
-    ],
-    "name":"Auto Mikulski",
-    "telephone":"+48517936676",
-    "email":"automikulski@gmail.com",
-    "url":"https://automikulski.pl/",
-    "image":[
-      "https://i.postimg.cc/J0tFfMHV/IMG1.jpg",
-      "https://i.postimg.cc/pdG4qmyw/IMG2.png",
-      "https://i.postimg.cc/0NQHM9ZV/IMG3.png"
-    ],
-    "logo":"https://i.postimg.cc/J0tFfMHV/IMG1.jpg",
-    "sameAs":["https://g.page/r/CYCFfoC-NJDsEBM/"],
-    "address":{
-      "@type":"PostalAddress",
-      "streetAddress":"Dąbrowskiego 23",
-      "postalCode":"44-100",
-      "addressLocality":"Gliwice",
-      "addressRegion":"Śląskie",
-      "addressCountry":"PL"
-    },
-    "areaServed":[
-      {"@type":"City","name":"Bytom"},
-      {"@type":"City","name":"Gliwice"},
-      {"@type":"City","name":"Zabrze"},
-      {"@type":"City","name":"Ruda Śląska"},
-      {"@type":"City","name":"Knurów"},
-      {"@type":"City","name":"Pyskowice"},
-      {"@type":"City","name":"Katowice"},
-      {"@type":"AdministrativeArea","name":"Śląskie"}
-    ],
-    "openingHoursSpecification":[
-      {
-        "@type":"OpeningHoursSpecification",
-        "dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-        "opens":"00:00",
-        "closes":"23:59"
+      let c = document.querySelector('link[rel="canonical"]');
+      if (!c) {
+        c = document.createElement('link');
+        c.setAttribute('rel', 'canonical');
+        document.head.appendChild(c);
       }
-    ],
-    "priceRange":"PLN"
-  }
+      c.setAttribute('href', 'https://automikulski.pl/skup-aut-bytom/');
+    })();
   </script>
 
-  <!-- JSON-LD: FAQ (Bytom – rozszerzone) -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"FAQPage",
-    "mainEntity":[
-      {
-        "@type":"Question",
-        "name":"Czy skupujesz auta do złomowania w Bytomiu?",
-        "acceptedAnswer":{"@type":"Answer","text":"Tak. Skupuję auta do złomowania w Bytomiu i okolicach — również niesprawne, nieodpalające oraz bez przeglądu. Ustalamy cenę telefonicznie, a odbiór auta z miejsca umawiamy na dogodny termin."}
-      },
-      {
-        "@type":"Question",
-        "name":"Ile trwa wycena auta w Bytomiu?",
-        "acceptedAnswer":{"@type":"Answer","text":"Wycena telefoniczna zwykle trwa około 2 minuty. Wystarczy marka/model, rocznik, krótki opis stanu lub uszkodzeń oraz lokalizacja odbioru w Bytomiu (dzielnica/okolica)."}
-      },
-      {
-        "@type":"Question",
-        "name":"Czy odbierasz auta z dzielnic Bytomia (Szombierki, Łagiewniki, Miechowice, Rozbark)?",
-        "acceptedAnswer":{"@type":"Answer","text":"Tak. Odbieram auta z całego Bytomia — m.in. Centrum, Szombierki, Łagiewniki, Miechowice, Stroszek, Rozbark, Karb i okolice."}
-      },
-      {
-        "@type":"Question",
-        "name":"Czy mogę sprzedać auto, które nie odpala lub stoi na parkingu pod blokiem?",
-        "acceptedAnswer":{"@type":"Answer","text":"Tak. Skupuję auta nieodpalające i po długim postoju. Jeśli auto stoi pod blokiem, na parkingu lub w garażu — ustalamy szczegóły telefonicznie i organizuję odbiór z miejsca."}
-      },
-      {
-        "@type":"Question",
-        "name":"Jakie dokumenty są potrzebne do sprzedaży auta w Bytomiu?",
-        "acceptedAnswer":{"@type":"Answer","text":"Najczęściej wystarczy dowód rejestracyjny i dokument tożsamości właściciela. Jeśli sytuacja jest nietypowa (np. współwłasność, brak przeglądu, auto po długim postoju) — powiedz o tym w rozmowie, podpowiem najprostsze rozwiązanie."}
-      },
-      {
-        "@type":"Question",
-        "name":"Czy skupujesz auta po kolizji parkingowej w Bytomiu?",
-        "acceptedAnswer":{"@type":"Answer","text":"Tak. Skupuję auta uszkodzone i powypadkowe — również po stłuczkach parkingowych. Wystarczy krótki opis szkody, żebym podał wstępną wycenę i ustalił odbiór."}
-      },
-      {
-        "@type":"Question",
-        "name":"Czy skup obejmuje auta firmowe (flotowe) z Bytomia?",
-        "acceptedAnswer":{"@type":"Answer","text":"Tak. Skupuję także auta firmowe. Najlepiej zadzwonić i powiedzieć, czy auto jest prywatne czy firmowe — dopasujemy formalności."}
-      }
-    ]
-  }
-  </script>
-
-  <!-- JSON-LD: Reviews (bez ratingValue — bezpieczniej) -->
+  <!-- ✅ JSON-LD (jeden, czytelny blok) -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@graph":[
+      {
+        "@type":"WebSite",
+        "@id":"https://automikulski.pl/#website",
+        "name":"Auto Mikulski",
+        "url":"https://automikulski.pl/",
+        "inLanguage":"pl-PL"
+      },
+      {
+        "@type":"WebPage",
+        "@id":"https://automikulski.pl/skup-aut-bytom/#webpage",
+        "url":"https://automikulski.pl/skup-aut-bytom/",
+        "name":"Skup aut Bytom – do złomowania, uszkodzone | Odbiór z miejsca 24h",
+        "description":"Skup aut Bytom: auta do złomowania, uszkodzone, powypadkowe i nieodpalające. Umowa kupna–sprzedaży + odbiór z miejsca. Wycena w ~2 min.",
+        "inLanguage":"pl-PL",
+        "isPartOf":{"@id":"https://automikulski.pl/#website"},
+        "primaryImageOfPage":{"@type":"ImageObject","url":"https://i.postimg.cc/J0tFfMHV/IMG1.jpg"},
+        "datePublished":"2025-02-04T08:00:00+01:00",
+        "dateModified":"2026-02-04T08:00:00+01:00"
+      },
+      {
+        "@type":"BreadcrumbList",
+        "@id":"https://automikulski.pl/skup-aut-bytom/#breadcrumbs",
+        "itemListElement":[
+          {"@type":"ListItem","position":1,"name":"Auto Mikulski","item":"https://automikulski.pl/"},
+          {"@type":"ListItem","position":2,"name":"Skup aut Bytom","item":"https://automikulski.pl/skup-aut-bytom/"}
+        ]
+      },
+      {
+        "@type":"LocalBusiness",
+        "@id":"https://automikulski.pl/#localbusiness",
+        "additionalType":[
+          "https://schema.org/AutoDealer",
+          "https://schema.org/UsedCarDealer"
+        ],
+        "name":"Auto Mikulski",
+        "url":"https://automikulski.pl/",
+        "telephone":"+48517936676",
+        "email":"automikulski@gmail.com",
+        "image":[
+          "https://i.postimg.cc/J0tFfMHV/IMG1.jpg",
+          "https://i.postimg.cc/pdG4qmyw/IMG2.png",
+          "https://i.postimg.cc/0NQHM9ZV/IMG3.png"
+        ],
+        "logo":"https://i.postimg.cc/J0tFfMHV/IMG1.jpg",
+        "sameAs":["https://g.page/r/CYCFfoC-NJDsEBM/"],
+        "address":{
+          "@type":"PostalAddress",
+          "streetAddress":"Dąbrowskiego 23",
+          "postalCode":"44-100",
+          "addressLocality":"Gliwice",
+          "addressRegion":"Śląskie",
+          "addressCountry":"PL"
+        },
+        "areaServed":[
+          {"@type":"City","name":"Bytom"},
+          {"@type":"City","name":"Gliwice"},
+          {"@type":"City","name":"Zabrze"},
+          {"@type":"City","name":"Ruda Śląska"},
+          {"@type":"City","name":"Knurów"},
+          {"@type":"City","name":"Pyskowice"},
+          {"@type":"City","name":"Katowice"},
+          {"@type":"AdministrativeArea","name":"Śląskie"}
+        ],
+        "openingHoursSpecification":[
+          {
+            "@type":"OpeningHoursSpecification",
+            "dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+            "opens":"00:00",
+            "closes":"23:59"
+          }
+        ],
+        "priceRange":"$$"
+      },
+      {
+        "@type":"FAQPage",
+        "@id":"https://automikulski.pl/skup-aut-bytom/#faq",
+        "mainEntity":[
+          {
+            "@type":"Question",
+            "name":"Czy skupujesz auta do złomowania w Bytomiu?",
+            "acceptedAnswer":{"@type":"Answer","text":"Tak. Skupuję auta do złomowania w Bytomiu i okolicach — również niesprawne, nieodpalające oraz bez przeglądu. Ustalamy cenę telefonicznie, a odbiór auta z miejsca umawiamy na dogodny termin."}
+          },
+          {
+            "@type":"Question",
+            "name":"Ile trwa wycena auta w Bytomiu?",
+            "acceptedAnswer":{"@type":"Answer","text":"Wycena telefoniczna zwykle trwa około 2 minuty. Wystarczy marka/model, rocznik, krótki opis stanu lub uszkodzeń oraz lokalizacja odbioru w Bytomiu (dzielnica/okolica)."}
+          },
+          {
+            "@type":"Question",
+            "name":"Czy odbierasz auta z dzielnic Bytomia (Szombierki, Łagiewniki, Miechowice, Rozbark)?",
+            "acceptedAnswer":{"@type":"Answer","text":"Tak. Odbieram auta z całego Bytomia — m.in. Centrum, Szombierki, Łagiewniki, Miechowice, Stroszek, Rozbark, Karb i okolice."}
+          },
+          {
+            "@type":"Question",
+            "name":"Czy mogę sprzedać auto, które nie odpala lub stoi na parkingu pod blokiem?",
+            "acceptedAnswer":{"@type":"Answer","text":"Tak. Skupuję auta nieodpalające i po długim postoju. Jeśli auto stoi pod blokiem, na parkingu lub w garażu — ustalamy szczegóły telefonicznie i organizuję odbiór z miejsca."}
+          },
+          {
+            "@type":"Question",
+            "name":"Jakie dokumenty są potrzebne do sprzedaży auta w Bytomiu?",
+            "acceptedAnswer":{"@type":"Answer","text":"Najczęściej wystarczy dowód rejestracyjny i dokument tożsamości właściciela. Jeśli sytuacja jest nietypowa (np. współwłasność, brak przeglądu, auto po długim postoju) — powiedz o tym w rozmowie, podpowiem najprostsze rozwiązanie."}
+          }
+        ]
+      },
       {
         "@type":"Review",
         "itemReviewed":{"@type":"LocalBusiness","@id":"https://automikulski.pl/#localbusiness"},
@@ -202,7 +207,7 @@
       --radius:18px;
       --radius-lg:22px;
 
-      --star:#FFD54A; /* żółte gwiazdki */
+      --star:#FFD54A;
       --star-bg: rgba(255,213,74,.10);
       --star-br: rgba(255,213,74,.25);
     }
@@ -238,7 +243,6 @@
     .skip-link:focus{ left:12px; outline:3px solid rgba(79,209,197,.7); outline-offset:2px; }
     :focus-visible{ outline:3px solid rgba(79,209,197,.75); outline-offset:3px; border-radius:10px; }
 
-    /* Header */
     .site-header{
       position: sticky; top:0; z-index: 50;
       backdrop-filter: blur(10px);
@@ -271,7 +275,6 @@
       color: #061018;
     }
 
-    /* Hero */
     .hero{ padding: 56px 0 34px; }
     .hero-grid{ display:grid; grid-template-columns: 1.15fr .85fr; gap:22px; align-items:start; }
     .badge{
@@ -301,7 +304,6 @@
     .btn-secondary{ background: transparent; border-color: rgba(115,130,255,.55); }
     .btn-full{ width:100%; }
 
-    /* NAP */
     .nap{
       margin-top: 14px; display:grid; gap: 10px;
       background: rgba(14,22,48,.24); border: 1px solid rgba(115,130,255,.16);
@@ -311,7 +313,6 @@
     .nap-pill{ display:inline-flex; align-items:center; gap:8px; padding: 8px 10px; border-radius:999px; border: 1px solid rgba(115,130,255,.18); background: rgba(14,22,48,.24); }
     .nap a{ text-decoration: underline; text-decoration-color: rgba(79,209,197,.55); text-underline-offset: 3px; }
 
-    /* Sections */
     .section{ padding: 58px 0; }
     .section-title{ margin: 0 0 14px; text-align:center; font-size: clamp(1.45rem, 2.7vw, 2.15rem); }
     .section-lead{ margin: 0 auto 18px; max-width: 940px; text-align:center; color: var(--muted); line-height: 1.8; }
@@ -343,7 +344,6 @@
 
     .two-col{ display:grid; grid-template-columns: 1fr 1fr; gap: 18px; }
 
-    /* Mini blocks */
     .mini-grid{ display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 14px; margin-top: 14px; }
     .mini{
       background: rgba(14,22,48,.45);
@@ -355,7 +355,6 @@
     .mini b{ display:block; margin-bottom:6px; }
     .mini p{ color: var(--muted); line-height:1.7; }
 
-    /* Reviews */
     .reviews-wrap{
       background: linear-gradient(180deg, rgba(14,22,48,.78), rgba(10,16,36,.68));
       border: 1px solid rgba(115,130,255,.18);
@@ -414,7 +413,6 @@
       font-size: 13px;
     }
 
-    /* FAQ */
     .faq{ max-width: 980px; margin: 0 auto; display:grid; gap: 12px; }
     .faq-item{
       background: linear-gradient(180deg, rgba(14,22,48,.96), rgba(10,16,36,.92));
@@ -428,16 +426,11 @@
     .faq-body{ padding: 0 16px 14px; color: var(--muted); line-height: 1.85; }
     .faq-item[open] summary{ border-bottom: 1px solid rgba(115,130,255,.16); }
 
-    /* Contact */
     .contact-grid{ display:grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-    .kpi-row{
-      display:flex; flex-wrap:wrap; gap:10px;
-      margin-top: 12px;
-    }
+    .kpi-row{ display:flex; flex-wrap:wrap; gap:10px; margin-top: 12px; }
     .kpi{
       display:inline-flex; align-items:center; gap:8px;
-      padding: 10px 12px;
-      border-radius: 999px;
+      padding: 10px 12px; border-radius: 999px;
       border: 1px solid rgba(115,130,255,.18);
       background: rgba(14,22,48,.24);
       font-weight: 900; font-size: 13px;
@@ -455,10 +448,8 @@
       font-family: inherit;
     }
     textarea{ min-height: 120px; resize: vertical; }
-
     .hint{ color: rgba(238,240,255,.62); font-size: 12px; line-height: 1.5; margin-top: 8px; }
 
-    /* Footer */
     .site-footer{ padding: 22px 0 86px; border-top: 1px solid rgba(115,130,255,.12); background: rgba(7,10,22,.35); }
     .footer-inner{ text-align:center; display:grid; gap: 8px; }
     .footer-keywords{
@@ -471,7 +462,6 @@
       margin-right: auto;
     }
 
-    /* Mobile CTA */
     .mobile-cta{
       position: fixed; left: 0; right: 0; bottom: 0;
       padding: 10px 12px; display: none; gap: 10px;
@@ -485,7 +475,6 @@
     .mobile-cta-btn.primary{ background: linear-gradient(135deg, var(--a1), var(--a2)); color: #061018; }
     .mobile-cta-btn.secondary{ background: rgba(14,22,48,.35); border-color: rgba(115,130,255,.45); }
 
-    /* Responsive */
     @media (max-width: 980px){
       .hero-grid{ grid-template-columns: 1fr; }
       .cards{ grid-template-columns: 1fr; }
@@ -525,7 +514,7 @@
         <a class="nav-link" href="#opinie">Opinie</a>
         <a class="nav-link" href="#faq">FAQ</a>
         <a class="nav-link" href="#kontakt">Kontakt</a>
-        <a class="nav-cta" href="tel:517936676" aria-label="Zadzwoń 517 936 676">Zadzwoń</a>
+        <a class="nav-cta" href="tel:+48517936676" aria-label="Zadzwoń 517 936 676">Zadzwoń</a>
       </nav>
     </div>
   </header>
@@ -545,7 +534,7 @@
           </p>
 
           <div class="hero-cta" role="group" aria-label="Akcje">
-            <a class="btn btn-primary" href="tel:517936676">Zadzwoń: 517 936 676</a>
+            <a class="btn btn-primary" href="tel:+48517936676">Zadzwoń: 517 936 676</a>
             <a class="btn btn-secondary" href="#wycena">Wycena w ~2 min</a>
             <a class="btn btn-secondary" href="https://g.page/r/CYCFfoC-NJDsEBM/" target="_blank" rel="noopener">Opinie Google</a>
           </div>
@@ -562,7 +551,7 @@
           <div class="nap" aria-label="Kontakt">
             <div class="nap-row">
               <span class="nap-pill">🏷️ <strong>Auto Mikulski</strong></span>
-              <span class="nap-pill">📞 <a href="tel:517936676">517 936 676</a></span>
+              <span class="nap-pill">📞 <a href="tel:+48517936676">517 936 676</a></span>
               <span class="nap-pill">✉️ <a href="mailto:automikulski@gmail.com">automikulski@gmail.com</a></span>
             </div>
             <div class="nap-row">
@@ -587,7 +576,7 @@
             Auta do złomowania i nieodpalające — jak najbardziej.
           </p>
           <div class="service-actions" style="margin-top:14px;">
-            <a class="btn btn-primary btn-full" href="tel:517936676">Zadzwoń po wycenę</a>
+            <a class="btn btn-primary btn-full" href="tel:+48517936676">Zadzwoń po wycenę</a>
             <a class="btn btn-secondary btn-full" href="#kontakt">Napisz wiadomość</a>
           </div>
           <p class="hint">Tip: jeśli podasz VIN, często szybciej sprawdzę wersję i wyposażenie.</p>
@@ -617,7 +606,7 @@
               <li>odbiór auta z miejsca w Bytomiu</li>
             </ul>
             <div class="service-actions two">
-              <a class="btn btn-primary btn-full" href="tel:517936676">Zadzwoń</a>
+              <a class="btn btn-primary btn-full" href="tel:+48517936676">Zadzwoń</a>
               <a class="btn btn-secondary btn-full" href="../skup-aut-do-zlomowania-gliwice/">Zobacz też: Gliwice</a>
             </div>
           </article>
@@ -634,7 +623,7 @@
             </ul>
             <div class="service-actions two">
               <a class="btn btn-secondary btn-full" href="../skup-aut-uszkodzonych-gliwice/">Szczegóły usługi</a>
-              <a class="btn btn-primary btn-full" href="tel:517936676">Zadzwoń</a>
+              <a class="btn btn-primary btn-full" href="tel:+48517936676">Zadzwoń</a>
             </div>
           </article>
 
@@ -650,7 +639,7 @@
             </ul>
             <div class="service-actions two">
               <a class="btn btn-primary btn-full" href="#kontakt">Ustal odbiór</a>
-              <a class="btn btn-secondary btn-full" href="tel:517936676">Zadzwoń</a>
+              <a class="btn btn-secondary btn-full" href="tel:+48517936676">Zadzwoń</a>
             </div>
           </article>
         </div>
@@ -697,7 +686,7 @@
               Jeśli pasuje — ustalamy termin. Jeśli chcesz się zastanowić — spoko, bez ciśnienia.
             </p>
             <div class="service-actions" style="margin-top:12px;">
-              <a class="btn btn-primary btn-full" href="tel:517936676">Zadzwoń po wycenę</a>
+              <a class="btn btn-primary btn-full" href="tel:+48517936676">Zadzwoń po wycenę</a>
               <a class="btn btn-secondary btn-full" href="#opinie">Zobacz opinie</a>
             </div>
           </div>
@@ -713,23 +702,21 @@
       </div>
     </section>
 
-    <!-- LOKALNIE: BYTOM PRO -->
-    <section class="section" id="lokalnie" aria-label="Skup aut Bytom – treści lokalne PRO">
+    <!-- LOKALNIE -->
+    <section class="section" id="lokalnie" aria-label="Skup aut Bytom – lokalnie">
       <div class="container">
         <h2 class="section-title">Skup aut Bytom – lokalnie, konkretnie i pod realne sytuacje</h2>
         <p class="section-lead">
           Jeśli wpisujesz <strong>skup aut Bytom</strong>, <strong>skup aut do złomowania Bytom</strong> albo <strong>sprzedaż auta na złom Bytom</strong>,
-          to zwykle chodzi o jedną z trzech rzeczy: auto stoi i przeszkadza, naprawa jest nieopłacalna, albo chcesz sprzedać szybko bez ogłoszeń.
-          Poniżej masz treść “pod Bytom” — bez kopiuj-wklej.
+          to zwykle chodzi o: auto stoi i przeszkadza, naprawa jest nieopłacalna, albo chcesz sprzedać szybko bez ogłoszeń.
         </p>
 
         <div class="two-col">
           <article class="panel">
             <h3>Typowe przypadki w Bytomiu</h3>
             <p class="muted">
-              W Bytomiu najczęściej trafiają do mnie auta po długim postoju (stoją “od zawsze”), auta po stłuczkach parkingowych
-              oraz samochody z awarią skrzyni/silnika. Są też sytuacje rodzinne: auto po kimś, brak chęci inwestowania i temat ma zniknąć szybko.
-              Wtedy skup auta jest najkrótszą drogą.
+              Najczęściej trafiają do mnie auta po długim postoju, auta po stłuczkach parkingowych oraz samochody z awarią skrzyni/silnika.
+              Są też sytuacje rodzinne: auto po kimś, brak chęci inwestowania i temat ma zniknąć szybko. Wtedy skup auta to najkrótsza droga.
             </p>
             <ul class="service-list">
               <li>auto nie odpala / stoi długo bez jazdy</li>
@@ -738,88 +725,31 @@
               <li>brak przeglądu i brak sensu inwestowania</li>
               <li>auto do złomowania – kompletne lub z brakami</li>
             </ul>
-
-            <p class="muted" style="margin-top:12px;">
-              Jeżeli auto ma trafić “na złom”, a Ty chcesz to załatwić bez biegania — skup w Bytomiu działa najprościej: telefon → cena → odbiór.
-            </p>
           </article>
 
           <article class="panel">
             <h3>Bytom – dzielnice i odbiór z miejsca</h3>
             <p class="muted">
-              Odbiór auta z miejsca w Bytomiu to standard. Najczęściej jeżdżę po odbiory w:
-              <strong>Centrum</strong>, <strong>Szombierki</strong>, <strong>Łagiewniki</strong>, <strong>Miechowice</strong>,
-              <strong>Stroszek</strong>, <strong>Rozbark</strong>, <strong>Karb</strong>.
-              Jeśli Twojej dzielnicy nie ma na liście — zadzwoń, powiesz gdzie stoi auto i ustalimy logistykę.
+              Odbiór auta z miejsca w Bytomiu to standard. Najczęściej: <strong>Centrum</strong>, <strong>Szombierki</strong>, <strong>Łagiewniki</strong>,
+              <strong>Miechowice</strong>, <strong>Stroszek</strong>, <strong>Rozbark</strong>, <strong>Karb</strong>.
+              Jeśli Twojej dzielnicy nie ma na liście — zadzwoń i ustalimy logistykę.
             </p>
-            <p class="muted" style="margin-top:10px;">
-              Auto na parkingu pod blokiem? W garażu? Na ciasnym podjeździe? Da się to ogarnąć — ważne, żeby w rozmowie powiedzieć jak stoi auto
-              i czy jest dostęp. Wtedy odbiór jest szybki i bez stresu.
-            </p>
-
             <p class="muted" style="margin-top:12px;">
               Szukasz też sąsiednich miast? Zobacz:
               <a href="../zabrze/" style="text-decoration:underline;text-underline-offset:3px;">skup aut Zabrze</a> oraz
               <a href="../ruda-slaska/" style="text-decoration:underline;text-underline-offset:3px;">skup aut Ruda Śląska</a>.
             </p>
           </article>
-
-          <article class="panel" style="grid-column: 1 / -1;">
-            <h3>Skup aut do złomowania Bytom – co wpływa na cenę?</h3>
-            <p class="muted">
-              Cena przy skupie aut do złomowania w Bytomiu zależy od kilku prostych rzeczy. Największe różnice robi:
-              kompletność auta (czy ma koła, katalizator, wnętrze), rocznik, marka oraz stan (czy odpala, czy jest po kolizji).
-              Jedno auto “na złom” to realnie coś innego niż drugie — dlatego najuczciwiej wycenić to po krótkiej rozmowie.
-            </p>
-            <p class="muted" style="margin-top:10px;">
-              Żeby wycena była szybka: powiedz markę/model, rocznik, czy auto odpala, co jest uszkodzone i gdzie stoi w Bytomiu.
-              Jeśli masz VIN — ekstra, ale nie jest to wymagane. W wielu przypadkach cena pada w trakcie rozmowy.
-            </p>
-          </article>
-        </div>
-
-        <!-- LONG-TAIL “KILLERS” -->
-        <div class="panel" style="margin-top:18px;">
-          <h3>Skup aut do złomowania Bytom – kiedy to najlepsza opcja?</h3>
-          <p class="muted">
-            Gdy auto ma kosztować więcej w naprawie niż jest warte, a do tego stoi i zabiera miejsce — decyzja jest prosta.
-            Wtedy ludzie wpisują “<strong>auto na złom Bytom</strong>”, “<strong>oddać auto na złom Bytom</strong>” albo “<strong>sprzedaż auta do złomowania Bytom</strong>”.
-            W takich sytuacjach nie chodzi o idealną sprzedaż, tylko o szybkie rozwiązanie: konkretna cena, odbiór z miejsca i formalności na miejscu.
-            Najczęściej dotyczy to aut starych, po awarii skrzyni/silnika, po długim postoju, albo po kolizjach parkingowych.
-          </p>
         </div>
 
         <div class="panel" style="margin-top:18px;">
-          <h3>Skup aut z Bytomia – auta prywatne i firmowe</h3>
+          <h3>Skup aut do złomowania Bytom – co wpływa na cenę?</h3>
           <p class="muted">
-            Skupuję zarówno auta prywatne, jak i samochody firmowe. Jeśli masz auto “po firmie”, z floty albo po działalności i chcesz je sprzedać szybko,
-            po prostu powiedz o tym w rozmowie. W praktyce: ustalamy cenę, miejsce odbioru w Bytomiu, a formalności dopasowujemy do sytuacji.
-            Wiele osób szuka “<strong>skup aut firmowych Bytom</strong>” lub “<strong>sprzedaż auta po firmie Bytom</strong>” — i tu też liczy się szybkość i konkret.
-          </p>
-        </div>
-
-        <div class="panel" style="margin-top:18px;">
-          <h3>Dlaczego lokalny skup aut w Bytomiu jest lepszy niż “ogólnopolskie serwisy”?</h3>
-          <p class="muted">
-            Ogólnopolskie serwisy często działają “po schemacie”: formularz, oddzwonimy, wyślij zdjęcia, poczekaj.
-            Lokalnie jest prościej: znasz numer, dzwonisz, dostajesz konkrety i umawiasz odbiór.
-            Jeśli potrzebujesz <strong>skupu aut z dojazdem w Bytomiu</strong>, to właśnie o to chodzi — ma być szybko, bez lawirowania i bez straty czasu.
-            Dlatego ludzie wybierają <strong>lokalny skup aut Bytom</strong>, gdy auto jest do złomowania albo jest uszkodzone.
-          </p>
-        </div>
-
-        <div class="panel" style="margin-top:18px;">
-          <h3>Dlaczego ludzie w Bytomiu wybierają skup zamiast ogłoszeń?</h3>
-          <p class="muted">
-            Ogłoszenia są OK, gdy auto jest sprawne i “idzie w świat”. Ale jeśli masz auto po kolizji, do złomowania albo nieodpalające, zaczyna się:
-            dziesiątki wiadomości, pytania, negocjacje, oględziny i “a może jeszcze pan zjedzie”.
-            Skup aut w Bytomiu to skrót: jeden telefon, konkretna cena, odbiór auta z miejsca i temat zamknięty.
-          </p>
-          <p class="muted" style="margin-top:10px;">
-            Jeśli zależy Ci na czasie i nie chcesz robić z tego projektu życia — zadzwoń i załatwimy to po ludzku.
+            Największe różnice robi kompletność (koła, katalizator, wnętrze), rocznik, marka i stan (czy odpala, czy jest po kolizji).
+            Najuczciwiej wycenić to po krótkiej rozmowie: marka/model, rocznik, stan, gdzie stoi w Bytomiu.
           </p>
           <div class="service-actions two" style="margin-top:14px;">
-            <a class="btn btn-primary btn-full" href="tel:517936676">Zadzwoń: 517 936 676</a>
+            <a class="btn btn-primary btn-full" href="tel:+48517936676">Zadzwoń: 517 936 676</a>
             <a class="btn btn-secondary btn-full" href="#kontakt">Napisz wiadomość</a>
           </div>
         </div>
@@ -832,7 +762,7 @@
         <div class="reviews-wrap">
           <h2 class="section-title" style="margin-bottom:10px;">Opinie klientów z Bytomia i okolic (Google)</h2>
           <p class="section-lead" style="margin-bottom:0;">
-            Kilka krótkich opinii z wizytówki <strong>Auto Mikulski</strong>. Najczęściej klienci chwalą: kontakt, punktualność i szybkie formalności na miejscu.
+            Kilka krótkich opinii z wizytówki <strong>Auto Mikulski</strong>. Najczęściej: kontakt, punktualność i szybkie formalności.
           </p>
 
           <div class="review-grid" role="list">
@@ -886,12 +816,12 @@
           </div>
 
           <p class="note-line">
-            Większość zleceń w Bytomiu dotyczy aut do złomowania, nieodpalających lub po kolizjach parkingowych — dokładnie takich sytuacji, jakie opisują klienci w opiniach.
+            W Bytomiu najczęściej chodzi o auta do złomowania, nieodpalające lub po kolizjach — dlatego działa to tak szybko.
           </p>
 
           <div class="review-actions" role="group" aria-label="Akcje opinii">
             <a class="btn btn-primary" href="https://g.page/r/CYCFfoC-NJDsEBM/" target="_blank" rel="noopener">Zobacz wszystkie opinie w Google</a>
-            <a class="btn btn-secondary" href="tel:517936676">Zadzwoń po wycenę</a>
+            <a class="btn btn-secondary" href="tel:+48517936676">Zadzwoń po wycenę</a>
           </div>
         </div>
       </div>
@@ -902,7 +832,7 @@
       <div class="container">
         <h2 class="section-title">FAQ – Skup aut Bytom</h2>
         <p class="section-lead">
-          Najczęstsze pytania od osób z Bytomia. Jeśli masz nietypową sytuację — zadzwoń, powiesz jak jest i dobierzemy rozwiązanie.
+          Najczęstsze pytania od osób z Bytomia. Jeśli masz nietypową sytuację — zadzwoń.
         </p>
 
         <div class="faq">
@@ -917,43 +847,28 @@
           <details class="faq-item">
             <summary>Ile trwa wycena auta w Bytomiu?</summary>
             <div class="faq-body">
-              Wycena telefoniczna zwykle trwa ok. 2 minuty. Wystarczy marka/model, rocznik, krótki opis stanu/uszkodzeń i lokalizacja odbioru (dzielnica Bytomia).
+              Zwykle ok. 2 minuty: marka/model, rocznik, krótki opis stanu/uszkodzeń i dzielnica Bytomia.
             </div>
           </details>
 
           <details class="faq-item">
             <summary>Czy odbierasz auta z dzielnic Bytomia (Szombierki, Łagiewniki, Miechowice)?</summary>
             <div class="faq-body">
-              Tak. Odbieram auta z całego Bytomia: Centrum, Szombierki, Łagiewniki, Miechowice, Stroszek, Rozbark, Karb i inne okolice.
-              Jeśli Twojej dzielnicy nie ma na liście — zadzwoń, ustalimy odbiór.
+              Tak. Odbieram auta z całego Bytomia: Centrum, Szombierki, Łagiewniki, Miechowice, Stroszek, Rozbark, Karb i okolice.
             </div>
           </details>
 
           <details class="faq-item">
             <summary>Czy mogę sprzedać auto nieodpalające lub po długim postoju?</summary>
             <div class="faq-body">
-              Tak. Skupuję auta nieodpalające i po długim postoju. Jeśli auto stoi pod blokiem, w garażu lub na parkingu — ustalamy szczegóły telefonicznie i organizuję odbiór.
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary>Czy skupujesz auta po kolizji parkingowej w Bytomiu?</summary>
-            <div class="faq-body">
-              Tak. Skupuję auta po stłuczkach parkingowych i po większych kolizjach. Podasz krótki opis szkody — dostaniesz wstępną wycenę i ustalimy odbiór z miejsca.
+              Tak. Skupuję auta nieodpalające i po długim postoju. Ustalamy szczegóły telefonicznie i organizuję odbiór z miejsca.
             </div>
           </details>
 
           <details class="faq-item">
             <summary>Jakie dokumenty są potrzebne do sprzedaży auta?</summary>
             <div class="faq-body">
-              Najczęściej wystarczy dowód rejestracyjny i dokument tożsamości właściciela. W nietypowych sytuacjach (współwłasność, brak przeglądu, auto po postoju) — powiedz o tym w rozmowie.
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary>Czy skupujesz auta firmowe w Bytomiu?</summary>
-            <div class="faq-body">
-              Tak. Skupuję także auta firmowe. Najlepiej zadzwonić i powiedzieć, czy auto jest prywatne czy firmowe — dopasujemy formalności.
+              Najczęściej dowód rejestracyjny i dokument tożsamości właściciela. W nietypowych sytuacjach — powiedz w rozmowie.
             </div>
           </details>
         </div>
@@ -966,7 +881,7 @@
         <div class="panel">
           <h3>Obsługiwane miasta na Śląsku</h3>
           <p class="muted">
-            Oprócz Bytomia obsługuję też inne miasta. Zobacz lokalne podstrony:
+            Zobacz lokalne podstrony:
             <a href="../zabrze/" style="text-decoration:underline;text-underline-offset:3px;">Zabrze</a>,
             <a href="../ruda-slaska/" style="text-decoration:underline;text-underline-offset:3px;">Ruda Śląska</a>,
             <a href="../knurow/" style="text-decoration:underline;text-underline-offset:3px;">Knurów</a>,
@@ -974,13 +889,13 @@
             <a href="../" style="text-decoration:underline;text-underline-offset:3px;">Gliwice</a>.
           </p>
           <p class="muted" style="margin-top:10px;">
-            Szukasz tematu ogólnie? Zobacz też:
+            Zobacz też:
             <a href="../skup-aut-do-zlomowania-gliwice/" style="text-decoration:underline;text-underline-offset:3px;">skup aut do złomowania</a>
             oraz
             <a href="../skup-aut-uszkodzonych-gliwice/" style="text-decoration:underline;text-underline-offset:3px;">skup aut uszkodzonych</a>.
           </p>
           <div class="service-actions two" style="margin-top:14px;">
-            <a class="btn btn-primary btn-full" href="tel:517936676">Zadzwoń</a>
+            <a class="btn btn-primary btn-full" href="tel:+48517936676">Zadzwoń</a>
             <a class="btn btn-secondary btn-full" href="../">Wróć na stronę główną</a>
           </div>
         </div>
@@ -999,14 +914,14 @@
           <article class="panel">
             <h3>📞 Telefon</h3>
             <p style="font-size:1.25rem;font-weight:950;margin:0 0 8px;">
-              <a href="tel:517936676" style="text-decoration:underline;text-underline-offset:3px;">517 936 676</a>
+              <a href="tel:+48517936676" style="text-decoration:underline;text-underline-offset:3px;">517 936 676</a>
             </p>
             <p class="muted">Skup aut do złomowania • auta uszkodzone • odbiór z miejsca • Bytom i okolice.</p>
             <div class="service-actions" style="margin-top:12px;">
-              <a class="btn btn-primary btn-full" href="tel:517936676">Zadzwoń teraz</a>
-              <a class="btn btn-secondary btn-full" href="sms:517936676">Wyślij SMS</a>
+              <a class="btn btn-primary btn-full" href="tel:+48517936676">Zadzwoń teraz</a>
+              <a class="btn btn-secondary btn-full" href="sms:+48517936676">Wyślij SMS</a>
             </div>
-            <p class="hint">Jeśli możesz: powiedz markę/model, rocznik, stan (np. “nie odpala”), i dzielnicę Bytomia.</p>
+            <p class="hint">Jeśli możesz: marka/model, rocznik, stan (np. “nie odpala”) i dzielnica Bytomia.</p>
           </article>
 
           <article class="panel">
@@ -1036,27 +951,26 @@
       </div>
     </section>
 
-    <footer class="site-footer">
-      <div class="container footer-inner">
-        <div><strong>Auto Mikulski</strong> — Skup aut Bytom i Śląsk • Tel. <a href="tel:517936676" style="text-decoration:underline;text-underline-offset:3px;">517 936 676</a></div>
-        <div style="color:rgba(238,240,255,.62);">Umowa kupna–sprzedaży • Odbiór z miejsca • Auta do złomowania • Auta uszkodzone • Auta nieodpalające</div>
-
-        <div class="footer-keywords">
-          frazy: skup aut bytom, skup aut do złomowania bytom, auto na złom bytom, sprzedaż auta na złom bytom, skup aut uszkodzonych bytom,
-          skup aut powypadkowych bytom, skup aut nieodpalających bytom, odbiór auta z miejsca bytom, skup samochodów bytom, skup aut śląsk
-        </div>
-      </div>
-    </footer>
   </main>
 
-  <!-- Mobile sticky CTA -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div><strong>Auto Mikulski</strong> — Skup aut Bytom i Śląsk • Tel. <a href="tel:+48517936676" style="text-decoration:underline;text-underline-offset:3px;">517 936 676</a></div>
+      <div style="color:rgba(238,240,255,.62);">Umowa kupna–sprzedaży • Odbiór z miejsca • Auta do złomowania • Auta uszkodzone • Auta nieodpalające</div>
+
+      <div class="footer-keywords">
+        frazy: skup aut bytom, skup aut do złomowania bytom, auto na złom bytom, sprzedaż auta na złom bytom, skup aut uszkodzonych bytom,
+        skup aut powypadkowych bytom, skup aut nieodpalających bytom, odbiór auta z miejsca bytom, skup samochodów bytom, skup aut śląsk
+      </div>
+    </div>
+  </footer>
+
   <div class="mobile-cta" role="navigation" aria-label="Szybkie akcje">
-    <a class="mobile-cta-btn primary" href="tel:517936676">Zadzwoń</a>
+    <a class="mobile-cta-btn primary" href="tel:+48517936676">Zadzwoń</a>
     <a class="mobile-cta-btn secondary" href="#kontakt">Wycena</a>
   </div>
 
   <script>
-    // Mailto generator
     (function(){
       const btn = document.getElementById('sendMailBtn');
       if(!btn) return;
