@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
     <loc>https://automikulski.pl/</loc>
@@ -8,7 +8,6 @@
     <priority>1.0</priority>
   </url>
 
-  <!-- Podstrony usług (SKUP) -->
   <url>
     <loc>https://automikulski.pl/skup-aut-do-zlomowania-gliwice/</loc>
     <lastmod>2026-02-04</lastmod>
@@ -23,7 +22,6 @@
     <priority>0.9</priority>
   </url>
 
-  <!-- Miasta -->
   <url>
     <loc>https://automikulski.pl/zabrze/</loc>
     <lastmod>2026-02-04</lastmod>
