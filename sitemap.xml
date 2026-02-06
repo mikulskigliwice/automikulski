@@ -1,63 +1,105 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- Strona główna -->
+  <!-- STRONA GŁÓWNA -->
   <url>
     <loc>https://automikulski.pl/</loc>
     <lastmod>2026-02-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <changefreq>daily</changefreq>
+    <priority>1.00</priority>
   </url>
 
-  <!-- Podstrony usług (z Twoich linków + JSON-LD Service) -->
+  <!-- USŁUGI -->
+  <url>
+    <loc>https://automikulski.pl/pomoc-drogowa-laweta-gliwice/</loc>
+    <lastmod>2026-02-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
   <url>
     <loc>https://automikulski.pl/skup-aut-do-zlomowania-gliwice/</loc>
     <lastmod>2026-02-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
   </url>
 
   <url>
     <loc>https://automikulski.pl/skup-aut-uszkodzonych-gliwice/</loc>
     <lastmod>2026-02-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
   </url>
 
-  <!-- Podstrony miast (z sekcji "Miasta") -->
+  <!-- MIASTA -->
   <url>
-    <loc>https://automikulski.pl/skup-aut-zabrze/</loc>
+    <loc>https://automikulski.pl/skup-aut-bytom/</loc>
     <lastmod>2026-02-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
   </url>
 
   <url>
-    <loc>https://automikulski.pl/skup-aut-pyskowice/</loc>
+    <loc>https://automikulski.pl/skup-aut-chorzow/</loc>
     <lastmod>2026-02-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://automikulski.pl/skup-aut-katowice/</loc>
+    <lastmod>2026-02-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
   </url>
 
   <url>
     <loc>https://automikulski.pl/skup-aut-knurow/</loc>
     <lastmod>2026-02-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://automikulski.pl/skup-aut-pyskowice/</loc>
+    <lastmod>2026-02-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
   </url>
 
   <url>
     <loc>https://automikulski.pl/skup-aut-ruda-slaska/</loc>
     <lastmod>2026-02-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
   </url>
 
   <url>
-    <loc>https://automikulski.pl/skup-aut-bytom/</loc>
+    <loc>https://automikulski.pl/skup-aut-siemianowice-slaskie/</loc>
     <lastmod>2026-02-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://automikulski.pl/skup-aut-swietochlowice/</loc>
+    <lastmod>2026-02-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://automikulski.pl/skup-aut-tarnowskie-gory/</loc>
+    <lastmod>2026-02-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://automikulski.pl/skup-aut-zabrze/</loc>
+    <lastmod>2026-02-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
   </url>
 
 </urlset>
