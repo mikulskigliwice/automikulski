@@ -1,1 +1,823 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#0b1226" />
+
+  <!-- PRIMARY SEO -->
+  <title>Holowanie Gliwice 24/7 – Laweta i pomoc drogowa | HOLMET (Holmech) Jarosław Stachowski</title>
+  <meta name="description" content="Holowanie aut Gliwice 24/7. Laweta, pomoc drogowa, awaryjne uruchomienie, wymiana koła, dowóz paliwa, wyciąganie z rowu. Holmet (Holmech) Jarosław Stachowski – Rybnicka 138, Gliwice. Zadzwoń: +48 509 922 212." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+
+  <!-- CANONICAL (PODMIEN URL) -->
+  <link rel="canonical" href="https://example.github.io/holmet/" />
+
+  <!-- OPEN GRAPH -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Holowanie Gliwice 24/7 – Laweta i pomoc drogowa | Holmet (Holmech)" />
+  <meta property="og:description" content="Szybka pomoc drogowa w Gliwicach i okolicy: laweta, holowanie, awaria, kolizja, wymiana koła, dowóz paliwa. Tel. +48 509 922 212." />
+  <meta property="og:url" content="https://example.github.io/holmet/" />
+  <meta property="og:locale" content="pl_PL" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Holowanie Gliwice 24/7 – Laweta i pomoc drogowa | Holmet (Holmech)" />
+  <meta name="twitter:description" content="Laweta i holowanie aut w Gliwicach 24/7. Tel. +48 509 922 212." />
+
+  <!-- Local keywords (bez przesady w meta keywords, ale daję “pakiet” bo prosiłeś) -->
+  <meta name="keywords" content="holowanie Gliwice, laweta Gliwice, pomoc drogowa Gliwice, auto laweta Gliwice, holownik Gliwice, transport samochodu Gliwice, holowanie 24h Gliwice, pomoc drogowa 24/7 Gliwice, laweta 24h Gliwice, holowanie aut osobowych Gliwice, holowanie busów Gliwice, holowanie SUV Gliwice, holowanie po wypadku Gliwice, holowanie po kolizji Gliwice, awaryjne uruchomienie Gliwice, dowóz paliwa Gliwice, wymiana koła Gliwice, odpalanie z kabli Gliwice, wyciąganie z rowu Gliwice, pomoc na A4 Gliwice, pomoc na DTŚ Gliwice, pomoc na DK88 Gliwice, holowanie Trynek, holowanie Sośnica, holowanie Łabędy, holowanie Czechowice, holowanie Sikornik, holowanie Śródmieście Gliwice" />
+
+  <!-- PERFORMANCE: preconnect (jeśli kiedyś dodasz fonty/analytics) -->
+  <link rel="preconnect" href="https://www.google.com" crossorigin>
+
+  <!-- BASIC A11Y -->
+  <meta name="color-scheme" content="dark light" />
+
+  <style>
+    :root{
+      --bg:#070a14;
+      --panel:#0b1226;
+      --panel2:#0e1731;
+      --text:#eaf0ff;
+      --muted:#b9c3df;
+      --muted2:#8fa0c6;
+      --line:rgba(255,255,255,.10);
+      --accent:#7aa6ff;
+      --accent2:#7dffcb;
+      --warn:#ffcf5a;
+      --shadow: 0 12px 36px rgba(0,0,0,.45);
+      --radius:18px;
+      --radius2:24px;
+      --max:1140px;
+      --pad: clamp(16px, 3vw, 26px);
+      --h1: clamp(32px, 4.6vw, 54px);
+      --h2: clamp(22px, 2.6vw, 32px);
+      --h3: clamp(18px, 2.2vw, 22px);
+    }
+
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+      background:
+        radial-gradient(1200px 700px at 10% 10%, rgba(122,166,255,.18), transparent 55%),
+        radial-gradient(1000px 700px at 90% 0%, rgba(125,255,203,.12), transparent 50%),
+        radial-gradient(1200px 900px at 50% 120%, rgba(255,207,90,.10), transparent 55%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
+    a{ color:inherit; text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+    .container{ max-width:var(--max); margin:0 auto; padding:0 var(--pad); }
+
+    /* Top bar */
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background: rgba(7,10,20,.65);
+      border-bottom:1px solid var(--line);
+    }
+    .topbar .row{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px; padding: 12px 0;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+    }
+    .logo{
+      width:40px; height:40px; border-radius:14px;
+      background: linear-gradient(135deg, rgba(122,166,255,.95), rgba(125,255,203,.85));
+      box-shadow: 0 10px 30px rgba(122,166,255,.22);
+      display:grid; place-items:center;
+      color:#081023; font-weight:900;
+    }
+    .brand strong{ letter-spacing:.3px; }
+    .brand small{ display:block; color:var(--muted2); margin-top:2px; }
+
+    nav{
+      display:flex; gap:14px; flex-wrap:wrap; justify-content:flex-end;
+      color:var(--muted);
+      font-weight:650;
+    }
+    nav a{ padding:8px 10px; border-radius:12px; }
+    nav a:hover{ background: rgba(255,255,255,.06); text-decoration:none; }
+
+    .cta{
+      display:flex; gap:10px; align-items:center; flex-wrap:wrap; justify-content:flex-end;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding: 12px 14px; border-radius: 14px;
+      border:1px solid rgba(122,166,255,.30);
+      background: rgba(14,23,49,.62);
+      color:var(--text);
+      font-weight:850;
+      box-shadow: var(--shadow);
+      text-decoration:none !important;
+      transition: transform .12s ease, background .12s ease;
+      white-space:nowrap;
+    }
+    .btn:hover{ transform: translateY(-1px); background: rgba(14,23,49,.78); }
+    .btn.primary{
+      border-color: rgba(125,255,203,.35);
+      background: linear-gradient(135deg, rgba(122,166,255,.92), rgba(125,255,203,.78));
+      color:#071021;
+      box-shadow: 0 16px 40px rgba(122,166,255,.22);
+    }
+    .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 6px 10px; border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      color:var(--muted);
+      font-weight:700; font-size:13px;
+    }
+
+    /* Hero */
+    header.hero{
+      padding: clamp(28px, 5vw, 54px) 0 18px;
+    }
+    .hero-grid{
+      display:grid; grid-template-columns: 1.25fr .75fr;
+      gap: 18px;
+      align-items:stretch;
+    }
+    .card{
+      border:1px solid var(--line);
+      background: linear-gradient(180deg, rgba(11,18,38,.78), rgba(11,18,38,.55));
+      border-radius: var(--radius2);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .hero-main{ padding: 26px; }
+    .kicker{
+      display:flex; flex-wrap:wrap; gap:10px; margin-bottom:14px;
+    }
+    h1{
+      font-size: var(--h1);
+      line-height:1.05;
+      margin: 0 0 12px;
+      letter-spacing:-.4px;
+    }
+    .lead{
+      color: var(--muted);
+      font-size: clamp(16px, 1.3vw, 18px);
+      margin: 0 0 18px;
+    }
+    .hero-actions{
+      display:flex; flex-wrap:wrap; gap:10px; align-items:center;
+      margin-top: 12px;
+    }
+    .hero-actions .btn{ box-shadow:none; }
+    .hero-actions .btn.primary{ box-shadow: 0 14px 34px rgba(122,166,255,.20); }
+
+    .hero-aside{
+      padding: 18px;
+      display:grid;
+      gap:12px;
+      grid-auto-rows: min-content;
+    }
+    .mini{
+      padding:14px;
+      border-radius: 16px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(14,23,49,.48);
+    }
+    .mini strong{ display:block; margin-bottom:6px; }
+    .mini p{ margin:0; color:var(--muted); font-size:14px; }
+    .mini a{ color: var(--accent2); font-weight:800; }
+    .mini .line{ height:1px; background: rgba(255,255,255,.10); margin:12px 0; }
+
+    /* Sections */
+    section{ padding: 18px 0; }
+    .section-title{
+      display:flex; align-items:flex-end; justify-content:space-between; gap:14px;
+      margin: 10px 0 12px;
+    }
+    .section-title h2{ margin:0; font-size: var(--h2); }
+    .section-title p{ margin:0; color:var(--muted2); max-width: 62ch; }
+
+    .grid3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .grid2{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .tile{
+      padding: 18px;
+      border-radius: var(--radius);
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(14,23,49,.52);
+    }
+    .tile h3{ margin: 0 0 8px; font-size: var(--h3); }
+    .tile p{ margin:0; color:var(--muted); }
+    .tile ul{ margin:10px 0 0; padding-left:18px; color: var(--muted); }
+    .tile li{ margin: 6px 0; }
+
+    .split{
+      display:grid; grid-template-columns: 1.05fr .95fr; gap:14px;
+      align-items:start;
+    }
+
+    .prose{
+      padding: 22px;
+      border-radius: var(--radius2);
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(11,18,38,.62);
+    }
+    .prose h2{ margin-top:0; }
+    .prose h3{ margin: 18px 0 8px; }
+    .prose p{ color: var(--muted); margin: 10px 0; }
+    .prose .note{
+      border-left:3px solid rgba(125,255,203,.55);
+      padding: 10px 12px;
+      margin: 12px 0;
+      background: rgba(125,255,203,.06);
+      border-radius: 12px;
+      color: var(--muted);
+    }
+
+    /* FAQ */
+    details{
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(14,23,49,.52);
+      border-radius: 16px;
+      padding: 14px 14px;
+      margin: 10px 0;
+    }
+    summary{
+      cursor:pointer;
+      font-weight:900;
+      list-style:none;
+    }
+    summary::-webkit-details-marker{ display:none; }
+    details p{ margin: 10px 0 0; color: var(--muted); }
+
+    /* Footer */
+    footer{
+      padding: 26px 0 40px;
+      border-top:1px solid var(--line);
+      margin-top: 18px;
+      color: var(--muted2);
+    }
+    .footgrid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:14px;
+    }
+    .footgrid .tile{ background: rgba(14,23,49,.40); }
+    .small{ font-size: 13px; color: var(--muted2); }
+    .hr{ height:1px; background: rgba(255,255,255,.10); margin: 14px 0; }
+
+    /* Sticky call on mobile */
+    .sticky-call{
+      position:fixed;
+      left: 12px; right: 12px; bottom: 12px;
+      display:none;
+      z-index: 90;
+    }
+    .sticky-call .btn{
+      width:100%;
+      padding: 14px 16px;
+      border-radius: 16px;
+    }
+
+    /* To top */
+    .to-top{
+      position: fixed; right: 14px; bottom: 86px;
+      width: 46px; height: 46px; border-radius: 999px;
+      display:flex; align-items:center; justify-content:center;
+      background: rgba(14,22,48,.62); border: 1px solid rgba(115,130,255,.34);
+      box-shadow: var(--shadow); color: var(--text); font-weight: 950;
+      cursor: pointer; opacity: 0; transform: translateY(10px);
+      pointer-events: none; transition: .2s ease; z-index: 81;
+    }
+    .to-top.show{ opacity: 1; transform: none; pointer-events: auto; }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      nav{ display:none; }
+      .hero-grid{ grid-template-columns: 1fr; }
+      .grid3{ grid-template-columns: 1fr; }
+      .grid2{ grid-template-columns: 1fr; }
+      .split{ grid-template-columns: 1fr; }
+      .sticky-call{ display:block; }
+    }
+  </style>
+
+  <!-- JSON-LD: Organization + LocalBusiness + AutoRepair + Service + FAQ + Breadcrumb -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"WebSite",
+        "@id":"https://example.github.io/holmet/#website",
+        "url":"https://example.github.io/holmet/",
+        "name":"Holmet (Holmech) – holowanie i pomoc drogowa Gliwice",
+        "inLanguage":"pl-PL"
+      },
+      {
+        "@type":"WebPage",
+        "@id":"https://example.github.io/holmet/#webpage",
+        "url":"https://example.github.io/holmet/",
+        "name":"Holowanie Gliwice 24/7 – Laweta i pomoc drogowa | Holmet (Holmech)",
+        "isPartOf":{"@id":"https://example.github.io/holmet/#website"},
+        "inLanguage":"pl-PL",
+        "about":{"@id":"https://example.github.io/holmet/#localbusiness"},
+        "breadcrumb":{"@id":"https://example.github.io/holmet/#breadcrumb"}
+      },
+      {
+        "@type":"BreadcrumbList",
+        "@id":"https://example.github.io/holmet/#breadcrumb",
+        "itemListElement":[
+          {"@type":"ListItem","position":1,"name":"Strona główna","item":"https://example.github.io/holmet/"},
+          {"@type":"ListItem","position":2,"name":"Holowanie Gliwice 24/7"}
+        ]
+      },
+      {
+        "@type":["LocalBusiness","AutoRepair"],
+        "@id":"https://example.github.io/holmet/#localbusiness",
+        "name":"HOLMET (Holmech) Jarosław Stachowski – holowanie i pomoc drogowa",
+        "description":"Holowanie, laweta i pomoc drogowa 24/7 w Gliwicach i okolicy. Awaria, kolizja, dowóz paliwa, wymiana koła, awaryjne uruchomienie, transport auta.",
+        "telephone":"+48 509 922 212",
+        "taxID":"6311897478",
+        "address":{
+          "@type":"PostalAddress",
+          "streetAddress":"Rybnicka 138",
+          "postalCode":"44-100",
+          "addressLocality":"Gliwice",
+          "addressRegion":"Śląskie",
+          "addressCountry":"PL"
+        },
+        "areaServed":[
+          {"@type":"City","name":"Gliwice"},
+          {"@type":"AdministrativeArea","name":"Powiat gliwicki"},
+          {"@type":"AdministrativeArea","name":"Województwo śląskie"}
+        ],
+        "keywords":[
+          "holowanie Gliwice","laweta Gliwice","pomoc drogowa Gliwice","holowanie 24h Gliwice","laweta 24/7 Gliwice",
+          "awaryjne uruchomienie Gliwice","dowóz paliwa Gliwice","wymiana koła Gliwice","transport auta Gliwice",
+          "holowanie po wypadku Gliwice","pomoc drogowa A4 Gliwice","pomoc drogowa DK88 Gliwice","pomoc drogowa DTŚ Gliwice"
+        ],
+        "makesOffer":[
+          {
+            "@type":"Offer",
+            "name":"Holowanie / laweta 24/7 – Gliwice",
+            "availability":"https://schema.org/InStock",
+            "areaServed":"Gliwice"
+          },
+          {
+            "@type":"Offer",
+            "name":"Pomoc drogowa – awaryjne uruchomienie, koło, paliwo",
+            "availability":"https://schema.org/InStock",
+            "areaServed":"Gliwice"
+          }
+        ]
+      },
+      {
+        "@type":"Service",
+        "@id":"https://example.github.io/holmet/#service-holowanie",
+        "serviceType":"Holowanie i transport pojazdów",
+        "provider":{"@id":"https://example.github.io/holmet/#localbusiness"},
+        "areaServed":{"@type":"City","name":"Gliwice"},
+        "inLanguage":"pl-PL"
+      },
+      {
+        "@type":"FAQPage",
+        "@id":"https://example.github.io/holmet/#faq",
+        "mainEntity":[
+          {
+            "@type":"Question",
+            "name":"Jak szybko dojeżdża laweta w Gliwicach?",
+            "acceptedAnswer":{"@type":"Answer","text":"Czas dojazdu zależy od miejsca zdarzenia (Gliwice, dzielnice, A4, DK88, DTŚ) i warunków na drodze. Najlepiej zadzwonić – powiesz lokalizację, a ustalimy realny czas dojazdu."}
+          },
+          {
+            "@type":"Question",
+            "name":"Czy holujecie auta po kolizji / wypadku?",
+            "acceptedAnswer":{"@type":"Answer","text":"Tak – realizujemy holowanie po kolizji lub wypadku, transport z miejsca zdarzenia, zjazdy z A4/DK88/DTŚ, a także przewóz na warsztat, parking lub pod dom."}
+          },
+          {
+            "@type":"Question",
+            "name":"Czy robicie pomoc drogową bez holowania?",
+            "acceptedAnswer":{"@type":"Answer","text":"Tak – w ramach pomocy drogowej wykonujemy m.in. awaryjne uruchomienie (odpalanie), dowóz paliwa, wymianę koła, pomoc przy rozładowanym akumulatorze, podstawowe wsparcie na miejscu."}
+          },
+          {
+            "@type":"Question",
+            "name":"Jak zamówić holowanie w Gliwicach?",
+            "acceptedAnswer":{"@type":"Answer","text":"Zadzwoń pod +48 509 922 212. Podaj: lokalizację (ulica / punkt), co się stało, typ auta (osobowe/bus), czy auto jest na kołach, oraz gdzie ma trafić."}
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <div class="topbar" role="banner">
+    <div class="container">
+      <div class="row">
+        <div class="brand" aria-label="Holmet Holowanie Gliwice">
+          <div class="logo" aria-hidden="true">H</div>
+          <div>
+            <strong>HOLMET / Holmech – Jarosław Stachowski</strong>
+            <small>Holowanie • Laweta • Pomoc drogowa Gliwice 24/7</small>
+          </div>
+        </div>
+
+        <nav aria-label="Nawigacja">
+          <a href="#uslugi">Usługi</a>
+          <a href="#obszar">Obszar</a>
+          <a href="#cennik">Jak liczymy</a>
+          <a href="#faq">FAQ</a>
+          <a href="#kontakt">Kontakt</a>
+        </nav>
+
+        <div class="cta">
+          <span class="badge" title="Działamy w Gliwicach i okolicy">Gliwice • A4 • DK88 • DTŚ</span>
+          <a class="btn primary" href="tel:+48509922212" aria-label="Zadzwoń: +48 509 922 212">Zadzwoń 509 922 212</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <header class="hero" id="top">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="card hero-main">
+          <div class="kicker">
+            <span class="badge">Holowanie 24/7</span>
+            <span class="badge">Laweta Gliwice</span>
+            <span class="badge">Pomoc drogowa</span>
+            <span class="badge">Trynek • Sośnica • Łabędy</span>
+          </div>
+
+          <h1>Holowanie Gliwice 24/7 – laweta i pomoc drogowa, kiedy liczy się czas</h1>
+          <p class="lead">
+            Potrzebujesz <strong>lawety w Gliwicach</strong> albo <strong>pomocy drogowej</strong> po awarii, kolizji lub wypadku?
+            HOLMET (Holmech) zapewnia holowanie aut osobowych, busów i dostawczych oraz usługi na miejscu:
+            odpalanie, wymiana koła, dowóz paliwa, pomoc przy akumulatorze.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn primary" href="tel:+48509922212">📞 Zadzwoń teraz: 509 922 212</a>
+            <a class="btn" href="#uslugi">Zobacz usługi</a>
+            <a class="btn" href="#kontakt">Dane firmy</a>
+          </div>
+
+          <div class="hr"></div>
+
+          <div class="grid3" aria-label="Szybkie korzyści">
+            <div class="tile">
+              <h3>Szybka organizacja lawety</h3>
+              <p>Holowanie w Gliwicach i okolicy – sprawnie ustalamy dojazd i miejsce docelowe (warsztat, parking, dom).</p>
+            </div>
+            <div class="tile">
+              <h3>Pomoc drogowa bez holowania</h3>
+              <p>Awaryjne uruchomienie, koło, paliwo, akumulator – często da się ruszyć dalej bez transportu.</p>
+            </div>
+            <div class="tile">
+              <h3>Lokalnie: dzielnice + trasy</h3>
+              <p>Gliwice: Trynek, Sośnica, Łabędy, Sikornik, Centrum, Czechowice – oraz A4, DK88, DTŚ.</p>
+            </div>
+          </div>
+        </div>
+
+        <aside class="card hero-aside" aria-label="Szybki kontakt i lokalizacja">
+          <div class="mini">
+            <strong>Kontakt 24/7</strong>
+            <p>Telefon: <a href="tel:+48509922212">+48 509 922 212</a></p>
+            <div class="line"></div>
+            <p class="small">Jeśli jesteś na trasie: podaj punkt (np. z mapy), kierunek jazdy i czy auto jest na kołach.</p>
+          </div>
+
+          <div class="mini">
+            <strong>Adres (Gliwice)</strong>
+            <p>Rybnicka 138, 44-100 Gliwice</p>
+            <p class="small">Dane firmowe wg publicznych źródeł: NIP 6311897478. :contentReference[oaicite:1]{index=1}</p>
+          </div>
+
+          <div class="mini">
+            <strong>Najczęstsze sytuacje</strong>
+            <p>Awaria na mieście • rozładowany akumulator • przebita opona • brak paliwa • kolizja • wypadek • auto nie odpala</p>
+          </div>
+
+          <div class="mini">
+            <strong>Obsługiwane pojazdy</strong>
+            <p>Osobowe • SUV • dostawcze • busy (zależnie od masy i warunków – ustalamy w rozmowie)</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" id="main" role="main">
+    <section id="uslugi" aria-label="Usługi holowania i pomocy drogowej">
+      <div class="section-title">
+        <h2>Usługi: holowanie, laweta, pomoc drogowa – Gliwice i okolice</h2>
+        <p>Pakiet usług pod najczęstsze awarie i zdarzenia drogowe. Dużo fraz jest wpisanych naturalnie (SEO lokalne).</p>
+      </div>
+
+      <div class="grid3">
+        <div class="tile">
+          <h3>Holowanie aut Gliwice</h3>
+          <p>
+            Holowanie samochodu osobowego, SUV, auta po kolizji i po wypadku.
+            Transport na warsztat, parking, pod dom lub w umówione miejsce.
+          </p>
+          <ul>
+            <li>holowanie po kolizji Gliwice</li>
+            <li>holowanie po wypadku Gliwice</li>
+            <li>transport auta niesprawnego Gliwice</li>
+            <li>zjazd z drogi / zabezpieczenie pojazdu</li>
+          </ul>
+        </div>
+
+        <div class="tile">
+          <h3>Laweta 24/7 Gliwice</h3>
+          <p>
+            Laweta całodobowo – pomoc na mieście, w dzielnicach i na trasach dojazdowych.
+            Jeśli stoisz na A4/DK88/DTŚ – liczy się szybka informacja o lokalizacji.
+          </p>
+          <ul>
+            <li>laweta Gliwice 24h</li>
+            <li>laweta A4 Gliwice</li>
+            <li>laweta DK88 Gliwice</li>
+            <li>laweta DTŚ Gliwice</li>
+          </ul>
+        </div>
+
+        <div class="tile">
+          <h3>Pomoc drogowa Gliwice</h3>
+          <p>
+            Nie zawsze trzeba holować. Często wystarczy szybka pomoc na miejscu: odpalanie, koło, paliwo, akumulator.
+          </p>
+          <ul>
+            <li>awaryjne uruchomienie Gliwice</li>
+            <li>odpalanie z kabli Gliwice</li>
+            <li>wymiana koła Gliwice</li>
+            <li>dowóz paliwa Gliwice</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="obszar" aria-label="Obszar działania i dzielnice">
+      <div class="split">
+        <div class="prose">
+          <h2>Obszar działania: Gliwice + dzielnice + okolica</h2>
+          <p>
+            Działamy w mieście Gliwice oraz w okolicy (powiat gliwicki / Śląsk). W praktyce realizujemy zgłoszenia
+            z dzielnic i osiedli, gdzie często pojawiają się awarie oraz kolizje w ruchu miejskim.
+          </p>
+
+          <h3>Dzielnice i osiedla (lokalne SEO)</h3>
+          <p class="note">
+            Jeśli wpisujesz w Google: „<strong>laweta Trynek</strong>”, „<strong>pomoc drogowa Sośnica</strong>”,
+            „<strong>holowanie Łabędy</strong>” – ta strona jest zrobiona tak, żeby te frazy miały sens w treści i nagłówkach.
+          </p>
+
+          <div class="grid2">
+            <div class="tile">
+              <h3>Gliwice – część zachodnia / południowa</h3>
+              <ul>
+                <li>Trynek – holowanie / pomoc drogowa / laweta</li>
+                <li>Sikornik – laweta 24/7</li>
+                <li>Bojków – holowanie auta</li>
+                <li>Ostropa – pomoc drogowa</li>
+              </ul>
+            </div>
+            <div class="tile">
+              <h3>Gliwice – centrum / północ / wschód</h3>
+              <ul>
+                <li>Śródmieście – holowanie po kolizji</li>
+                <li>Sośnica – pomoc drogowa 24h</li>
+                <li>Łabędy – laweta / transport auta</li>
+                <li>Czechowice – holowanie awaryjne</li>
+              </ul>
+            </div>
+          </div>
+
+          <h3>Trasy i węzły</h3>
+          <p>
+            Częste zgłoszenia to dojazdy do: <strong>A4</strong>, <strong>DK88</strong>, <strong>DTŚ</strong>, a także do stref przemysłowych,
+            parkingów i okolic warsztatów. Gdy dzwonisz, podaj: kierunek, numer zjazdu/węzła, marker z mapy.
+          </p>
+        </div>
+
+        <div class="prose">
+          <h2>Jak to działa krok po kroku</h2>
+          <div class="grid2">
+            <div class="tile">
+              <h3>1) Telefon i lokalizacja</h3>
+              <p>Zadzwoń: <a href="tel:+48509922212">+48 509 922 212</a>. Powiedz gdzie stoisz i co się stało.</p>
+            </div>
+            <div class="tile">
+              <h3>2) Ustalamy typ auta</h3>
+              <p>Osobowe/bus/dostawcze, czy auto jest na kołach, czy po kolizji – to wpływa na dobór transportu.</p>
+            </div>
+            <div class="tile">
+              <h3>3) Pomoc na miejscu albo laweta</h3>
+              <p>Jeśli się da: uruchomienie / koło / paliwo. Jeśli nie: holowanie i transport.</p>
+            </div>
+            <div class="tile">
+              <h3>4) Dowóz do celu</h3>
+              <p>Warsztat, parking, dom, ASO – gdzie chcesz. Potwierdzamy adres i finalizujemy usługę.</p>
+            </div>
+          </div>
+
+          <div class="hr"></div>
+
+          <h3>Najczęstsze frazy, pod które strona “łapie” ruch (naturalnie)</h3>
+          <p class="small">
+            holowanie gliwice • laweta gliwice • pomoc drogowa gliwice • holowanie 24h gliwice • laweta 24/7 gliwice •
+            holowanie po kolizji gliwice • holowanie po wypadku gliwice • awaryjne uruchomienie gliwice • odpalanie auta gliwice •
+            dowóz paliwa gliwice • wymiana koła gliwice • pomoc na A4 gliwice • pomoc na DK88 gliwice • pomoc na DTŚ gliwice •
+            holowanie trynek • laweta sośnica • pomoc drogowa łabędy • holowanie sikornik • laweta czechowice gliwice
+          </p>
+
+          <p class="note small">
+            Pro tip SEO: lepiej mieć dużo fraz w <strong>sekcjach usług + FAQ + obszarze działania</strong> niż w ukrytych blokach.
+            Ukrywanie “keywordów” potrafi szkodzić.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="cennik" aria-label="Jak liczymy koszt holowania i pomocy drogowej">
+      <div class="section-title">
+        <h2>Jak liczymy koszt: przejrzyście, bez magii</h2>
+        <p>Nie wrzucam tu “sztywnego cennika” z kosmosu – liczy się realne zlecenie. Poniżej zasady.</p>
+      </div>
+
+      <div class="grid3">
+        <div class="tile">
+          <h3>Co wpływa na cenę?</h3>
+          <ul>
+            <li>miejsce dojazdu (Gliwice / A4 / DK88 / DTŚ)</li>
+            <li>rodzaj usługi (pomoc na miejscu vs holowanie)</li>
+            <li>typ pojazdu (osobowe / bus / dostawcze)</li>
+            <li>stan auta (na kołach / po kolizji / zablokowane)</li>
+            <li>pora (dzień / noc) i warunki</li>
+          </ul>
+        </div>
+        <div class="tile">
+          <h3>Co przygotować do telefonu?</h3>
+          <ul>
+            <li>dokładna lokalizacja (ulica, numer, punkt z mapy)</li>
+            <li>krótki opis awarii (nie odpala / koło / paliwo / kolizja)</li>
+            <li>gdzie transportujemy auto</li>
+            <li>czy ktoś jedzie z autem</li>
+          </ul>
+        </div>
+        <div class="tile">
+          <h3>Dlaczego tak?</h3>
+          <p>
+            W holowaniu liczy się bezpieczeństwo i dobór sprzętu. “Jedna cena na wszystko” zwykle kończy się dopłatami.
+            U nas szybciej ustalisz konkret po krótkiej rozmowie.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" aria-label="FAQ pomoc drogowa i laweta Gliwice">
+      <div class="section-title">
+        <h2>FAQ – holowanie i pomoc drogowa Gliwice</h2>
+        <p>Najczęstsze pytania klientów (i dodatkowe frazy SEO, ale w formie normalnych odpowiedzi).</p>
+      </div>
+
+      <details>
+        <summary>Laweta Gliwice 24h – czy działacie w nocy i w weekendy?</summary>
+        <p>Tak – przy zgłoszeniach awaryjnych realizujemy pomoc 24/7. Zadzwoń i podaj lokalizację oraz typ auta.</p>
+      </details>
+
+      <details>
+        <summary>Holowanie po kolizji w Gliwicach – co, jeśli auto ma uszkodzone koło?</summary>
+        <p>Ustalamy w rozmowie, czy auto może być transportowane standardowo, czy wymaga dodatkowego zabezpieczenia / wciągarki.</p>
+      </details>
+
+      <details>
+        <summary>Pomoc drogowa Gliwice – odpalanie auta, rozładowany akumulator</summary>
+        <p>Jeśli problemem jest akumulator, często wystarcza awaryjne uruchomienie. Gdy to nie pomaga, organizujemy holowanie na warsztat.</p>
+      </details>
+
+      <details>
+        <summary>Dowóz paliwa Gliwice – jak to wygląda?</summary>
+        <p>Podajesz lokalizację i typ paliwa. Dowozimy paliwo awaryjnie, żebyś mógł dojechać do stacji.</p>
+      </details>
+
+      <details>
+        <summary>Wymiana koła Gliwice – co jeśli nie mam klucza / lewarka?</summary>
+        <p>W wielu przypadkach da się pomóc na miejscu. Jeśli warunki są trudne lub koło jest uszkodzone po kolizji, lepsze będzie holowanie.</p>
+      </details>
+    </section>
+
+    <section id="kontakt" aria-label="Kontakt Holmet Holmech Jarosław Stachowski">
+      <div class="section-title">
+        <h2>Kontakt – HOLMET (Holmech) Jarosław Stachowski</h2>
+        <p>W danych trzymam spójność z publicznymi wpisami: Rybnicka 138, Gliwice; tel. 509 922 212; NIP 6311897478. :contentReference[oaicite:2]{index=2}</p>
+      </div>
+
+      <div class="grid2">
+        <div class="prose">
+          <h3>Telefon (najlepiej zadzwonić)</h3>
+          <p>
+            <a class="btn primary" href="tel:+48509922212" style="display:inline-flex;">📞 +48 509 922 212</a>
+          </p>
+          <p class="small">
+            Jeśli jesteś na trasie (A4 / DK88 / DTŚ): podaj węzeł/zjazd, kierunek jazdy i czy auto blokuje pas.
+          </p>
+
+          <div class="hr"></div>
+
+          <h3>Adres</h3>
+          <p><strong>Rybnicka 138</strong>, 44-100 Gliwice</p>
+
+          <h3>Dane firmy</h3>
+          <p class="small">
+            Nazwa: <strong>Holmech Jarosław Stachowski</strong> (marka: HOLMET / Holmech) • NIP: <strong>6311897478</strong>
+          </p>
+        </div>
+
+        <div class="prose">
+          <h3>Mini “landing” pod SEO lokalne (dla Google)</h3>
+          <p>
+            Jeśli szukasz: <strong>holowanie Gliwice</strong>, <strong>laweta Gliwice</strong>, <strong>pomoc drogowa Gliwice</strong>,
+            a także: <strong>holowanie Trynek</strong>, <strong>laweta Sośnica</strong>, <strong>pomoc drogowa Łabędy</strong>,
+            jesteś w dobrym miejscu. Ta strona jest zaprojektowana jako “wypasiona” pod SEO: nagłówki, FAQ,
+            obszar działania, długi opis usług, dane NAP i schema.
+          </p>
+
+          <div class="hr"></div>
+
+          <p class="small">
+            Chcesz jeszcze mocniej? Zrób osobne podstrony: <em>/laweta-trynek/</em>, <em>/laweta-sosnica/</em>, <em>/holowanie-labedy/</em>
+            i wewnętrzne linkowanie – to zwykle działa lepiej niż upychanie samych fraz na jednej stronie.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footgrid">
+        <div class="tile">
+          <strong>HOLMET / Holmech – holowanie i pomoc drogowa Gliwice</strong>
+          <div class="hr"></div>
+          <div class="small">
+            Rybnicka 138, 44-100 Gliwice • Tel. <a href="tel:+48509922212">+48 509 922 212</a> • NIP 6311897478 :contentReference[oaicite:3]{index=3}
+            <br/>© <span id="year"></span> — Strona pod SEO lokalne: holowanie, laweta, pomoc drogowa Gliwice 24/7.
+          </div>
+        </div>
+
+        <div class="tile">
+          <strong>Szybkie linki</strong>
+          <div class="hr"></div>
+          <div class="small">
+            <a href="#uslugi">Usługi</a> •
+            <a href="#obszar">Obszar</a> •
+            <a href="#cennik">Jak liczymy</a> •
+            <a href="#faq">FAQ</a> •
+            <a href="#kontakt">Kontakt</a>
+          </div>
+          <div class="hr"></div>
+          <div class="small">
+            <strong>Frazy:</strong> holowanie gliwice, laweta gliwice, pomoc drogowa gliwice, laweta 24h gliwice, holowanie 24/7 gliwice, holowanie po kolizji gliwice, pomoc drogowa a4 gliwice, dowóz paliwa gliwice, wymiana koła gliwice.
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a class="to-top" href="#top" aria-label="Wróć na górę">↑</a>
+
+  <div class="sticky-call" aria-label="Szybkie połączenie telefoniczne">
+    <a class="btn primary" href="tel:+48509922212">📞 Holowanie / Laweta Gliwice 24/7 — 509 922 212</a>
+  </div>
+
+  <script>
+    // year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // to-top
+    const toTop = document.querySelector('.to-top');
+    const onScroll = () => {
+      if (window.scrollY > 600) toTop.classList.add('show');
+      else toTop.classList.remove('show');
+    };
+    window.addEventListener('scroll', onScroll, { passive:true });
+    onScroll();
+  </script>
+</body>
+</html>
 
