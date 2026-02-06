@@ -1,60 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+  <!-- Strona główna -->
   <url>
     <loc>https://automikulski.pl/</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
+  <!-- Podstrony usług (z Twoich linków + JSON-LD Service) -->
   <url>
     <loc>https://automikulski.pl/skup-aut-do-zlomowania-gliwice/</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://automikulski.pl/skup-aut-uszkodzonych-gliwice/</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
+  <!-- Podstrony miast (z sekcji "Miasta") -->
   <url>
-    <loc>https://automikulski.pl/zabrze/</loc>
-    <lastmod>2026-02-04</lastmod>
+    <loc>https://automikulski.pl/skup-aut-zabrze/</loc>
+    <lastmod>2026-02-06</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
   </url>
 
   <url>
-    <loc>https://automikulski.pl/pyskowice/</loc>
-    <lastmod>2026-02-04</lastmod>
+    <loc>https://automikulski.pl/skup-aut-pyskowice/</loc>
+    <lastmod>2026-02-06</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
   </url>
 
   <url>
-    <loc>https://automikulski.pl/knurow/</loc>
-    <lastmod>2026-02-04</lastmod>
+    <loc>https://automikulski.pl/skup-aut-knurow/</loc>
+    <lastmod>2026-02-06</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
   </url>
 
   <url>
-    <loc>https://automikulski.pl/ruda-slaska/</loc>
-    <lastmod>2026-02-04</lastmod>
+    <loc>https://automikulski.pl/skup-aut-ruda-slaska/</loc>
+    <lastmod>2026-02-06</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
   </url>
 
   <url>
-  <loc>https://automikulski.pl/skup-aut-bytom/</loc>
-  <lastmod>2026-02-04</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.7</priority>
-</url>
+    <loc>https://automikulski.pl/skup-aut-bytom/</loc>
+    <lastmod>2026-02-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
 
 </urlset>
