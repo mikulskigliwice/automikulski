@@ -11,7 +11,7 @@
 
 Treść strony jest w plikach HTML. Wspólne style i zachowanie formularza znajdują się w `assets/site.css` i `assets/site.js`. Przy zmianie tych plików należy zaktualizować parametr wersji przy odnośnikach do zasobów, aby przeglądarki pobrały nowe pliki.
 
-Nie dopisywać oddziałów, niepotwierdzonych realizacji, ocen, godzin pracy, cen ani obietnic bezpłatnego transportu. Podstrony miast przedstawiają obszar dojazdu. Oferta skupu na umowę nie jest równoznaczna z wydaniem zaświadczenia o demontażu.
+Nie dopisywać oddziałów, niepotwierdzonych realizacji, ocen, godzin pracy, cen ani obietnic bezpłatnego transportu. Podstrony miast przedstawiają obszar dojazdu. Oferta skupu na umowę nie jest równoznaczna z wydaniem zaświadczenia o demontażu. Właściciel potwierdził współpracę ze stacją i możliwość organizacji przekazania pojazdu oraz uzyskania zaświadczenia od stacji. Nie przedstawiać Auto Mikulski jako stacji ani wystawcy dokumentu. Wersja v2 jest propozycją na gałęzi seo-rozbudowa-v2; publikacja wymaga odrębnej zgody właściciela.
 
 ## Pomiar kontaktu w Google Analytics
 
@@ -38,7 +38,7 @@ Przed kolejnymi zmianami zestawiać porównywalne okresy, np. 28 dni względem p
 
 ## Materiały potrzebne od właściciela
 
-1. Potwierdzenie właściwego telefonu: obecnie na stronie i w danych firmy jest 517 936 676.
+1. Telefon potwierdzony przez właściciela: 517 936 676. Zachować ten numer.
 2. Aktualne zdjęcia rzeczywistych odbiorów z modelem auta, miejscowością i krótkim opisem sytuacji. Nie przypisywać zdjęć do miast bez potwierdzenia.
 3. Aktualne zasady wyceny i odbioru, godziny kontaktu oraz informacje o usługach, które firma rzeczywiście wykonuje.
 4. Dostęp do danych Search Console i GA4, jeżeli mają być oceniane wyniki.
