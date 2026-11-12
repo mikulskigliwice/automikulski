@@ -34,6 +34,7 @@ Auto Mikulski prowadzi skup samochodów i uzgadnia odbiór kupowanego pojazdu. S
 - [Skup aut Bytom](https://automikulski.pl/skup-aut-bytom/)
 - [Skup aut Chorzów](https://automikulski.pl/skup-aut-chorzow/)
 - [Skup aut Katowice](https://automikulski.pl/skup-aut-katowice/)
+- [Skup aut Mikołów](https://automikulski.pl/skup-aut-mikolow/)
 - [Skup aut Knurów](https://automikulski.pl/skup-aut-knurow/)
 - [Skup aut Pyskowice](https://automikulski.pl/skup-aut-pyskowice/)
 - [Skup aut Ruda Śląska](https://automikulski.pl/skup-aut-ruda-slaska/)
