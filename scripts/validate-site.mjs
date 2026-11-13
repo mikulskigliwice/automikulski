@@ -51,6 +51,7 @@ for(const url of urls){
   const serviceSelect=html.match(/<select\b[^>]*id="serviceRequest"[^>]*>([\s\S]*?)<\/select>/)?.[1]||'';
   assert.deepEqual(tags(serviceSelect,'option').map(o=>o.value),['skup','demontaz'],`${file}: unsupported form service`);
   assert(!html.includes('data-page-type="transport"'),`${file}: obsolete standalone transport page type`);
+  assert.equal(tags(html,'form').find(f=>f.id==='leadForm')?.method,'post',`${file}: fallback must not put contact fields into a GET URL`);
   const robotDirectives=singleMeta(html,'robots',file).toLowerCase().split(',').map(s=>s.trim());
   assert(!robotDirectives.includes('noindex')&&!robotDirectives.includes('none'),`${file}: unexpectedly noindex`);
   const ids=[...html.matchAll(/\sid="([^"]+)"/g)].map(m=>m[1]);
@@ -109,6 +110,12 @@ if(config.enabled){
 }
 validateRealizations(JSON.parse(read('data/realizations.json')),root);
 for(const file of ['gpt-zwykly.html','holmech/test.html','hybryda.html','index-astra.html','index-gemini.html','inxex2.html','old-index.html','test.html','test2.html','test3.html']){
-  assert(tags(read(file),'meta').some(m=>m.name==='robots'&&m.content.split(',').map(v=>v.trim()).includes('noindex')),`${file}: old/test page lost noindex`);
+  const archive=read(file);
+  assert(tags(archive,'meta').some(m=>m.name==='robots'&&m.content.split(',').map(v=>v.trim()).includes('noindex')),`${file}: old/test page lost noindex`);
+  assert.equal(tags(archive,'script').length,0,`${file}: archive must not run historical analytics or scripts`);
+  assert.equal(tags(archive,'form').length,0,`${file}: archive must not collect contact data`);
+  assert(tags(archive,'a').some(a=>a.href==='/'),`${file}: archive needs a link to the current website`);
+  for(const link of tags(archive,'a').filter(a=>a.href?.startsWith('tel:')))assert.equal(link.href,'tel:+48517936676',`${file}: unauthorized archive phone`);
+  assertOffer(text(archive),file);
 }
 console.log(`Validated ${documents.size} sitemap pages: actual canonical tags, unique titles/descriptions, Open Graph URLs, JSON-LD, internal links, anchors, FAQ parity, old-page noindex and homepage reachability.`);

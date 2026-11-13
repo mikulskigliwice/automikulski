@@ -23,20 +23,31 @@
     const message=document.getElementById('message-text');
     const status=document.getElementById('form-status');
     const mail=document.getElementById('sendMail');
-    form.hidden=false;
+    let lastPreparedDraft='';
+    function invalidateDraft(event){
+      if(event.target===message||document.getElementById('message-preview').hidden)return;
+      document.getElementById('message-preview').hidden=true;message.value='';mail.href='mailto:automikulski@gmail.com';
+      status.textContent='Dane samochodu zostały zmienione. Przygotuj wiadomość ponownie, aby zawierała aktualne informacje.';
+    }
+    form.addEventListener('input',invalidateDraft);
+    form.addEventListener('change',invalidateDraft);
     function validatePhone(){const value=phone.value.trim();const digits=value.replace(/\D/g,'');phone.setCustomValidity(digits.length>=7&&digits.length<=15&&/^[+\d\s().-]+$/.test(value)?'':'Podaj poprawny numer telefonu, np. 500 600 700.');}
     phone.addEventListener('input',validatePhone);
     function updateMail(){mail.href='mailto:automikulski@gmail.com?subject='+encodeURIComponent('Wycena auta — Auto Mikulski')+'&body='+encodeURIComponent(message.value);}
     form.addEventListener('submit',event=>{
-      event.preventDefault();validatePhone();if(!form.reportValidity())return;
-      if(!city.value.trim()||!car.value.trim()){status.textContent='Wpisz miasto oraz markę, model i rocznik auta.';(!city.value.trim()?city:car).focus();return;}
+      event.preventDefault();
+      if(document.getElementById('website')?.value.trim()){status.textContent='Nie można przygotować tego zgłoszenia. Zadzwoń: 517 936 676.';return;}
+      validatePhone();if(!form.reportValidity())return;
+      const brand=document.getElementById('brand'),year=document.getElementById('yearOfCar')?.value.trim()||'';
+      if(!city.value.trim()||!brand?.value.trim()||!car.value.trim()){status.textContent='Podaj miasto odbioru, markę i model auta.';(!city.value.trim()?city:!brand?.value.trim()?brand:car)?.focus();return;}
+      if(year&&(!/^\d{4}$/.test(year)||Number(year)<1886||Number(year)>new Date().getFullYear()+1)){status.textContent='Sprawdź rok produkcji lub pozostaw to pole puste.';document.getElementById('yearOfCar').focus();return;}
       const service=document.getElementById('serviceRequest')?.value||'skup';
       if(!['skup','demontaz'].includes(service)){status.textContent='Wybierz skup auta lub organizację przekazania do stacji.';return;}
       const topic=service==='demontaz'?'organizację przekazania auta do uprawnionej stacji demontażu':'wycenę i skup auta';
-      message.value='Dzień dobry, proszę o '+topic+'.\n\nMiasto odbioru: '+city.value.trim()+'\nSamochód: '+((document.getElementById('brand')?.value.trim()||'')+' '+car.value.trim()+' '+(document.getElementById('yearOfCar')?.value.trim()||'')).trim()+'\nTelefon kontaktowy: '+phone.value.trim()+'\nStan i uszkodzenia: '+(condition.value.trim()||'Do omówienia')+'\n\nProszę o omówienie dokumentów i warunków odbioru.';
+      message.value='Dzień dobry, proszę o '+topic+'.\n\nOsoba kontaktowa: '+(document.getElementById('contactName')?.value.trim()||'Do ustalenia')+'\nMiasto odbioru: '+city.value.trim()+'\nSamochód: '+(brand.value.trim()+' '+car.value.trim()+' '+year).trim()+'\nTelefon kontaktowy: '+phone.value.trim()+'\nStan: '+(document.getElementById('carState')?.value||'Do omówienia')+'\nStan i uszkodzenia: '+(condition.value.trim()||'Do omówienia')+'\n\nProszę o omówienie dokumentów i warunków odbioru.';
       updateMail();document.getElementById('message-preview').hidden=false;
       status.textContent='Wiadomość jest gotowa, ale jeszcze niewysłana. Otwórz pocztę lub skopiuj tekst.';
-      trackEvent('valuation_draft');
+      if(message.value!==lastPreparedDraft){trackEvent('valuation_draft');lastPreparedDraft=message.value;}
       message.focus();
     });
     message.addEventListener('input',updateMail);
@@ -44,6 +55,7 @@
       try{await navigator.clipboard.writeText(message.value);status.textContent='Skopiowano. Wklej tekst do e-maila lub SMS-a i wyślij wiadomość.';}
       catch{message.focus();message.select();status.textContent='Zaznaczono tekst. Skopiuj go ręcznie, wklej do wiadomości i wyślij.';}
     });
+    form.hidden=false;
     }
     // Preserve the existing GA property, opt-in only; never send form values.
     const gaId='G-2TNQWT3SF9';
@@ -66,6 +78,8 @@
     });
     try{consent=localStorage.getItem(consentKey);}catch{}
     function enableAnalytics(){
+      // Private previews and local tests must not pollute production statistics.
+      if(!['automikulski.pl','www.automikulski.pl'].includes(location.hostname))return;
       window['ga-disable-'+gaId]=false;
       if(gaLoaded){window.gtag('consent','update',{analytics_storage:'granted'});return;}
       gaLoaded=true;window.dataLayer=window.dataLayer||[];

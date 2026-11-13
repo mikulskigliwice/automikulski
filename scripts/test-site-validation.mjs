@@ -16,6 +16,7 @@ function validate(){return spawnSync(process.execPath,[validator,'--root',fixtur
 const clean=validate();assert.equal(clean.status,0,clean.stderr||clean.stdout);
 const home=fs.readFileSync(path.join(fixture,'index.html'),'utf8');
 const other=fs.readFileSync(path.join(fixture,'skup-aut-zabrze/index.html'),'utf8');
+const archive=fs.readFileSync(path.join(fixture,'old-index.html'),'utf8');
 const cases=[
   ['wrong canonical while a normal home link still exists','index.html',home.replace('rel="canonical" href="https://automikulski.pl/"','rel="canonical" href="https://automikulski.pl/wrong/"'),'canonical does not match'],
   ['missing canonical while a normal home link still exists','index.html',home.replace(/<link rel="canonical"[^>]*>/,''),'exactly one canonical'],
@@ -29,7 +30,13 @@ const cases=[
   ['false round-the-clock title','index.html',home.replace(/<title>.*?<\/title>/,'<title>Pomoc drogowa 24h Gliwice</title>'),'unoffered roadside'],
   ['standalone transport form option','index.html',home.replace('<select id="serviceRequest" name="service">','<select id="serviceRequest" name="service"><option value="transport">Transport na zlecenie</option>'),'unoffered roadside'],
   ['unsupported form service with a neutral label','index.html',home.replace('<select id="serviceRequest" name="service">','<select id="serviceRequest" name="service"><option value="transport">Inna sprawa</option>'),'unsupported form service'],
-  ['false roadside schema','index.html',home.replace(/"serviceType":"[^"]*"/,'"serviceType":"Pomoc drogowa 24h"'),'unoffered roadside']
+  ['false roadside schema','index.html',home.replace(/"serviceType":"[^"]*"/,'"serviceType":"Pomoc drogowa 24h"'),'unoffered roadside'],
+  ['contact fields in a GET URL','index.html',home.replace('id="leadForm" method="post"','id="leadForm" method="get"'),'fallback must not put contact fields into a GET URL'],
+  ['indexable archive','old-index.html',archive.replace('content="noindex,nofollow"','content="index,follow"'),'old/test page lost noindex'],
+  ['active archive analytics','old-index.html',archive.replace('</head>','<script src="https://www.googletagmanager.com/gtag/js?id=G-2TNQWT3SF9"></script></head>'),'archive must not run historical analytics'],
+  ['archive collecting private fields','old-index.html',archive.replace('</main>','<form><input name="phone"></form></main>'),'archive must not collect contact data'],
+  ['archive without current offer link','old-index.html',archive.replace('href="/"','href="/old-index.html"'),'archive needs a link to the current website'],
+  ['wrong archive phone','old-index.html',archive.replace('href="tel:+48517936676"','href="tel:+48509922212"'),'unauthorized archive phone']
 ];
 for(const [label,file,changed,expected] of cases){
   const target=path.join(fixture,file),original=fs.readFileSync(target,'utf8');
@@ -40,4 +47,4 @@ for(const [label,file,changed,expected] of cases){
   assert.notEqual(result.status,0,`${label}: broken fixture unexpectedly passed`);
   assert((result.stderr+result.stdout).includes(expected),`${label}: unexpected failure: ${result.stderr}`);
 }
-console.log(`Passed: valid baseline and ${cases.length} isolated regressions for canonical, metadata, indexing, phone and preview navigation. No production files were changed.`);
+console.log(`Passed: valid baseline and ${cases.length} isolated regressions for SEO, contact privacy, safe archives and preview navigation. No production files were changed.`);

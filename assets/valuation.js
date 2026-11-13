@@ -20,16 +20,17 @@
     }
     return total>limits.totalBytes?'Łączny rozmiar zdjęć nie może przekroczyć 20 MB.':'';
   }
-  function validatePayload(data,files=[]){
-    if(String(data.website||'').trim())return 'Nie można przygotować tego zgłoszenia. Zadzwoń: 517 936 676.';
-    if(!validPhone(data.phone))return 'Podaj poprawny numer telefonu.';
-    if(!data.city?.trim()||!data.brand?.trim()||!data.model?.trim())return 'Podaj miasto odbioru, markę i model auta.';
-    if(data.year&&(!/^\d{4}$/.test(data.year)||Number(data.year)<1886||Number(data.year)>new Date().getFullYear()+1))return 'Sprawdź rok produkcji lub pozostaw to pole puste.';
+  function payloadError(data,files=[]){
+    if(String(data.website||'').trim())return {message:'Nie można przygotować tego zgłoszenia. Zadzwoń: 517 936 676.'};
+    if(!validPhone(data.phone))return {field:'phone',message:'Podaj poprawny numer telefonu.'};
+    for(const [key,field] of [['city','city'],['brand','brand'],['model','car']])if(!data[key]?.trim())return {field,message:'Podaj miasto odbioru, markę i model auta.'};
+    if(data.year&&(!/^\d{4}$/.test(data.year)||Number(data.year)<1886||Number(data.year)>new Date().getFullYear()+1))return {field:'yearOfCar',message:'Sprawdź rok produkcji lub pozostaw to pole puste.'};
     const lengths={contact:100,city:100,brand:80,model:160,condition:1500};
-    for(const [field,max] of Object.entries(lengths))if(String(data[field]||'').length>max)return 'Skróć zbyt długie dane w formularzu.';
-    if(!['skup','demontaz'].includes(data.service))return 'Wybierz skup auta lub organizację przekazania do stacji.';
-    return validateFiles(files);
+    for(const [field,max] of Object.entries(lengths))if(String(data[field]||'').length>max)return {field:({contact:'contactName',model:'car'})[field]||field,message:'Skróć zbyt długie dane w formularzu.'};
+    if(!['skup','demontaz'].includes(data.service))return {field:'serviceRequest',message:'Wybierz skup auta lub organizację przekazania do stacji.'};
+    const message=validateFiles(files);return message?{field:'photos',message}:null;
   }
+  function validatePayload(data,files=[]){return payloadError(data,files)?.message||'';}
   function validPhone(value=''){const digits=value.replace(/\D/g,'');return digits.length>=7&&digits.length<=15&&/^[+\d\s().-]+$/.test(value);}
   function draft(data){
     const services={skup:'Wycena i skup auta',demontaz:'Organizacja przekazania do stacji demontażu'};
@@ -45,9 +46,9 @@
     payload.append('_gotcha',data.website||'');
     for(const file of files)payload.append('photos',file,file.name);
     const response=await fetchImpl(config.endpoint,{method:'POST',headers:{Accept:'application/json'},body:payload,signal,credentials:'omit',redirect:'error'});
-    // Formspree's official AJAX example uses HTTP response.ok for acceptance;
-    // it does not require a JSON property named "ok" on successful responses.
-    // https://formspree.io/blog/formspree-ajax/ (checked 2026-11-13)
+    // The adapter uses HTTP acceptance, without assuming a JSON "ok" field.
+    // Current provider documentation: https://help.formspree.io/articles/building-your-form/submit-forms-with-javascript-ajax/
+    // Live account acceptance/delivery must still be verified before activation.
     if(!response.ok){
       if(response.status===429)throw new Error('Wysyłka jest chwilowo ograniczona. Zachowaj dane i zadzwoń lub spróbuj później.');
       if(response.status===413)throw new Error('Zdjęcia są zbyt duże dla usługi formularza. Zmniejsz pliki i spróbuj ponownie.');
@@ -59,20 +60,29 @@
     const doc=global.document,form=doc.getElementById('leadForm');if(!form)return;
     const get=id=>doc.getElementById(id),config=global.AUTO_MIKULSKI_FORM||{},live=canSend(config),photoPreview=config.previewPhotoUI===true;
     const submit=get('valuation-submit'),status=get('form-status'),message=get('message-text'),mail=get('sendMail'),photos=get('photos');
-    let pending=false,accepted=false;
+    let pending=false,accepted=false,lastPreparedDraft='';
     const value=id=>get(id)?.value.trim()||'';
     const collect=()=>({contact:value('contactName'),phone:value('phone'),city:value('city'),brand:value('brand'),model:value('car'),year:value('yearOfCar'),state:value('carState'),service:value('serviceRequest')||'skup',condition:value('condition')});
     const files=()=>Array.from(photos?.files||[]);
     get('phone').addEventListener('input',()=>get('phone').setCustomValidity(validPhone(value('phone'))?'':'Podaj poprawny numer telefonu.'));
     const updateMail=()=>{mail.href='mailto:automikulski@gmail.com?subject='+encodeURIComponent('Zgłoszenie auta — Auto Mikulski')+'&body='+encodeURIComponent(message.value);};
-    form.hidden=false;
     get('photo-fields').hidden=!(live||photoPreview);
     get('valuation-intro').textContent=live?'Podaj podstawowe informacje i dodaj zdjęcia. Potwierdzenie zobaczysz po przyjęciu zgłoszenia.':'Podaj podstawowe informacje — przygotujemy wiadomość, którą wyślesz ze swojej poczty.';
     submit.textContent=live?'Wyślij zgłoszenie':'Przygotuj wiadomość e-mail';
     get('valuation-mode-note').textContent=live?'* Pola wymagane. Zdjęcia są opcjonalne.':'* Pola wymagane. Formularz przygotowuje wiadomość lokalnie. Wyślesz ją ze swojej poczty; zdjęcia dołączysz w e-mailu.';
     if(photoPreview&&!live)get('photos-help').textContent='Podgląd wersji ze zdjęciami. Wybrane pliki pozostają na urządzeniu i nie są przesyłane. W kontakcie e-mailowym dołącz je ręcznie.';
     if(live){get('form-privacy').hidden=false;get('form-privacy-link').href=config.privacyNoticeUrl;}
-    form.addEventListener('input',()=>{if(accepted){accepted=false;submit.disabled=false;submit.textContent=live?'Wyślij zgłoszenie':'Przygotuj wiadomość e-mail';}});
+    function onFieldChange(event){
+      if(event.target===message)return; // Hand-editing the draft updates its mailto below.
+      event.target?.removeAttribute('aria-invalid');
+      if(!live&&!get('message-preview').hidden){
+        get('message-preview').hidden=true;message.value='';mail.href='mailto:automikulski@gmail.com';
+        status.textContent='Dane samochodu zostały zmienione. Przygotuj wiadomość ponownie, aby zawierała aktualne informacje.';
+      }
+      if(accepted){accepted=false;submit.disabled=false;submit.textContent=live?'Wyślij zgłoszenie':'Przygotuj wiadomość e-mail';}
+    }
+    form.addEventListener('input',onFieldChange);
+    form.addEventListener('change',onFieldChange);
     photos?.addEventListener('change',()=>{
       const error=validateFiles(files());photos.setCustomValidity(error);
       get('photo-list').textContent=error||files().map(f=>f.name+' ('+Math.ceil(f.size/1024)+' KB)').join(' · ');
@@ -80,13 +90,14 @@
     form.addEventListener('submit',async event=>{
       event.preventDefault();if(pending||accepted)return;
       if(value('website')){status.textContent='Nie można przygotować tego zgłoszenia. Zadzwoń: 517 936 676.';return;}
-      const data=collect(),selected=files(),error=validatePayload(data,selected);
-      if(error){status.textContent=error;return;}
+      const data=collect(),selected=files(),error=payloadError(data,selected);
+      if(error){status.textContent=error.message;const field=get(error.field);if(field){field.setAttribute('aria-invalid','true');field.focus();}return;}
       if(!form.reportValidity())return;
       if(!live){
         message.value=draft(data);updateMail();get('message-preview').hidden=false;
         status.textContent='Wiadomość jest gotowa, ale jeszcze niewysłana. Otwórz pocztę lub skopiuj tekst. Zdjęcia dołącz w e-mailu.';
-        trackEvent('valuation_draft');message.focus();return;
+        if(message.value!==lastPreparedDraft){trackEvent('valuation_draft');lastPreparedDraft=message.value;}
+        message.focus();return;
       }
       pending=true;submit.disabled=true;submit.textContent='Wysyłanie…';status.textContent='Przesyłamy zgłoszenie. Poczekaj na potwierdzenie.';form.setAttribute('aria-busy','true');
       const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),20000);
@@ -103,6 +114,8 @@
       try{await global.navigator.clipboard.writeText(message.value);status.textContent='Skopiowano. Wklej tekst do e-maila lub SMS-a i wyślij wiadomość.';}
       catch{message.focus();message.select();status.textContent='Zaznaczono tekst. Skopiuj go, wklej do wiadomości i wyślij.';}
     });
+    // Expose the form only after all submission/fallback handlers are installed.
+    form.hidden=false;
   }
   const api={limits,validPhone,validEndpoint,canSend,validateFiles,validatePayload,draft,sendSubmission,init};
   global.AutoMikulskiValuation=api;
