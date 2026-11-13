@@ -1,5 +1,7 @@
 # Formularz wyceny — kod roboczy i uruchomienie
 
+> Aktualny przegląd 13.11.2026: backend nadal jest wyłączony. Bieżące poprawki i ograniczenia opisuje [audyt kontaktu i czytelności dla wyszukiwarek](audyt-konwersja-ai-2026-11-13.md). Poniższe historyczne ceny i opisy wcześniejszych testów nie są aktualną ofertą dostawcy ani dowodem działania konta.
+
 Stan: 12.11.2026. **Backend wyłączony. Nie utworzono konta ani usługi i nie poniesiono kosztów.** GitHub Pages nadal obsługuje stronę. W obecnej konfiguracji formularz przygotowuje wiadomość lokalnie, a klient wysyła ją ze swojej poczty. Zdjęcia trzeba dołączyć w poczcie. Telefon i SMS pozostają dostępne.
 
 ## Co jest przygotowane
@@ -64,4 +66,14 @@ W przeglądarce sprawdzono błędny telefon, rok, wiadomość i mailto, kopiowan
 
 ## Potwierdzenie właściciela i korekta 13.11.2026
 
-Odbiór własną lawetą dotyczy kupowanych aut. Firma nie oferuje osobnej pomocy drogowej, przewozów na zlecenie, wynajmu lawety ani obsługi całodobowej. Dopuszczalne rodzaje: skup i demontaz. [Oficjalny przykład AJAX Formspree](https://formspree.io/blog/formspree-ajax/) potwierdza warunek response.ok; pole JSON ok nie jest wymaganym kontraktem tego przykładu. Nie aktywowano konta ani płatnego planu.
+Odbiór własną lawetą dotyczy kupowanych aut. Firma nie oferuje osobnej pomocy drogowej, przewozów na zlecenie, wynajmu lawety ani obsługi całodobowej. Dopuszczalne rodzaje: skup i demontaz. Nie aktywowano konta ani płatnego planu.
+
+## Bieżący przegląd adaptera i wiadomości — 13.11.2026
+
+Aktualna [dokumentacja AJAX Formspree](https://help.formspree.io/articles/building-your-form/submit-forms-with-javascript-ajax/) opisuje bibliotekę `@formspree/ajax`; poprzednio przywoływany blog zmienił zawartość. Nie traktujemy go jako aktualnej specyfikacji odpowiedzi ręcznego adaptera. Zachowano kontrolę HTTP `response.ok`, bez wymuszania nieudokumentowanego pola JSON `ok`. Obsługa 429 jest zgodna z [dokumentacją limitów](https://help.formspree.io/articles/form-and-project-settings/system-limits/). Nie przeprowadzono prawdziwego POST ani odczytu konkretnego konta — integracja pozostaje niepotwierdzona i wyłączona. Przed aktywacją nadal obowiązują kroki 1–9 powyżej, w tym obserwacja odpowiedzi i odbioru powiadomienia; mocki potwierdzają tylko zachowanie kodu.
+
+Po zmianie danych samochodu stara wiadomość i jej mailto są usuwane z interfejsu. Klient przygotowuje nową wiadomość z aktualnymi danymi. Ręczna edycja treści wiadomości pozostaje dostępna; ponowne przygotowanie identycznego tekstu nie liczy kolejnego zdarzenia `valuation_draft` w tej samej stronie. Wariant awaryjny sprawdza również markę, rok i honeypot oraz zachowuje imię i wybrany stan auta.
+
+Formularz ma `method="post"` jako ochronę przed danymi w adresie URL w razie awarii obsługi zdarzeń; nie oznacza to uruchomienia backendu na GitHub Pages. Jest pokazywany dopiero po zarejestrowaniu obsługi JS. Dodano prośbę o nieprzekazywanie numeru PESEL i danych dokumentu. Pełna informacja o przetwarzaniu danych nadal wymaga rzeczywistych ustaleń administratora.
+
+Własny GA4 pozostaje ograniczony do domen automikulski.pl i www.automikulski.pl oraz zgody użytkownika. Podglądy i localhost nie zasilają statystyk produkcyjnych. Ustawienia rozszerzonych pomiarów i kluczowych zdarzeń w panelu GA4 pozostają poza zakresem dostępu.
