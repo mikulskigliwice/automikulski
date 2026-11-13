@@ -1,0 +1,16 @@
+import fs from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
+import assert from 'node:assert/strict';
+import {validateRealizations,renderRealizations} from './render-realizations.mjs';
+const root=fs.mkdtempSync(path.join(os.tmpdir(),'automikulski-realizations-'));
+fs.mkdirSync(path.join(root,'assets/realizations'),{recursive:true});
+fs.writeFileSync(path.join(root,'assets/realizations/test.png'),Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAusB9Wl6qxQAAAAASUVORK5CYII=','base64'));
+const item={id:'test-fixture',brand:'<test>',model:'test',city:'Gliwice',condition:'test',description:'test only, never published',service:'skup',photos:[{src:'/assets/realizations/test.png',alt:'test'}],approvedForPublication:true,platesAndPersonalDataChecked:true};
+assert.deepEqual(validateRealizations({version:1,items:[]},root),[]);assert.equal(renderRealizations([]),'');assert.equal(renderRealizations([item],'Zabrze'),'');
+validateRealizations({version:1,items:[item]},root);
+const markup=renderRealizations([item],'Gliwice');assert(markup.includes('&lt;test&gt;'));assert(!markup.includes('<test>'));assert(markup.includes('Nasze realizacje'));
+for(const changed of [{...item,approvedForPublication:false},{...item,platesAndPersonalDataChecked:false},{...item,photos:[]},{...item,photos:[{src:'https://example.com/photo.jpg',alt:'test'}]},{...item,photos:[{src:'/assets/realizations/missing.jpg',alt:'test'}]},{...item,photos:[{src:'/assets/realizations/../test.png',alt:'test'}]}])assert.throws(()=>validateRealizations({version:1,items:[changed]},root));
+assert.throws(()=>validateRealizations({version:1,items:[item,item]},root));
+assert.throws(()=>validateRealizations({version:1,items:[{...item,service:'transport'}]},root));
+console.log('Passed: empty gallery stays absent, city filtering, escaped content, required approvals, local image checks and duplicate rejection. Fixtures exist only in a temporary directory.');

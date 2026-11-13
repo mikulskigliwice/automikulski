@@ -15,7 +15,7 @@ class Element{
   reportValidity(){return true;}
   fire(type,event={}){return this.listeners.get(type)?.(event);}
 }
-function page(savedConsent){
+function page(savedConsent,modern=false){
   const elements=new Map();
   const get=id=>{if(!elements.has(id))elements.set(id,new Element());return elements.get(id);};
   const events=new Map(),scripts=[],storage=new Map();
@@ -28,8 +28,11 @@ function page(savedConsent){
   };
   const window={matchMedia:()=>({matches:false,addEventListener(){}})};
   const localStorage={getItem:key=>storage.get(key)??null,setItem:(key,value)=>storage.set(key,value)};
+  window.document=document;
   const context={document,window,localStorage,location:{hostname:'automikulski.pl'},navigator:{clipboard:{writeText:async()=>{}}}};
-  vm.createContext(context);vm.runInContext(script,context);
+  vm.createContext(context);
+  if(modern)vm.runInContext(fs.readFileSync(path.join(root,'assets/valuation.js'),'utf8'),context);
+  vm.runInContext(script,context);
   const click=href=>{
     const link={getAttribute:()=>href,closest:selector=>selector==='section[id]'?{id:'kontakt'}:null};
     events.get('click')({target:{closest:()=>link}});
@@ -54,10 +57,25 @@ active.get('leadForm').fire('submit',{preventDefault(){}});
 assert.equal(active.analyticsEvents().at(-1)[1],'valuation_draft','local draft must not be counted as a delivered lead');
 const payload=JSON.stringify(active.analyticsEvents());
 for(const value of ['PRIVATE-MESSAGE','PRIVATE-CITY','600123456','PRIVATE-CAR','PRIVATE-CONDITION'])assert(!payload.includes(value),'form data leaked to analytics: '+value);
+active.get('serviceRequest').value='demontaz';active.get('leadForm').fire('submit',{preventDefault(){}});
+assert(active.get('message-text').value.includes('uprawnionej stacji demontażu'),'fallback must preserve the chosen supported service');
+const beforeUnsupported=active.analyticsEvents().length;
+active.get('serviceRequest').value='transport';active.get('leadForm').fire('submit',{preventDefault(){}});
+assert.equal(active.analyticsEvents().length,beforeUnsupported,'unsupported transport must not produce a draft event');
+assert(active.get('form-status').textContent.includes('Wybierz skup'));
 assert.equal(active.analyticsEvents()[0][2].page_city,'Mikołów');
 const count=active.analyticsEvents().length;
 active.get('analytics-reject').fire('click');active.click('tel:+48517936676');
 assert.equal(active.analyticsEvents().length,count,'recording must stop after consent is withdrawn');
 assert.equal(active.window['ga-disable-G-2TNQWT3SF9'],true);
 const remembered=page('granted');assert.equal(remembered.scripts.length,1);remembered.get('analytics-accept').fire('click');assert.equal(remembered.scripts.length,1,'repeated consent must not load a second analytics script');
+const enhanced=page('granted',true);
+for(const [id,value] of Object.entries({city:'PRIVATE-CITY',phone:'600123456',brand:'PRIVATE-BRAND',car:'PRIVATE-MODEL',contactName:'PRIVATE-NAME',condition:'PRIVATE-DESCRIPTION',serviceRequest:'skup'}))enhanced.get(id).value=value;
+await enhanced.get('leadForm').fire('submit',{preventDefault(){}});
+assert.equal(enhanced.analyticsEvents().at(-1)[1],'valuation_draft');
+const enhancedPayload=JSON.stringify(enhanced.analyticsEvents());
+for(const value of ['PRIVATE-CITY','600123456','PRIVATE-BRAND','PRIVATE-MODEL','PRIVATE-NAME','PRIVATE-DESCRIPTION'])assert(!enhancedPayload.includes(value),'enhanced form data leaked to analytics');
+assert(!enhanced.analyticsEvents().some(e=>e[1]==='valuation_received'),'disabled backend must not claim accepted leads');
+enhanced.get('analytics-reject').fire('click');const enhancedCount=enhanced.analyticsEvents().length;
+await enhanced.get('leadForm').fire('submit',{preventDefault(){}});assert.equal(enhanced.analyticsEvents().length,enhancedCount);
 console.log('Passed: opt-in, denial, remembered consent, withdrawal, contact events, draft semantics, and no form data in analytics.');
