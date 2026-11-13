@@ -2,7 +2,7 @@
 
 Data: 12 listopada 2026, Europe/Warsaw. Repozytorium: `mikulskigliwice/automikulski`. Gałąź: **`seo-rozbudowa-v2`**. Bazą jest zabezpieczona produkcja `a79e402528cc0e9f5ce5ce5e4b28c303f1d8bcf0`; kontynuowano wcześniejszy roboczy commit `32dd900015028e5bd297ced21de8214f69bd8cea`.
 
-**Uzupełnienie statusu, 13.11.2026 po północy czasu polskiego:** przygotowanie i testy wykonano 12.11. Zapis pliku do GitHuba został następnie przerwany. Zdalna gałąź v2 nadal wskazuje `32dd900015028e5bd297ced21de8214f69bd8cea`. Nowy zakres jest przygotowany lokalnie; nie utworzono dla niego pull requesta ani nowego zdalnego commita. Zdalne `main` i backup ponownie sprawdzono: nadal a79. To rozróżnienie ma pierwszeństwo przed opisem docelowego PR poniżej.
+**Aktualizacja statusu, 13.11.2026:** ponowienie zapisu zakończyło się poprawnie. Pełny pakiet zapisano na `seo-rozbudowa-v2` w commicie [`f966295`](https://github.com/mikulskigliwice/automikulski/commit/f966295b0394c806ec3eaa8b46f8929aec49aed3). Drzewo plików `fb840f62183795a360ac86e405887be36c5d18a3` jest identyczne z przygotowanym lokalnym commitem `12cc794810a16ed6475aaf0a22fddbac02559021`; sprawdzono także SHA wszystkich dziewięciu obrazów. Utworzono [roboczy Pull Request nr 1](https://github.com/mikulskigliwice/automikulski/pull/1) do przeglądu. Ten zapis zastępuje wcześniejszy status o przerwaniu operacji. PR nie został scalony; `main` i backup pozostają na a79.
 
 **To propozycja zmian w istniejącej witrynie. Nie opublikowano jej na automikulski.pl, nie zmieniono `main`, nie scalono PR.** Raport opisuje cały zakres v2 względem zabezpieczonej produkcji, także przygotowaną wcześniej pierwszą część o stacji. Nie przypisuje tej modernizacji wcześniejszego utworzenia Mikołowa, Tychów, Sosnowca czy poradników: te adresy istniały już w bazie a79.
 
@@ -12,7 +12,7 @@ Data: 12 listopada 2026, Europe/Warsaw. Repozytorium: `mikulskigliwice/automikul
 | --- | --- |
 | Backup | Istnieje gałąź i zweryfikowany ZIP; SHA zgodny z a79. Backup nie był wykonywany ponownie. |
 | Kod v2 | Zmodyfikowane wszystkie 20 istniejących HTML; wspólne moduły, obrazy, mechanizm realizacji, testy i dokumentacja. |
-| GitHub | Zapis nowego zakresu przerwany; remote v2 pozostał na 32dd900. Kod i dokumentacja są przygotowane lokalnie na `seo-rozbudowa-v2`. Docelowy PR → `main` nie został utworzony. |
+| GitHub | Pełny zakres kodu i dokumentacji zapisano na `seo-rozbudowa-v2`; utworzono roboczy PR nr 1 do `main`. PR pozostaje otwarty i niescalony. |
 | Podgląd | Wewnętrzna kopia robocza, `noindex,nofollow,noarchive`, robots `Disallow: /`, brak publikacji publicznego serwisu. Pokazuje pole zdjęć bez przesyłania. Podgląd jest tymczasowy. |
 | Produkcja | Przy odczycie wszystkich 20 URL: HTTP 200 i bajty zgodne z zabezpieczonym a79. Przed zapisem ponownie sprawdzono remote `main`/backup: nadal a79. |
 | Rzeczywista wysyłka formularza | **Nieuruchomiona**. Pełny interfejs i adapter są przygotowane; potrzebne konto/usługa, decyzja właściciela, informacja o danych i test integracyjny. |
@@ -107,6 +107,8 @@ Nie zweryfikowano całego profilu backlinków ani danych płatnych narzędzi. Pr
 - ZIP: `Backup_AUTOMIKULSKI_2026-11-12_a79e402.zip`, 993 748 B, 40 plików repozytorium i 171 osiągalnych commitów. Zawiera instrukcję `PRZYWRACANIE.md` z przywróceniem przez nowy commit, bez kasowania historii.
 - SHA-256 ZIP ponownie sprawdzony: `78421ccd2873415014994db06c352372f4d85e46f4f5653030741aac1fc3c62b`.
 - Pierwsza część robocza v2: [`32dd900015028e5bd297ced21de8214f69bd8cea`](https://github.com/mikulskigliwice/automikulski/commit/32dd900015028e5bd297ced21de8214f69bd8cea).
+- Pełny pakiet modernizacji v2: [`f966295b0394c806ec3eaa8b46f8929aec49aed3`](https://github.com/mikulskigliwice/automikulski/commit/f966295b0394c806ec3eaa8b46f8929aec49aed3). Następny commit dokumentacji aktualizuje wyłącznie status dostarczenia.
+- [Pull Request nr 1 — wersja robocza do przeglądu](https://github.com/mikulskigliwice/automikulski/pull/1), bez scalenia i publikacji.
 - [Historia wszystkich commitów v2](https://github.com/mikulskigliwice/automikulski/commits/seo-rozbudowa-v2) i [pełne porównanie z main](https://github.com/mikulskigliwice/automikulski/compare/main...seo-rozbudowa-v2).
 - Ostatnia sprawdzona publikacja produkcyjna: [Pages run 43300788294](https://github.com/mikulskigliwice/automikulski/actions/runs/43300788294), main/a79, success, 12.11.2026 20:30:02 UTC. Nie uruchamiano nowej publikacji dla v2.
 
@@ -120,7 +122,7 @@ ZIP zabezpiecza repozytorium i historię, a nie konta Google, DNS lub wszystkie 
 | 2 | Rzeczywista procedura ze stacją: kto przyjmuje pojazd/zawiera dokumenty, wymagania, sposób i termin przekazania zaświadczenia | Ostrożny opis potwierdzonej współpracy. Nie wymyślono nieznanych szczegółów. |
 | 3 | Czy transport faktycznie działa 24h; czy podany adres/lokal 7 jest aktualny i obsługuje klientów | Zachowany dotychczasowy numer i adres; rozbieżności udokumentowane, bez samodzielnych zmian w Google. |
 | 4 | Autentyczne fotografie i opisy realizacji | Działający mechanizm dodawania i filtrowania; brak pustej/fikcyjnej galerii. |
-| 5 | Ponowienie przerwanego zapisu gałęzi i utworzenie PR, potem przegląd treści i osobna zgoda na publikację | Kod, porównanie, testy i raport są przygotowane. PR pozostaje niewykonanym krokiem. **Brak zgody na publikację oznacza brak merge/deploy.** |
+| 5 | Przegląd treści w PR nr 1 i osobna zgoda na publikację | Kod, porównanie, testy i raport są już na gałęzi roboczej; PR utworzono. **Brak zgody na publikację oznacza brak merge/deploy.** |
 | Kolejny etap | Prawdziwy telefon, pomiar wydajności, ustawienia GA4, później GSC/OpenSEO i eksport linków | Model pomiaru poniżej; nie wymagano teraz podłączenia Search Console. |
 
 Proponowany model późniejszych wyników: wyświetlenia/zapytania/CTR → wejścia organiczne i strony wejścia → kliknięcia kontaktowe → rzeczywiście przyjęte formularze i odebrane rozmowy → wyceny i zakupione auta. Zachowany GA4 `G-2TNQWT3SF9`; kliknięć nie utożsamiać z rozmowami, draftów z wysłaniem ani przyjętych zgłoszeń z zakupami. Porównywać równe okresy, np. 28 dni, uwzględniając wdrożenie i sezonowość. Nie deklarować efektu bez tych danych.
