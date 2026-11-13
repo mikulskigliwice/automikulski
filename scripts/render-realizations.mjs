@@ -11,7 +11,7 @@ export function validateRealizations(data,root){
     if(item.approvedForPublication!==true||item.platesAndPersonalDataChecked!==true)throw new Error('Each realization requires publication approval and privacy review');
     for(const key of ['brand','model','city','condition','description','service'])if(typeof item[key]!=='string'||!item[key].trim()||item[key].length>700)throw new Error('Missing or overlong realization '+key);
     if(item.year!=null&&(!Number.isInteger(item.year)||item.year<1886||item.year>new Date().getFullYear()+1))throw new Error('Invalid realization year');
-    if(!['skup','demontaz','transport'].includes(item.service))throw new Error('Invalid realization service');
+    if(!['skup','demontaz'].includes(item.service))throw new Error('Invalid realization service');
     if(!Array.isArray(item.photos)||!item.photos.length||item.photos.length>5)throw new Error('Realization requires one to five approved photos');
     for(const photo of item.photos){
       if(!/^\/assets\/realizations\/[a-zA-Z0-9/_-]+\.(?:jpg|jpeg|png|webp)$/.test(photo.src||'')||photo.src.includes('..'))throw new Error('Photo must be an approved local image');
@@ -24,7 +24,7 @@ export function validateRealizations(data,root){
 export function renderRealizations(items,city=''){
   const selected=(city?items.filter(i=>i.city===city):items).slice(0,6);
   if(!selected.length)return '';
-  const labels={skup:'Skup samochodu',demontaz:'Organizacja przekazania do stacji',transport:'Transport samochodu'};
+  const labels={skup:'Skup samochodu',demontaz:'Organizacja przekazania do stacji'};
   const cards=selected.map(i=>'<article class="realization-card"><div class="realization-photos">'+i.photos.map(p=>'<img src="'+escape(p.src)+'" alt="'+escape(p.alt)+'" loading="lazy" decoding="async" width="960" height="640">').join('')+'</div><div class="realization-copy"><p class="eyebrow">'+escape(i.city)+' · '+labels[i.service]+'</p><h3>'+escape(i.brand)+' '+escape(i.model)+(i.year?' · '+i.year:'')+'</h3><p><strong>Stan:</strong> '+escape(i.condition)+'</p><p>'+escape(i.description)+'</p></div></article>').join('');
   return '<section class="section realizations" id="realizacje"><div class="wrap"><div class="section-head"><div><p class="eyebrow">Nasze realizacje</p><h2>Skupione i odebrane samochody.</h2></div><p>Rzeczywiste zgłoszenia i odbiory opisane przez Auto Mikulski.</p></div><div class="realization-grid">'+cards+'</div></div></section>';
 }

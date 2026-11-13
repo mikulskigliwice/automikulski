@@ -1,5 +1,7 @@
 # Konkurencja i luki — stan odczytu 12.11.2026
 
+> Aktualizacja zakresu 13.11.2026: właściciel potwierdził brak osobnych usług pomocy drogowej/transportu oraz brak usług całodobowych. Opisy wcześniejszego wariantu są historyczne. Bieżący zakres, nowe testy i gotowość opisuje [końcowy przegląd](final-release-review.md).
+
 Analiza obejmuje publiczne strony i wybrane ścieżki. To nie jest pełny crawl wszystkich domen ani pomiar ich wyników sprzedaży. Wcześniejsze pozycje i szacunki 1700/670/499 wizyt oraz około 258 domen odsyłających do AUTO MIKULSKI **nie zostały niezależnie potwierdzone**. Nie użyto ich jako dowodu skuteczności zmian.
 
 ## Exmet — szczegółowe porównanie

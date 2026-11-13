@@ -14,7 +14,7 @@ Właściciel może przekazać zdjęcia wraz z marką, modelem, miastem, rodzajem
 | `city` | Rzeczywista miejscowość; dla wyświetlenia lokalnego dokładnie taka sama nazwa jak w `data-page-city` danej strony. |
 | `condition` | Krótki, potwierdzony stan auta. |
 | `description` | Rzeczywisty przebieg odbioru, bez adresu klienta, numerów dokumentów i danych osobowych. |
-| `service` | `skup`, `demontaz` albo `transport`, zgodnie z wykonaną usługą. `demontaz` jest opisany jako organizacja przekazania do stacji. |
+| `service` | `skup` albo `demontaz`, zgodnie z wykonaną usługą. Osobny transport nie jest oferowaną usługą. `demontaz` jest opisany jako organizacja przekazania do stacji. |
 | `photos` | Od 1 do 5 obiektów `src`, `alt`. Lokalne JPG/JPEG/PNG/WebP w `/assets/realizations/`. |
 | `approvedForPublication` | `true` dopiero po potwierdzeniu autentyczności i praw do publikacji. |
 | `platesAndPersonalDataChecked` | `true` dopiero po rzeczywistym sprawdzeniu tablic, dokumentów, osób, oznaczeń i metadanych plików. Samo pole nie wykonuje anonimizacji. |

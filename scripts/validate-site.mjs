@@ -20,7 +20,10 @@ const singleMeta=(html,key,file)=>{
 };
 const urls=[...read('sitemap.xml').matchAll(/<loc>([^<]+)<\/loc>/g)].map(m=>m[1]);
 assert.equal(new Set(urls).size,urls.length,'duplicate sitemap entries');
-assert(urls.length>0,'empty sitemap');
+assert.equal(urls.length,20,'expected the 20 retained sitemap URLs');
+const unoffered=/(?:\b24\s*(?:h\b|godzin)|całodob\w*|pomoc(?:y|ą)?\s+drogow\w*|wynaj\w*\s+lawet\w*|transport\w*\s+(?:samochod\w*\s+)?na\s+zlecenie|(?:wyłącznie|samego)\s+(?:transport\w*|przewoz\w*))/iu;
+const withoutDisclaimers=value=>value.replace(/Nie\s+(?:świadczymy|oferujemy|działa(?:my)?)\b[^.!?]*(?:[.!?]|$)/giu,'');
+const assertOffer=(value,file)=>assert(!unoffered.test(withoutDisclaimers(value)),`${file}: unoffered roadside, standalone transport or round-the-clock claim`);
 const titles=new Set(),descriptions=new Set();
 const documents=new Map();
 for(const url of urls){
@@ -42,12 +45,19 @@ for(const url of urls){
   const description=singleMeta(html,'description',file);
   assert(!descriptions.has(description),`${file}: duplicate meta description`);descriptions.add(description);
   assert.equal(singleMeta(html,'og:url',file),url,`${file}: og:url does not match canonical`);
+  for(const value of [title,description,singleMeta(html,'og:title',file),singleMeta(html,'og:description',file),text(html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i)?.[1]||'')])assertOffer(value,file);
+  const visible=text(html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi,'').replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi,'').replace(/<summary\b[^>]*>[\s\S]*?<\/summary>/gi,''));
+  assertOffer(visible,file);
+  const serviceSelect=html.match(/<select\b[^>]*id="serviceRequest"[^>]*>([\s\S]*?)<\/select>/)?.[1]||'';
+  assert.deepEqual(tags(serviceSelect,'option').map(o=>o.value),['skup','demontaz'],`${file}: unsupported form service`);
+  assert(!html.includes('data-page-type="transport"'),`${file}: obsolete standalone transport page type`);
   const robotDirectives=singleMeta(html,'robots',file).toLowerCase().split(',').map(s=>s.trim());
   assert(!robotDirectives.includes('noindex')&&!robotDirectives.includes('none'),`${file}: unexpectedly noindex`);
   const ids=[...html.matchAll(/\sid="([^"]+)"/g)].map(m=>m[1]);
   assert.equal(new Set(ids).size,ids.length,`${file}: duplicate HTML ids`);
   const json=[...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(m=>JSON.parse(m[1]));
   const entities=json.flatMap(j=>j['@graph']||[j]);
+  for(const entity of entities.filter(e=>['Service','LocalBusiness'].includes(e['@type'])))assertOffer([entity.name,entity.description,entity.serviceType,entity.potentialAction?.name].filter(Boolean).join('. '),file);
   for(const webpage of entities.filter(e=>e['@type']==='WebPage'))assert.equal(webpage.url,url,`${file}: WebPage.url does not match canonical`);
   const faqs=entities.filter(e=>e['@type']==='FAQPage').flatMap(e=>e.mainEntity);
   assert.equal(faqs.length,(html.match(/<details class="faq-item">/g)||[]).length,`${file}: visible FAQ count differs from JSON-LD`);

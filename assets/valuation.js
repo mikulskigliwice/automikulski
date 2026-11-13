@@ -27,12 +27,13 @@
     if(data.year&&(!/^\d{4}$/.test(data.year)||Number(data.year)<1886||Number(data.year)>new Date().getFullYear()+1))return 'Sprawdź rok produkcji lub pozostaw to pole puste.';
     const lengths={contact:100,city:100,brand:80,model:160,condition:1500};
     for(const [field,max] of Object.entries(lengths))if(String(data[field]||'').length>max)return 'Skróć zbyt długie dane w formularzu.';
-    if(!['skup','demontaz','transport'].includes(data.service))return 'Wybierz rodzaj zgłoszenia.';
+    if(!['skup','demontaz'].includes(data.service))return 'Wybierz skup auta lub organizację przekazania do stacji.';
     return validateFiles(files);
   }
   function validPhone(value=''){const digits=value.replace(/\D/g,'');return digits.length>=7&&digits.length<=15&&/^[+\d\s().-]+$/.test(value);}
   function draft(data){
-    const services={skup:'Wycena i skup auta',demontaz:'Organizacja przekazania do stacji demontażu',transport:'Transport samochodu'};
+    const services={skup:'Wycena i skup auta',demontaz:'Organizacja przekazania do stacji demontażu'};
+    if(!Object.hasOwn(services,data.service))throw new Error('Nieobsługiwany rodzaj zgłoszenia.');
     return 'Dzień dobry, proszę o kontakt.\n\nSprawa: '+services[data.service]+'\nOsoba kontaktowa: '+(data.contact||'Do ustalenia')+'\nTelefon: '+data.phone+'\nMiejsce odbioru: '+data.city+'\nSamochód: '+data.brand+' '+data.model+(data.year?' '+data.year:'')+'\nStan: '+(data.state||'Do omówienia')+'\nOpis i warunki odbioru: '+(data.condition||'Do omówienia')+'\n\nProszę o omówienie wyceny, dokumentów i warunków odbioru.';
   }
   async function sendSubmission(data,files,config,{fetchImpl=global.fetch,signal}={}){
@@ -44,8 +45,10 @@
     payload.append('_gotcha',data.website||'');
     for(const file of files)payload.append('photos',file,file.name);
     const response=await fetchImpl(config.endpoint,{method:'POST',headers:{Accept:'application/json'},body:payload,signal,credentials:'omit',redirect:'error'});
-    let result;try{result=await response.json();}catch{throw new Error('Nie udało się potwierdzić przyjęcia zgłoszenia. Zachowaj dane i zadzwoń.');}
-    if(!response.ok||result?.ok!==true){
+    // Formspree's official AJAX example uses HTTP response.ok for acceptance;
+    // it does not require a JSON property named "ok" on successful responses.
+    // https://formspree.io/blog/formspree-ajax/ (checked 2026-11-13)
+    if(!response.ok){
       if(response.status===429)throw new Error('Wysyłka jest chwilowo ograniczona. Zachowaj dane i zadzwoń lub spróbuj później.');
       if(response.status===413)throw new Error('Zdjęcia są zbyt duże dla usługi formularza. Zmniejsz pliki i spróbuj ponownie.');
       throw new Error('Zgłoszenie nie zostało potwierdzone. Zachowaj dane i skontaktuj się telefonicznie.');

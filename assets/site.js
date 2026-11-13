@@ -30,7 +30,10 @@
     form.addEventListener('submit',event=>{
       event.preventDefault();validatePhone();if(!form.reportValidity())return;
       if(!city.value.trim()||!car.value.trim()){status.textContent='Wpisz miasto oraz markę, model i rocznik auta.';(!city.value.trim()?city:car).focus();return;}
-      message.value='Dzień dobry, proszę o wycenę auta.\n\nMiasto odbioru: '+city.value.trim()+'\nMarka, model, rocznik: '+((document.getElementById('brand')?.value.trim()||'')+' '+car.value.trim()).trim()+'\nTelefon kontaktowy: '+phone.value.trim()+'\nStan i uszkodzenia: '+(condition.value.trim()||'Do omówienia')+'\n\nProszę o kontakt w sprawie ceny i odbioru.';
+      const service=document.getElementById('serviceRequest')?.value||'skup';
+      if(!['skup','demontaz'].includes(service)){status.textContent='Wybierz skup auta lub organizację przekazania do stacji.';return;}
+      const topic=service==='demontaz'?'organizację przekazania auta do uprawnionej stacji demontażu':'wycenę i skup auta';
+      message.value='Dzień dobry, proszę o '+topic+'.\n\nMiasto odbioru: '+city.value.trim()+'\nSamochód: '+((document.getElementById('brand')?.value.trim()||'')+' '+car.value.trim()+' '+(document.getElementById('yearOfCar')?.value.trim()||'')).trim()+'\nTelefon kontaktowy: '+phone.value.trim()+'\nStan i uszkodzenia: '+(condition.value.trim()||'Do omówienia')+'\n\nProszę o omówienie dokumentów i warunków odbioru.';
       updateMail();document.getElementById('message-preview').hidden=false;
       status.textContent='Wiadomość jest gotowa, ale jeszcze niewysłana. Otwórz pocztę lub skopiuj tekst.';
       trackEvent('valuation_draft');

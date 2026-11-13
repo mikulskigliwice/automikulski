@@ -1,5 +1,7 @@
 # Indywidualny audyt 20 URL — produkcja i propozycja v2
 
+> Aktualizacja zakresu 13.11.2026: właściciel potwierdził brak osobnych usług pomocy drogowej/transportu oraz brak usług całodobowych. Opisy wcześniejszego wariantu są historyczne. Bieżący zakres, nowe testy i gotowość opisuje [końcowy przegląd](final-release-review.md).
+
 12.11.2026. Produkcja/backup: `a79e402528cc0e9f5ce5ce5e4b28c303f1d8bcf0`. Punkt rozpoczęcia dalszej modernizacji: `32dd900015028e5bd297ced21de8214f69bd8cea`. Wszystkie zmiany opisane jako v2 są propozycją do przeglądu, bez publikacji.
 
 „Aktualny” w tabeli oznacza wersję produkcyjną; strzałka wskazuje zmianę w v2. Brak strzałki oznacza zachowanie wartości. Pełne metadane przed/po, sumy SHA-256 HTML i dowody kontroli są w [JSON](audit-20-urls.json). Liczba słów nie jest oceną jakości i obejmuje wspólne sekcje formularza/oferty. Linki oznaczają unikalne docelowe href, wraz z kotwicami, a nie liczbę niezależnych stron.

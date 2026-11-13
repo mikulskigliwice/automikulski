@@ -1,5 +1,7 @@
 # Profil Google, wiarygodność i linki
 
+> Aktualizacja zakresu 13.11.2026: właściciel potwierdził brak osobnych usług pomocy drogowej/transportu oraz brak usług całodobowych. Opisy wcześniejszego wariantu są historyczne. Bieżący zakres, nowe testy i gotowość opisuje [końcowy przegląd](final-release-review.md).
+
 Odczyt: 12.11.2026. Nie zmieniano profilu, wpisów katalogowych, opinii, kont ani ich ustawień. Nie kontaktowano osób trzecich.
 
 ## Bezpośrednio sprawdzona wizytówka Google

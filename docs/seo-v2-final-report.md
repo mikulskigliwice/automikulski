@@ -1,5 +1,7 @@
 # AUTO MIKULSKI — raport modernizacji v2 do zatwierdzenia
 
+> Aktualizacja zakresu 13.11.2026: właściciel potwierdził brak osobnych usług pomocy drogowej/transportu oraz brak usług całodobowych. Opisy wcześniejszego wariantu są historyczne. Bieżący zakres, nowe testy i gotowość opisuje [końcowy przegląd](final-release-review.md).
+
 Data: 12 listopada 2026, Europe/Warsaw. Repozytorium: `mikulskigliwice/automikulski`. Gałąź: **`seo-rozbudowa-v2`**. Bazą jest zabezpieczona produkcja `a79e402528cc0e9f5ce5ce5e4b28c303f1d8bcf0`; kontynuowano wcześniejszy roboczy commit `32dd900015028e5bd297ced21de8214f69bd8cea`.
 
 **Aktualizacja statusu, 13.11.2026:** ponowienie zapisu zakończyło się poprawnie. Pełny pakiet zapisano na `seo-rozbudowa-v2` w commicie [`f966295`](https://github.com/mikulskigliwice/automikulski/commit/f966295b0394c806ec3eaa8b46f8929aec49aed3). Drzewo plików `fb840f62183795a360ac86e405887be36c5d18a3` jest identyczne z przygotowanym lokalnym commitem `12cc794810a16ed6475aaf0a22fddbac02559021`; sprawdzono także SHA wszystkich dziewięciu obrazów. Utworzono [roboczy Pull Request nr 1](https://github.com/mikulskigliwice/automikulski/pull/1) do przeglądu. Ten zapis zastępuje wcześniejszy status o przerwaniu operacji. PR nie został scalony; `main` i backup pozostają na a79.

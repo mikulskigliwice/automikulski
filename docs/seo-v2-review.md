@@ -1,5 +1,7 @@
 # SEO v2 — propozycja do sprawdzenia, bez publikacji
 
+> Aktualizacja zakresu 13.11.2026: właściciel potwierdził brak osobnych usług pomocy drogowej/transportu oraz brak usług całodobowych. Opisy wcześniejszego wariantu są historyczne. Bieżący zakres, nowe testy i gotowość opisuje [końcowy przegląd](final-release-review.md).
+
 > Ten dokument zachowuje raport **pierwszej, wcześniejszej części v2** (commit 32dd900). Po późniejszym poleceniu kompleksowej modernizacji rozszerzono formularz, CSS, wszystkie 20 stron i dokumentację. Aktualny pełny zakres, testy, stan backendu i decyzje są w [raporcie końcowym v2](seo-v2-final-report.md). Poniższych stwierdzeń „nie zmieniano CSS/JS/formularza” nie należy odnosić do późniejszej części prac.
 
 Data: 12 listopada 2026, Europe/Warsaw. Repozytorium: `mikulskigliwice/automikulski`.

@@ -25,10 +25,15 @@ const cases=[
   ['wrong Open Graph URL','index.html',home.replace('property="og:url" content="https://automikulski.pl/"','property="og:url" content="https://automikulski.pl/wrong/"'),'og:url does not match'],
   ['preview navigation escaping to production','index.html',home.replace('href="/skup-aut-zabrze/"','href="https://automikulski.pl/skup-aut-zabrze/"'),'internal anchor must use a relative URL'],
   ['noindex with reversed attribute order','index.html',home.replace(/<meta name="robots"[^>]*>/,'<meta content="NOINDEX, follow" name="robots">'),'unexpectedly noindex'],
-  ['unauthorized contact phone','index.html',home.replace('href="tel:+48517936676"','href="tel:+48690626260"'),'unauthorized phone number']
+  ['unauthorized contact phone','index.html',home.replace('href="tel:+48517936676"','href="tel:+48690626260"'),'unauthorized phone number'],
+  ['false round-the-clock title','index.html',home.replace(/<title>.*?<\/title>/,'<title>Pomoc drogowa 24h Gliwice</title>'),'unoffered roadside'],
+  ['standalone transport form option','index.html',home.replace('<select id="serviceRequest" name="service">','<select id="serviceRequest" name="service"><option value="transport">Transport na zlecenie</option>'),'unoffered roadside'],
+  ['unsupported form service with a neutral label','index.html',home.replace('<select id="serviceRequest" name="service">','<select id="serviceRequest" name="service"><option value="transport">Inna sprawa</option>'),'unsupported form service'],
+  ['false roadside schema','index.html',home.replace(/"serviceType":"[^"]*"/,'"serviceType":"Pomoc drogowa 24h"'),'unoffered roadside']
 ];
 for(const [label,file,changed,expected] of cases){
   const target=path.join(fixture,file),original=fs.readFileSync(target,'utf8');
+  assert.notEqual(changed,original,`${label}: fixture mutation had no effect`);
   fs.writeFileSync(target,changed);
   const result=validate();
   fs.writeFileSync(target,original);

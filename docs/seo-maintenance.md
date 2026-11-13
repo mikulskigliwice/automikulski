@@ -6,7 +6,7 @@
 - 13 podstron miast: Zabrze, Bytom, Chorzów, Katowice, Knurów, Mikołów, Pyskowice, Ruda Śląska, Siemianowice Śląskie, Świętochłowice, Tarnowskie Góry, Tychy, Sosnowiec.
 - Dwie strony usług: skup aut uszkodzonych i skup aut do złomowania.
 - Trzy poradniki: przygotowanie wyceny, czynniki wpływające na cenę, przygotowanie odbioru.
-- Istniejąca strona kontaktu w sprawie lawety.
+- Istniejący URL /pomoc-drogowa-laweta-gliwice/ opisuje odbiór kupowanego auta własną lawetą, nie osobny transport.
 - `sitemap.xml` zawiera 20 publicznych adresów. Stare wersje i strony testowe pozostają poza mapą oraz mają `noindex`.
 
 Treść strony jest w plikach HTML. Wspólne style: `assets/site.css`; menu i pomiar: `assets/site.js`; formularz: `assets/valuation.js` i wyłączona konfiguracja `assets/form-config.js`. Wspólny HTML formularza jest w `partials/valuation-form.html`; po edycji uruchomić `node scripts/sync-forms.mjs`. Przy zmianie zasobów należy zaktualizować parametr wersji w odnośnikach. [Raport v2](seo-v2-final-report.md), [backend formularza](form-backend.md), [prawdziwe realizacje](realizations.md).
@@ -83,3 +83,7 @@ Dokumentacja:
 - Zasady spamu: https://developers.google.com/search/docs/essentials/spam-policies
 - Mapy w Search Console: https://support.google.com/webmasters/answer/7451001?hl=pl
 - Zdarzenia GA4: https://developers.google.com/analytics/devguides/collection/ga4/events
+
+## Ostateczny zakres oferty — potwierdzony 13.11.2026
+
+Firma kupuje samochody używane, uszkodzone, powypadkowe, niesprawne i do złomowania. Odbiera kupowane auta własną lawetą po uzgodnieniu warunków. Nie oferuje osobnej pomocy drogowej, transportu na zlecenie, wynajmu lawety i usług całodobowych. Zaświadczenia wydaje uprawniona stacja demontażu. Rodzaje formularza i realizacji: skup lub demontaz. Telefon 517 936 676 i GA4 G-2TNQWT3SF9 pozostają. URL lawety ma własny canonical i treść o odbiorze w skupie; nie wdrożono przekierowania ani nowego URL.
