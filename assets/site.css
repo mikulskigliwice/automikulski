@@ -36,3 +36,6 @@
 @media(max-width:760px){.guide-cards{grid-template-columns:1fr}.guide-card{padding:23px}.local-coverage .value-grid,.local-offer .value-grid{gap:28px}.guide-lead{font-size:16px}.guide-body p{font-size:15px}.area-tags{gap:7px}.area-tags li{padding:7px 10px;font-size:12px}}
 
 @media(max-width:760px){html{scroll-padding-bottom:calc(90px + env(safe-area-inset-bottom))}}
+
+/* Equal contact choices for the two actual services; retain the existing layout. */
+.intent-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:12px}.intent-actions .btn{min-width:0;gap:8px;padding:12px 10px;font-size:13px;line-height:1.4}.service-role-note{font-size:13px;line-height:1.65;margin-top:12px;border-left:3px solid var(--yellow);padding-left:12px}.hero.dual-offer h1{font-size:clamp(34px,4.2vw,55px)}.local-hero.dual-offer h1{font-size:clamp(32px,3.4vw,48px)}.local-cassation{margin-top:18px}.local-cassation a{color:#245b4e;text-decoration:underline;text-underline-offset:3px}.contact .intent-actions{max-width:440px;margin-top:20px}.contact .intent-actions .btn-outline{border-color:#806b22}

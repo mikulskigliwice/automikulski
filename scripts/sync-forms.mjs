@@ -10,7 +10,7 @@ for(const url of urls){
   if(!source.includes('<!-- valuation:start -->'))throw new Error('Missing valuation markers in '+file);
   const type=source.match(/data-page-type="([^"]+)"/)?.[1],city=type==='city'?source.match(/data-page-city="([^"]+)"/)?.[1]||'':'';
   const service=new URL(url).pathname==='/skup-aut-do-zlomowania-gliwice/'?'demontaz':'skup';
-  const values={CITY_VALUE:escape(city),FORM_HEADING:'Opisz samochód do wyceny.',CONDITION_PLACEHOLDER:'Czy odpala? Co jest uszkodzone? Gdzie stoi samochód?',SELECT_SKUP:service==='skup'?'selected':'',SELECT_DEMONTAZ:service==='demontaz'?'selected':''};
+  const values={CITY_VALUE:escape(city),FORM_HEADING:service==='demontaz'?'Zgłoś auto do złomowania.':'Skup czy złomowanie?',CONDITION_PLACEHOLDER:'Czy odpala? Co jest uszkodzone? Gdzie stoi samochód?',SELECT_SKUP:service==='skup'?'selected':'',SELECT_DEMONTAZ:service==='demontaz'?'selected':''};
   const form=template.replace(/\{\{([A-Z_]+)\}\}/g,(_,key)=>{if(!(key in values))throw new Error('Unknown form token '+key);return values[key];});
   const output=source.replace(/<!-- valuation:start -->[\s\S]*?<!-- valuation:end -->/,'<!-- valuation:start -->'+form+'<!-- valuation:end -->');
   if(output!==source)fs.writeFileSync(file,output);count++;
