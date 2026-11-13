@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import assert from 'node:assert/strict';
 import vm from 'node:vm';
+import {validateRealizations} from './render-realizations.mjs';
 
 const rootArgument=process.argv.indexOf('--root');
 if(rootArgument!==-1)assert(process.argv[rootArgument+1],'--root requires a directory');
@@ -30,6 +31,7 @@ for(const url of urls){
   assert(pathname.endsWith('/'),`sitemap page must use its canonical trailing slash: ${url}`);
   const file=path.join(pathname.replace(/^\//,''),'index.html');
   const html=read(file);
+  assert(!html.includes('{{'),`${file}: unresolved template tokens`);
   assert.equal((html.match(/<h1\b/g)||[]).length,1,`${file}: expected one H1`);
   const canonical=tags(html,'link').filter(l=>l.rel?.toLowerCase().split(/\s+/).includes('canonical'));
   assert.equal(canonical.length,1,`${file}: expected exactly one canonical link`);
@@ -40,7 +42,8 @@ for(const url of urls){
   const description=singleMeta(html,'description',file);
   assert(!descriptions.has(description),`${file}: duplicate meta description`);descriptions.add(description);
   assert.equal(singleMeta(html,'og:url',file),url,`${file}: og:url does not match canonical`);
-  assert(!/<meta name="robots" content="[^"]*noindex/.test(html),`${file}: unexpectedly noindex`);
+  const robotDirectives=singleMeta(html,'robots',file).toLowerCase().split(',').map(s=>s.trim());
+  assert(!robotDirectives.includes('noindex')&&!robotDirectives.includes('none'),`${file}: unexpectedly noindex`);
   const ids=[...html.matchAll(/\sid="([^"]+)"/g)].map(m=>m[1]);
   assert.equal(new Set(ids).size,ids.length,`${file}: duplicate HTML ids`);
   const json=[...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(m=>JSON.parse(m[1]));
@@ -59,12 +62,15 @@ for(const url of urls){
     assert(html.includes('tel:+48517936676'),`${file}: missing company phone`);
   }
   for(const a of tags(html,'a')){
+    if(a.href?.startsWith('tel:'))assert.equal(a.href,'tel:+48517936676',`${file}: unauthorized phone number`);
+    if(a.href?.startsWith('sms:'))assert.equal(a.href,'sms:+48517936676',`${file}: unauthorized SMS number`);
     if(a.href?.startsWith(origin+'/'))assert.fail(`${file}: internal anchor must use a relative URL for safe previews: ${a.href}`);
   }
   documents.set(pathname,{html,ids:new Set(ids),destinations:new Set()});
 }
 for(const [pathname,doc] of documents){
-  const refs=[...doc.html.matchAll(/<(?:a|link|script)\b[^>]*(?:href|src)="([^"]+)"/g)].map(m=>m[1]);
+  const refs=[...doc.html.matchAll(/<(?:a|link|script|img|source)\b[^>]*(?:href|src)="([^"]+)"/g)].map(m=>m[1]);
+  for(const tag of [...tags(doc.html,'source'),...tags(doc.html,'img')])if(tag.srcset)refs.push(...tag.srcset.split(',').map(v=>v.trim().split(/\s+/)[0]));
   for(const ref of refs){
     const target=new URL(ref,origin+pathname);
     if(target.origin!==origin)continue;
@@ -81,6 +87,17 @@ const visited=new Set(),queue=['/'];
 while(queue.length){const current=queue.shift();if(visited.has(current))continue;visited.add(current);for(const next of documents.get(current).destinations)if(!visited.has(next))queue.push(next);}
 for(const p of documents.keys())assert(visited.has(p),`orphan page: ${p}`);
 new vm.Script(read('assets/site.js'));
+for(const file of ['assets/valuation.js','assets/form-config.js'])new vm.Script(read(file));
+const formConfig=read('assets/form-config.js');
+const configScope={window:{},URL};
+vm.runInNewContext(formConfig,configScope);
+vm.runInNewContext(read('assets/valuation.js'),configScope);
+const config=configScope.window.AUTO_MIKULSKI_FORM;
+if(config.enabled){
+  assert(configScope.window.AutoMikulskiValuation.canSend(config),'active form requires an approved provider endpoint and privacy notice');
+  assert(fs.existsSync(path.join(root,config.privacyNoticeUrl.replace(/^\//,''),'index.html')),'active form requires its published privacy notice');
+}
+validateRealizations(JSON.parse(read('data/realizations.json')),root);
 for(const file of ['gpt-zwykly.html','holmech/test.html','hybryda.html','index-astra.html','index-gemini.html','inxex2.html','old-index.html','test.html','test2.html','test3.html']){
   assert(tags(read(file),'meta').some(m=>m.name==='robots'&&m.content.split(',').map(v=>v.trim()).includes('noindex')),`${file}: old/test page lost noindex`);
 }

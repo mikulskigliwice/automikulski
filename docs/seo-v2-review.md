@@ -1,5 +1,7 @@
 # SEO v2 — propozycja do sprawdzenia, bez publikacji
 
+> Ten dokument zachowuje raport **pierwszej, wcześniejszej części v2** (commit 32dd900). Po późniejszym poleceniu kompleksowej modernizacji rozszerzono formularz, CSS, wszystkie 20 stron i dokumentację. Aktualny pełny zakres, testy, stan backendu i decyzje są w [raporcie końcowym v2](seo-v2-final-report.md). Poniższych stwierdzeń „nie zmieniano CSS/JS/formularza” nie należy odnosić do późniejszej części prac.
+
 Data: 12 listopada 2026, Europe/Warsaw. Repozytorium: `mikulskigliwice/automikulski`.
 
 **Wszystkie opisane niżej zmiany strony są robocze. Produkcja i backup pozostają na `a79e402528cc0e9f5ce5ce5e4b28c303f1d8bcf0`. Zgoda na przygotowanie gałęzi nie jest zgodą na publikację.**

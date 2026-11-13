@@ -11,6 +11,9 @@
     nav.addEventListener('click',event=>{if(event.target.closest('a')&&narrow.matches)closeMenu();});
     document.addEventListener('keydown',event=>{if(event.key==='Escape'&&narrow.matches&&!nav.hidden){closeMenu();menu.focus();}});
     document.getElementById('year').textContent=new Date().getFullYear();
+    if(window.AutoMikulskiValuation){
+      window.AutoMikulskiValuation.init({trackEvent});
+    }else{
     // Build a local email draft. This page has no form submission endpoint.
     const form=document.getElementById('leadForm');
     const phone=document.getElementById('phone');
@@ -27,7 +30,7 @@
     form.addEventListener('submit',event=>{
       event.preventDefault();validatePhone();if(!form.reportValidity())return;
       if(!city.value.trim()||!car.value.trim()){status.textContent='Wpisz miasto oraz markę, model i rocznik auta.';(!city.value.trim()?city:car).focus();return;}
-      message.value='Dzień dobry, proszę o wycenę auta.\n\nMiasto odbioru: '+city.value.trim()+'\nMarka, model, rocznik: '+car.value.trim()+'\nTelefon kontaktowy: '+phone.value.trim()+'\nStan i uszkodzenia: '+(condition.value.trim()||'Do omówienia')+'\n\nProszę o kontakt w sprawie ceny i odbioru.';
+      message.value='Dzień dobry, proszę o wycenę auta.\n\nMiasto odbioru: '+city.value.trim()+'\nMarka, model, rocznik: '+((document.getElementById('brand')?.value.trim()||'')+' '+car.value.trim()).trim()+'\nTelefon kontaktowy: '+phone.value.trim()+'\nStan i uszkodzenia: '+(condition.value.trim()||'Do omówienia')+'\n\nProszę o kontakt w sprawie ceny i odbioru.';
       updateMail();document.getElementById('message-preview').hidden=false;
       status.textContent='Wiadomość jest gotowa, ale jeszcze niewysłana. Otwórz pocztę lub skopiuj tekst.';
       trackEvent('valuation_draft');
@@ -38,6 +41,7 @@
       try{await navigator.clipboard.writeText(message.value);status.textContent='Skopiowano. Wklej tekst do e-maila lub SMS-a i wyślij wiadomość.';}
       catch{message.focus();message.select();status.textContent='Zaznaczono tekst. Skopiuj go ręcznie, wklej do wiadomości i wyślij.';}
     });
+    }
     // Preserve the existing GA property, opt-in only; never send form values.
     const gaId='G-2TNQWT3SF9';
     const consentKey='automikulski-analytics-v1';

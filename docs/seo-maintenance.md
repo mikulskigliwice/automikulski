@@ -9,7 +9,7 @@
 - Istniejąca strona kontaktu w sprawie lawety.
 - `sitemap.xml` zawiera 20 publicznych adresów. Stare wersje i strony testowe pozostają poza mapą oraz mają `noindex`.
 
-Treść strony jest w plikach HTML. Wspólne style i zachowanie formularza znajdują się w `assets/site.css` i `assets/site.js`. Przy zmianie tych plików należy zaktualizować parametr wersji przy odnośnikach do zasobów, aby przeglądarki pobrały nowe pliki.
+Treść strony jest w plikach HTML. Wspólne style: `assets/site.css`; menu i pomiar: `assets/site.js`; formularz: `assets/valuation.js` i wyłączona konfiguracja `assets/form-config.js`. Wspólny HTML formularza jest w `partials/valuation-form.html`; po edycji uruchomić `node scripts/sync-forms.mjs`. Przy zmianie zasobów należy zaktualizować parametr wersji w odnośnikach. [Raport v2](seo-v2-final-report.md), [backend formularza](form-backend.md), [prawdziwe realizacje](realizations.md).
 
 Nie dopisywać oddziałów, niepotwierdzonych realizacji, ocen, godzin pracy, cen ani obietnic bezpłatnego transportu. Podstrony miast przedstawiają obszar dojazdu. Oferta skupu na umowę nie jest równoznaczna z wydaniem zaświadczenia o demontażu. Właściciel potwierdził współpracę ze stacją i możliwość organizacji przekazania pojazdu oraz uzyskania zaświadczenia od stacji. Nie przedstawiać Auto Mikulski jako stacji ani wystawcy dokumentu. Wersja v2 jest propozycją na gałęzi seo-rozbudowa-v2; publikacja wymaga odrębnej zgody właściciela.
 
@@ -23,6 +23,7 @@ Zachowana usługa GA4: `G-2TNQWT3SF9`. Zdarzenia są wysyłane dopiero po wyraż
 | `sms_click` | Kliknięcie odnośnika otwierającego SMS. |
 | `email_click` | Kliknięcie odnośnika otwierającego pocztę. |
 | `valuation_draft` | Przygotowanie treści wiadomości lokalnie w formularzu; nie oznacza wysłania zapytania. |
+| `valuation_received` | Kod przygotowany na przyszłe przyjęcie przez zatwierdzony backend; obecna wyłączona konfiguracja nie emituje tego zdarzenia. Nie potwierdza odebrania telefonu ani zakupu auta. |
 
 Parametry `page_city`, `page_type`, `link_location` opisują stronę i położenie linku. Formularz nie przekazuje do zdarzeń numeru klienta, opisu samochodu ani wpisanego miasta. Nie dopisywać takich danych do analityki.
 
@@ -30,7 +31,7 @@ Aby analizować te parametry w raportach GA4, właściciel usługi może skonfig
 
 ## Search Console i ocena wyników
 
-Właściciel powinien udostępnić dane usługi `automikulski.pl` przez obsługiwaną integrację lub eksport. Jeśli usługa nie jest zweryfikowana, potrzebna jest weryfikacja własności. Nie wymagać podawania hasła do Google.
+Search Console i OpenSEO są odłożone zgodnie z decyzją właściciela. Nie wymagać ich teraz. W późniejszym etapie dane usługi `automikulski.pl` można udostępnić przez obsługiwaną integrację lub eksport; nie wymagać podawania hasła do Google.
 
 Mapa do zgłoszenia: `https://automikulski.pl/sitemap.xml`. Raport map i indeksowania pokaże, które adresy Google pobrał i zindeksował. Publikacja plików ani dodanie mapy nie gwarantują indeksowania lub pozycji.
 
@@ -47,11 +48,14 @@ Przed kolejnymi zmianami zestawiać porównywalne okresy, np. 28 dni względem p
 
 ```sh
 node scripts/validate-site.mjs
+node scripts/test-site-validation.mjs
 node scripts/test-contact-analytics.mjs
+node scripts/test-valuation.mjs
+node scripts/test-realizations.mjs
 git diff --check
 ```
 
-Pierwsza kontrola sprawdza mapę, linki, kotwice, dane FAQ i osiągalność stron. Druga sprawdza zgodę, jej wycofanie, pomiar kontaktu i brak danych formularza w zdarzeniach. Po publikacji sprawdzić stronę główną, jedną podstronę miasta, nowy poradnik i formularz.
+Kontrole sprawdzają mapę, metadane, linki/kotwice, FAQ, osiągalność, błędne przypadki, zgodę i pomiar, formularz i dane realizacji. Przed publikacją sprawdzić wszystkie 20 URL i kontakt na telefonie. Rzeczywista wysyłka wymaga osobnego testu integracji z zatwierdzonym backendem. Po osobno zatwierdzonej publikacji ponownie sprawdzić stronę, zasoby i formularz; nie zastępować testów przeglądarkowych samym walidatorem.
 
 ## Źródła nazw dzielnic i obszarów
 

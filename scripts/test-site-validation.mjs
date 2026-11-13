@@ -23,7 +23,9 @@ const cases=[
   ['duplicate title','skup-aut-zabrze/index.html',other.replace(/<title>.*?<\/title>/,home.match(/<title>.*?<\/title>/)[0]),'duplicate title'],
   ['duplicate description','skup-aut-zabrze/index.html',other.replace(/<meta name="description"[^>]*>/,home.match(/<meta name="description"[^>]*>/)[0]),'duplicate meta description'],
   ['wrong Open Graph URL','index.html',home.replace('property="og:url" content="https://automikulski.pl/"','property="og:url" content="https://automikulski.pl/wrong/"'),'og:url does not match'],
-  ['preview navigation escaping to production','index.html',home.replace('href="/skup-aut-zabrze/"','href="https://automikulski.pl/skup-aut-zabrze/"'),'internal anchor must use a relative URL']
+  ['preview navigation escaping to production','index.html',home.replace('href="/skup-aut-zabrze/"','href="https://automikulski.pl/skup-aut-zabrze/"'),'internal anchor must use a relative URL'],
+  ['noindex with reversed attribute order','index.html',home.replace(/<meta name="robots"[^>]*>/,'<meta content="NOINDEX, follow" name="robots">'),'unexpectedly noindex'],
+  ['unauthorized contact phone','index.html',home.replace('href="tel:+48517936676"','href="tel:+48690626260"'),'unauthorized phone number']
 ];
 for(const [label,file,changed,expected] of cases){
   const target=path.join(fixture,file),original=fs.readFileSync(target,'utf8');
@@ -33,4 +35,4 @@ for(const [label,file,changed,expected] of cases){
   assert.notEqual(result.status,0,`${label}: broken fixture unexpectedly passed`);
   assert((result.stderr+result.stdout).includes(expected),`${label}: unexpected failure: ${result.stderr}`);
 }
-console.log(`Passed: valid baseline and ${cases.length} isolated regressions for canonical, metadata and preview navigation. No production files were changed.`);
+console.log(`Passed: valid baseline and ${cases.length} isolated regressions for canonical, metadata, indexing, phone and preview navigation. No production files were changed.`);
